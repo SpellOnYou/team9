@@ -13,6 +13,10 @@ CL team lab course repository at 21SS
 
 **Deep Learning**
 
+- CNN
+- RNN(LSTM, AWD-LSTM..)
+
+
 **pre-processing procedure**
 
 1. tokenization (create separate unit)
