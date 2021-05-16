@@ -1,0 +1,163 @@
+\documentclass[aspectratio=169]{beamer}
+\usepackage{graphicx}
+\usepackage{pdfpages}
+\usepackage[utf8]{inputenc}
+\usepackage{natbib}
+\usepackage[english]{babel}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{tabularx}
+
+\usetheme{Dresden}
+
+\title[Miterm presentation CL Team Lab]
+{Midterm presentation CL Team Lab}
+\subtitle{Group 9 Emotion Classification}
+\author{Lara Grimminger, Jiwon Kim}
+\date{14.06.2021}
+
+
+\AtBeginSection[]{
+    \begin{frame}
+        \tableofcontents[currentsection]
+    \end{frame}
+}
+
+\begin{document}
+
+\begin{frame}
+\maketitle
+\end{frame}
+
+\section{Task Description}
+
+
+\begin{frame}
+\frametitle{Emotion Classification}
+
+\begin{itemize}
+\setlength\itemsep{1em}
+\item International Survey On Emotion Antecedents And Reactions (ISEAR)
+\item Students asked to describe emotional events for 7 emotions including \emph{joy, fear, anger, sadness, disgust, shame}, and \emph{guilt}
+\hspace{+5mm}
+\begin{itemize}
+\setlength\itemsep{0.3em}
+\item [$\star$]\emph{joy} - A party I went to last Christmas.
+\item [$\star$]\emph{disgust} - An Engineer I know wants war so he can get a job making bombs.
+
+\end{itemize}
+
+\item Supervised Classification Task: Predict correct emotion given a text sequence from the data set
+
+\end{itemize}
+
+\end{frame}
+
+
+\section{Approach}
+
+\begin{frame}
+\frametitle{Data Preprocessing and Neural Network}
+\begin{itemize}
+
+
+\item Convert text data to numerical data with tf\_idf approach
+\item Convert text labels (i.e. the 7 emotions) to numerical data with one hot encoding
+\item 2-layer neural network with input layer, hidden layer, and output layer
+\end{itemize}
+\end{frame}
+
+
+\section{Method}
+\begin{frame}
+\frametitle{Data Preprocessing: tf\_idf and One Hot Encoding}
+
+\begin{itemize}
+
+\item tf-idf = Term frequency (tf) $*$ Inverse document frequency (idf)
+
+\begin{itemize}
+\setlength\itemsep{0.4em}
+\item [$\star$] $ \text{tf}_{t,d} \: \text{of term t in document d is the number of times t occurs in d} $
+\item [$\star$] $\text{df}_t$ is the number of documents that t occurs in
+
+%\item [$\star$] $ \text{idf}_t \: \text{of term t}$ measures the informativeness of the term
+
+\item [$\star$] $ \text{idf}_t \:=\log_{10}\frac{N}{df_t}$, N is the number of documents in the data set
+\end{itemize}
+\setlength\itemsep{0.8em}
+\item One Hot Encoding
+
+\begin{itemize}
+\item [$\star$] \emph{joy}$=[1,0,0,0,0,0,0,0]$, \emph{fear}$=[0,1,0,0,0,0,0,0]$, \emph{shame}$=[0,0,1,0,0,0,0,0]$, etc.
+\end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{2-Layer Neural Network}
+
+\includegraphics[scale=0.5]{Method_TeamLab.jpg}
+
+\end{frame}
+
+
+
+\section{Architecture}
+
+\begin{frame}
+\frametitle{2-Layer Neural Network}
+  %# New column type
+\begin{tabular}{m{6.5cm}|m{6.5cm}}                          
+%\renewcommand\arraystretch{1.05}
+rward-propagation & Backward-propagation \\
+\midrule
+
+input layer: (n\_data, n\_features$=1000$) & Get derivatives\\
+hidden layer:(n\_features=1000, 7) & Reverse steps from forward function  \\
+hidden layer to ReLu function & \\
+output layer: (n\_data, 7) & \\
+output layer to softmax function  & \\
+output to cross-entropy function(loss))&
+
+\end{tabular}
+%\end{center}
+
+\end{frame}
+
+
+
+\section{Experimental Design}
+\begin{frame}
+\frametitle{Training of the 2-Layer Neural Network}
+
+\begin{itemize}
+
+\item Initialization with Kaiming (No exploding or vanishing weights and gradients)
+\item 1 Epoch
+\item Batchsize of 32
+\item Learning rate of 0.01
+
+\end{itemize}
+
+\end{frame}
+
+\section{Results}
+\begin{frame}
+\frametitle{Precision, Recall and $F_1Score$}
+\end{frame}
+
+\section{Next steps}
+
+\begin{frame}
+\frametitle{Advanced Classifier}
+\begin{itemize}
+\item Tackle Curse of Dimensionality with Word Embeddings or PCA
+\item Add more layers (Universal Approximation Theorem)
+\item Change ReLu to another activation function
+\item Use optimizer
+\end{itemize}
+\end{frame}
+
+\end{document}
