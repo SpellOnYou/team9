@@ -67,8 +67,25 @@ class BagOfWords:
         # define punctuation and upper case alphabet
         self.punctuations = '''!()-[]{};:'"\,<>./?@#$%^&*_~'''
         self.upper = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+        self.stopwords = ['i', 'me', 'my', 'myself', 'we', 'our', 'ours', 'ourselves', 'you', "you're", "you've",
+                          "you'll", "you'd", 'your', 'yours', 'yourself', 'yourselves', 'he', 'him', 'his', 'himself',
+                          'she', "she's", 'her', 'hers', 'herself', 'it', "it's", 'its', 'itself', 'they', 'them',
+                          'their', 'theirs', 'themselves', 'what', 'which', 'who', 'whom', 'this', 'that', "that'll",
+                          'these', 'those', 'am', 'is', 'are', 'was', 'were', 'be', 'been', 'being', 'have', 'has',
+                          'had', 'having', 'do', 'does', 'did', 'doing', 'a', 'an', 'the', 'and', 'but', 'if', 'or',
+                          'because', 'as', 'until', 'while', 'of', 'at', 'by', 'for', 'with', 'about', 'against',
+                          'between', 'into', 'through', 'during', 'before', 'after', 'above', 'below', 'to', 'from',
+                          'up', 'down', 'in', 'out', 'on', 'off', 'over', 'under', 'again', 'further', 'then', 'once',
+                          'here', 'there', 'when', 'where', 'why', 'how', 'all', 'any', 'both', 'each', 'few', 'more',
+                          'most', 'other', 'some', 'such', 'no', 'nor', 'not', 'only', 'own', 'same', 'so', 'than',
+                          'too', 'very', 's', 't', 'can', 'will', 'just', 'don', "don't", 'should', "should've", 'now', 'd',
+                          'll', 'm', 'o', 're', 've', 'y', 'ain', 'aren', "aren't", 'couldn', "couldn't", 'didn',
+                          "didn't", 'doesn', "doesn't", 'hadn', "hadn't", 'hasn', "hasn't", 'haven', "haven't",
+                          'isn', "isn't", 'ma', 'mightn', "mightn't", 'mustn', "mustn't", 'needn', "needn't",
+                          'shan', "shan't", 'shouldn', "shouldn't", 'wasn', "wasn't", 'weren', "weren't", 'won',
+                          "won't", 'wouldn', "wouldn't"]
         self.vocab = self.generate_vocabulary(all_padded_sentences)  # Generate the vocabulary
-        #print(len(self.vocab))
+        # print(len(self.vocab))
         self.dict_idx = self.indexing(self.vocab)  # Generate the indexing
         self.word_count = self.count_dictionary(list_of_sentences)
         self.N_sentences = len(list_of_sentences)
@@ -86,13 +103,24 @@ class BagOfWords:
                 lowercase = lowercase + char
         lowercase = lowercase.strip()
         tokenized = list(lowercase.split())
+        print(tokenized)
         return tokenized
+
+    def remove_stopwords(self, tokenized_sentences):
+        filtered_list = []
+        for token in tokenized_sentences:
+            if token in self.stopwords:
+                continue
+            else:
+                filtered_list.append(token)
+        return filtered_list
 
     def generate_vocabulary(self, all_padded_sentences):
         vocab = []
         for sentence in all_padded_sentences:
             tokenized_sentence = self.lowercase_tokenize(sentence)
-            for word in tokenized_sentence:  # append only unique words
+            filtered_tokenized_sentence = self.remove_stopwords(tokenized_sentence)
+            for word in filtered_tokenized_sentence:  # append only unique words
                 if word not in vocab:
                     vocab.append(word)
         return vocab
@@ -134,7 +162,8 @@ class BagOfWords:
 
         for sentence in input_sentences:
             tokenized_sentence = self.lowercase_tokenize(sentence)
-            for word in tokenized_sentence:
+            filtered_tokenized_sentence = self.remove_stopwords(tokenized_sentence)
+            for word in filtered_tokenized_sentence:
                 tf = self.termfreq(sentence, word)
                 idf = self.inverse_doc_freq(word)
 
@@ -156,7 +185,7 @@ class BagOfWords:
     #         row += 1
     #     return bow_vector
 
-
+#
 train_file = "../data/emotions/isear/isear-train-modified.csv"
 val_file = "../data/emotions/isear/isear-val-modified.csv"
 test_file = "../data/emotions/isear/isear-test-modified.csv"
@@ -194,18 +223,3 @@ print(tf_idf_val)
 print("\n")
 print("tf_idf_test \n", tf_idf_test.shape)
 print(tf_idf_test)
-
-
-# vector_train = bow_train.bag_of_words(sentences_padded_train)  # BOW over some other sentences
-# vector_val = bow_val.bag_of_words(sentences_padded_val)  # BOW over some other sentences
-# vector_test = bow_test.bag_of_words(sentences_padded_test)  # BOW over some other sentences
-#
-# print(vector_train.shape)
-# print(vector_train)
-#
-# print(vector_val.shape)
-# print(vector_val)
-#
-# print(vector_test.shape)
-# print(vector_test)
-
