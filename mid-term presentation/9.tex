@@ -11,18 +11,18 @@
 
 \usetheme{Dresden}
 
-\title[Miterm presentation CL Team Lab]
-{Midterm presentation CL Team Lab}
+\title[Mid-term presentation CL Team Lab]
+{Mid-term presentation CL Team Lab}
 \subtitle{Group 9 Emotion Classification}
 \author{Lara Grimminger, Jiwon Kim}
 \date{14.06.2021}
 
 
-\AtBeginSection[]{
-    \begin{frame}
-        \tableofcontents[currentsection]
-    \end{frame}
-}
+%\AtBeginSection[]{
+%    \begin{frame}
+%        \tableofcontents[currentsection]
+%    \end{frame}
+%}
 
 \begin{document}
 
@@ -48,7 +48,7 @@
 
 \end{itemize}
 
-\item Supervised Classification Task: Predict correct emotion given a text sequence from the data set
+\item Supervised Classification Task:\\ Predict correct emotion given a text sequence from the data set
 
 \end{itemize}
 
@@ -104,40 +104,42 @@
 
 
 
-\section{Architecture}
 
-\begin{frame}
-\frametitle{2-Layer Neural Network}
+%\section{Architecture}
+
+%\begin{frame}
+%\frametitle{2-Layer Neural Network}
   %# New column type
-\begin{tabular}{m{6.5cm}|m{6.5cm}}                          
+%\begin{tabular}{m{6.5cm}|m{6.5cm}}                          
 %\renewcommand\arraystretch{1.05}
-Forward-propagation & Backward-propagation \\
-\midrule
+%Forward-propagation & Backward-propagation \\
+%\midrule
 
-input layer: (n\_data, n\_features$=1000$) & Get derivatives\\
-hidden layer:(n\_features=1000, 7) & Reverse steps from forward function  \\
-hidden layer to ReLu function & \\
-output layer: (n\_data, 7) & \\
-output layer to softmax function  & \\
-output to cross-entropy function(loss))&
+%input layer: (n\_data, n\_features$=1000$) & Get derivatives\\
+%hidden layer:(n\_features=1000, 7) & Reverse steps from forward function  \\
+%hidden layer to ReLu function & \\
+%output layer: (n\_data, 7) & \\
+%output layer to softmax function  & \\
+%output to cross-entropy function(loss))&
 
-\end{tabular}
+%\end{tabular}
 %\end{center}
 
-\end{frame}
+%\end{frame}
 
 
 
 \section{Experimental Design}
 \begin{frame}
-\frametitle{Training of the 2-Layer Neural Network}
+\frametitle{Training of the Neural Network}
 
 \begin{itemize}
 
 \item Initialization with Kaiming (No exploding or vanishing weights and gradients)
+\item 2 Layers
 \item 1 Epoch
 \item Batchsize of 32
-\item Learning rate of 0.01
+\item Learning rate of 0.00001
 
 \end{itemize}
 
@@ -145,19 +147,70 @@ output to cross-entropy function(loss))&
 
 \section{Results}
 \begin{frame}
-\frametitle{Precision, Recall and $F_1Score$}
+\frametitle{Goals}
+\begin{itemize}
+\item Detect emotion from text
+\item Evaluate classifier performance with F$_1$Score
+\item $F_1Score$ is the harmonic mean of Precision and Recall
+
+
+\end{itemize}
 \end{frame}
+
+\section{Results}
+
+\begin{frame}
+\frametitle{Precision, Recall and F$_1$Score}
+\begin{table}
+  \centering
+  %\setlength{\tabcolsep}{7pt}
+  \begin{tabular}{l ccc}
+  
+    \toprule
+
+    Class &Precision&Recall&F$_1$Score\\
+    \cmidrule{1-4}
+
+    Joy & .13 & 1.0 & .23\\
+    Fear & .00 & .00 & .00\\
+    Shame &  .00 & .00 & .00 \\
+    Disgust & .00 & .00 & .00 \\
+    Guilt & .00 & .00 & .00  \\
+    Anger & .00 & .00 & .00  \\
+    Sadness & .00 & .00 & .00  \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+\end{frame}
+
 
 \section{Next steps}
 
 \begin{frame}
-\frametitle{Advanced Classifier}
+\frametitle{Experiments}
+
 \begin{itemize}
-\item Tackle Curse of Dimensionality with Word Embeddings or PCA
-\item Add more layers (Universal Approximation Theorem)
-\item Change ReLu to another activation function
-\item Use optimizer
+\item Problem: Our baseline performs poorly
+\setlength\itemsep{0.4em}
+\item \emph{Can we improve the performance of the emotion detection method by converting the multi-class classification problem into a binary one? }
+%\setlength\itemsep{0.4em}
+\begin{itemize}
+%\setlength\itemsep{0.4em}
+\item [$\star$] Experiment 1:\\ Have one classifier per emotion, e.g. joy vs rest
+\item [$\star$] Experiment 2:\\ Have a classifier for a pair of opposite emotions, e.g. joy vs sadness
 \end{itemize}
+
+
+%\begin{itemize}
+%\setlength\itemsep{0.4em}
+%\item [$\star$] Tackle Curse of Dimensionality with Word Embeddings or PCA
+%\item [$\star$] Sequential model of Pytorch
+%\end{itemize}
+\end{itemize}
+
+%
+
 \end{frame}
 
 \end{document}
