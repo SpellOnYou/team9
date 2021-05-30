@@ -8,6 +8,8 @@
 \usepackage{graphicx}
 \usepackage{booktabs}
 \usepackage{tabularx}
+\usepackage{array,multirow}
+\usepackage{adjustbox}
 
 \usetheme{Dresden}
 
@@ -55,21 +57,21 @@
 \end{frame}
 
 
-\section{Approach}
+\section{Motivation and Approach}
 
 \begin{frame}
-\frametitle{Data Preprocessing and Neural Network}
+\frametitle{Simple Neural Networks and Data Preprocessing}
 \begin{itemize}
 
+\item Neural Network as baseline because it is state-of-the-art architecture
+\item Simple 2 and 4-layer Neural Network to understand how architecture works
 
-\item Convert text data to numerical data with tf\_idf approach
-\item Convert text labels (i.e. the 7 emotions) to numerical data with one hot encoding
-\item 2-layer neural network with input layer, hidden layer, and output layer
+
 \end{itemize}
 \end{frame}
 
 
-\section{Method}
+\section{Method and Experimental Design}
 \begin{frame}
 \frametitle{Data Preprocessing: tf\_idf and One Hot Encoding}
 
@@ -96,12 +98,22 @@
 \end{frame}
 
 \begin{frame}
-\frametitle{2-Layer Neural Network}
+\frametitle{Graphic of 2-Layer Neural Network}
 
 \includegraphics[scale=0.5]{Method_TeamLab.jpg}
 
 \end{frame}
 
+\begin{frame}
+\frametitle{Hyperparameters}
+\begin{itemize}
+
+\item 2 and 4-layers architecture
+\item Tried 5, 10, and 20 epochs
+\item Each epoch with $0.01, 0.001, 0.0001, 0.00001$ as learning rates
+
+\end{itemize}
+\end{frame}
 
 
 
@@ -129,69 +141,76 @@
 
 
 
-\section{Experimental Design}
-\begin{frame}
-\frametitle{Training of the Neural Network}
+%\section{Experimental Design}
+%\begin{frame}
+%\frametitle{Training of the Neural Network}
 
-\begin{itemize}
+%\begin{itemize}
 
-\item Initialization with Kaiming (No exploding or vanishing weights and gradients)
-\item 2 Layers
-\item 1 Epoch
-\item Batchsize of 32
-\item Learning rate of 0.00001
+%\item Initialization with Kaiming (No exploding or vanishing weights and gradients)
+%\item 2 Layers
+%\item 1 Epoch
+%\item Batchsize of 32
+%\item Learning rate of 0.00001
 
-\end{itemize}
+%\end{itemize}
 
-\end{frame}
+%\end{frame}
 
-\section{Results}
-\begin{frame}
-\frametitle{Goals}
-\begin{itemize}
-\item Detect emotion from text
-\item Evaluate classifier performance with F$_1$Score
-\item $F_1Score$ is the harmonic mean of Precision and Recall
-
-
-\end{itemize}
-\end{frame}
 
 \section{Results}
 
 \begin{frame}
 \frametitle{Precision, Recall and F$_1$Score}
+
 \begin{table}
+\begin{adjustbox}{width=0.35\columnwidth,center}
   \centering
-  %\setlength{\tabcolsep}{7pt}
-  \begin{tabular}{l ccc}
+  \setlength{\tabcolsep}{5pt}
+  \renewcommand\arraystretch{1.20}
+  \begin{tabular}{l l ccc}
   
     \toprule
-
-    Class &Precision&Recall&F$_1$Score\\
-    \cmidrule{1-4}
-
-    Joy & .13 & 1.0 & .23\\
-    Fear & .00 & .00 & .00\\
-    Shame &  .00 & .00 & .00 \\
-    Disgust & .00 & .00 & .00 \\
-    Guilt & .00 & .00 & .00  \\
-    Anger & .00 & .00 & .00  \\
-    Sadness & .00 & .00 & .00  \\
+	 \setlength{\tabcolsep}{8pt}
+    Layers & Class &Precision&Recall&F$_1$Score\\
+    \cmidrule{1-5}
+	\multirow{7}{*}{\rotatebox[origin=c]{90}{\centering 2-layer}}
+    &Joy & .13 & 1.0 & .23\\
+    &Fear & .00 & .00 & .00\\
+    &Shame &  .00 & .00 & .00 \\
+    &Disgust & .00 & .00 & .00 \\
+    &Guilt & .00 & .00 & .00  \\
+    &Anger & .00 & .00 & .00  \\
+    &Sadness & .00 & .00 & .00  \\
+     \cmidrule{1-5}
+    \multirow{7}{*}{\rotatebox[origin=c]{90}{\centering 4-layer}}
+   
+    &Joy & .13 & 1.0 & .23\\
+    &Fear & .00 & .00 & .00\\
+    &Shame &  .00 & .00 & .00 \\
+    &Disgust & .00 & .00 & .00 \\
+    &Guilt & .00 & .00 & .00  \\
+    &Anger & .00 & .00 & .00  \\
+    &Sadness & .00 & .00 & .00  \\
     \bottomrule
   \end{tabular}
+  \end{adjustbox}
 \end{table}
 
+\end{frame}
+
+\begin{frame}
+\frametitle{Std/mean value of each epoch}
 \end{frame}
 
 
 \section{Next steps}
 
 \begin{frame}
-\frametitle{Experiments}
+\frametitle{Conclusion and Future Work}
 
 \begin{itemize}
-\item Problem: Our baseline performs poorly
+\item Problem: Our baseline predicts the same class regardless of hyperparameters
 \setlength\itemsep{0.4em}
 \item \emph{Can we improve the performance of the emotion detection method by converting the multi-class classification problem into a binary one? }
 %\setlength\itemsep{0.4em}
