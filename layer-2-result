@@ -1,0 +1,2880 @@
+
+
+learning rate: 0.0001, epochs: 1, batch size: 16
+loss_valid: 1.9890594482421875 softmax(prediction): tensor([[-1.8723, -1.8466, -1.8913,  ..., -2.7199, -1.7772, -2.0329],
+        [-1.8722, -1.8466, -1.8912,  ..., -2.7197, -1.7774, -2.0328],
+        [-1.8722, -1.8465, -1.8911,  ..., -2.7196, -1.7776, -2.0328],
+        ...,
+        [-1.8721, -1.8465, -1.8909,  ..., -2.7192, -1.7780, -2.0327],
+        [-1.8723, -1.8466, -1.8912,  ..., -2.7198, -1.7774, -2.0328],
+        [-1.8723, -1.8466, -1.8914,  ..., -2.7201, -1.7771, -2.0329]])
+              precision    recall  f1-score      support
+joy            0.000000  0.000000  0.000000   151.000000
+fear           0.000000  0.000000  0.000000   171.000000
+shame          0.000000  0.000000  0.000000   167.000000
+disgust        0.138622  1.000000  0.243492   159.000000
+guilt          0.000000  0.000000  0.000000   165.000000
+anger          0.000000  0.000000  0.000000   160.000000
+sadness        0.000000  0.000000  0.000000   175.000000
+accuracy       0.138502  0.138502  0.138502     0.138502
+macro avg      0.019803  0.142857  0.034785  1148.000000
+weighted avg   0.019199  0.138502  0.033724  1148.000000
+--------------------
+/usr/local/lib/python3.7/dist-packages/sklearn/metrics/_classification.py:1272: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+
+
+learning rate: 0.0001, epochs: 1, batch size: 32
+loss_valid: 1.9504709243774414 softmax(prediction): tensor([[-1.8487, -1.9810, -2.1000,  ..., -1.9218, -2.0312, -1.8772],
+        [-1.8487, -1.9811, -2.0998,  ..., -1.9218, -2.0311, -1.8770],
+        [-1.8487, -1.9812, -2.0997,  ..., -1.9219, -2.0311, -1.8769],
+        ...,
+        [-1.8487, -1.9815, -2.0994,  ..., -1.9219, -2.0311, -1.8767],
+        [-1.8487, -1.9811, -2.0999,  ..., -1.9218, -2.0311, -1.8771],
+        [-1.8487, -1.9809, -2.1001,  ..., -1.9218, -2.0312, -1.8773]])
+              precision    recall  f1-score      support
+joy            0.131533  1.000000  0.232487   151.000000
+fear           0.000000  0.000000  0.000000   171.000000
+shame          0.000000  0.000000  0.000000   167.000000
+disgust        0.000000  0.000000  0.000000   159.000000
+guilt          0.000000  0.000000  0.000000   165.000000
+anger          0.000000  0.000000  0.000000   160.000000
+sadness        0.000000  0.000000  0.000000   175.000000
+accuracy       0.131533  0.131533  0.131533     0.131533
+macro avg      0.018790  0.142857  0.033212  1148.000000
+weighted avg   0.017301  0.131533  0.030580  1148.000000
+--------------------
+/usr/local/lib/python3.7/dist-packages/sklearn/metrics/_classification.py:1272: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+
+
+learning rate: 0.0001, epochs: 1, batch size: 64
+loss_valid: 2.090428352355957 softmax(prediction): tensor([[-1.8555, -3.6424, -1.8655,  ..., -1.7381, -1.9142, -1.7353],
+        [-1.8555, -3.6425, -1.8655,  ..., -1.7381, -1.9144, -1.7352],
+        [-1.8555, -3.6425, -1.8655,  ..., -1.7381, -1.9146, -1.7350],
+        ...,
+        [-1.8555, -3.6426, -1.8655,  ..., -1.7380, -1.9149, -1.7347],
+        [-1.8555, -3.6425, -1.8655,  ..., -1.7381, -1.9144, -1.7352],
+        [-1.8555, -3.6424, -1.8655,  ..., -1.7381, -1.9141, -1.7354]])
+              precision    recall  f1-score      support
+joy            0.000000  0.000000  0.000000   151.000000
+fear           0.000000  0.000000  0.000000   171.000000
+shame          0.000000  0.000000  0.000000   167.000000
+disgust        0.000000  0.000000  0.000000   159.000000
+guilt          0.000000  0.000000  0.000000   165.000000
+anger          0.000000  0.000000  0.000000   160.000000
+sadness        0.152705  1.000000  0.264951   175.000000
+accuracy       0.152439  0.152439  0.152439     0.152439
+macro avg      0.021815  0.142857  0.037850  1148.000000
+weighted avg   0.023278  0.152439  0.040389  1148.000000
+--------------------
+/usr/local/lib/python3.7/dist-packages/sklearn/metrics/_classification.py:1272: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+
+
+learning rate: 8.571430000000001e-05, epochs: 1, batch size: 16
+loss_valid: 2.0209808349609375 softmax(prediction): tensor([[-3.1683, -1.7561, -2.2085,  ..., -1.8197, -1.7899, -1.7645],
+        [-3.1682, -1.7560, -2.2084,  ..., -1.8198, -1.7899, -1.7643],
+        [-3.1681, -1.7560, -2.2083,  ..., -1.8199, -1.7899, -1.7642],
+        ...,
+        [-3.1680, -1.7560, -2.2082,  ..., -1.8201, -1.7899, -1.7639],
+        [-3.1682, -1.7560, -2.2084,  ..., -1.8198, -1.7899, -1.7644],
+        [-3.1683, -1.7561, -2.2085,  ..., -1.8196, -1.7899, -1.7646]])
+              precision    recall  f1-score      support
+joy            0.000000  0.000000  0.000000   151.000000
+fear           1.000000  0.005848  0.011628   171.000000
+shame          0.000000  0.000000  0.000000   167.000000
+disgust        0.138743  1.000000  0.243678   159.000000
+guilt          0.000000  0.000000  0.000000   165.000000
+anger          0.000000  0.000000  0.000000   160.000000
+sadness        1.000000  0.005714  0.011364   175.000000
+accuracy       0.140244  0.140244  0.140244     0.140244
+macro avg      0.305535  0.144509  0.038096  1148.000000
+weighted avg   0.320610  0.140244  0.037214  1148.000000
+--------------------
+/usr/local/lib/python3.7/dist-packages/sklearn/metrics/_classification.py:1272: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+
+
+learning rate: 8.571430000000001e-05, epochs: 1, batch size: 32
+loss_valid: 1.9485641717910767 softmax(prediction): tensor([[-1.8931, -2.0524, -2.0113,  ..., -1.8837, -1.9573, -1.9028],
+        [-1.8932, -2.0524, -2.0115,  ..., -1.8835, -1.9574, -1.9027],
+        [-1.8933, -2.0523, -2.0116,  ..., -1.8833, -1.9574, -1.9026],
+        ...,
+        [-1.8935, -2.0522, -2.0117,  ..., -1.8830, -1.9576, -1.9024],
+        [-1.8932, -2.0524, -2.0114,  ..., -1.8835, -1.9573, -1.9027],
+        [-1.8931, -2.0525, -2.0113,  ..., -1.8839, -1.9572, -1.9029]])
+              precision    recall  f1-score      support
+joy            0.000000  0.000000  0.000000   151.000000
+fear           0.000000  0.000000  0.000000   171.000000
+shame          0.000000  0.000000  0.000000   167.000000
+disgust        0.000000  0.000000  0.000000   159.000000
+guilt          0.143728  1.000000  0.251333   165.000000
+anger          0.000000  0.000000  0.000000   160.000000
+sadness        0.000000  0.000000  0.000000   175.000000
+accuracy       0.143728  0.143728  0.143728     0.143728
+macro avg      0.020533  0.142857  0.035905  1148.000000
+weighted avg   0.020658  0.143728  0.036124  1148.000000
+--------------------
+/usr/local/lib/python3.7/dist-packages/sklearn/metrics/_classification.py:1272: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+
+
+learning rate: 8.571430000000001e-05, epochs: 1, batch size: 64
+loss_valid: 1.9649485349655151 softmax(prediction): tensor([[-1.8964, -1.9585, -1.9061,  ..., -1.8109, -2.4915, -1.8610],
+        [-1.8964, -1.9586, -1.9059,  ..., -1.8108, -2.4916, -1.8612],
+        [-1.8964, -1.9586, -1.9058,  ..., -1.8107, -2.4917, -1.8613],
+        ...,
+        [-1.8963, -1.9588, -1.9055,  ..., -1.8105, -2.4918, -1.8615],
+        [-1.8964, -1.9585, -1.9060,  ..., -1.8108, -2.4916, -1.8611],
+        [-1.8964, -1.9584, -1.9063,  ..., -1.8109, -2.4914, -1.8609]])
+              precision    recall  f1-score      support
+joy            0.000000  0.000000  0.000000   151.000000
+fear           0.000000  0.000000  0.000000   171.000000
+shame          0.000000  0.000000  0.000000   167.000000
+disgust        0.000000  0.000000  0.000000   159.000000
+guilt          0.143728  1.000000  0.251333   165.000000
+anger          0.000000  0.000000  0.000000   160.000000
+sadness        0.000000  0.000000  0.000000   175.000000
+accuracy       0.143728  0.143728  0.143728     0.143728
+macro avg      0.020533  0.142857  0.035905  1148.000000
+weighted avg   0.020658  0.143728  0.036124  1148.000000
+--------------------
+/usr/local/lib/python3.7/dist-packages/sklearn/metrics/_classification.py:1272: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+
+
+learning rate: 7.14286e-05, epochs: 1, batch size: 16
+loss_valid: 1.986826777458191 softmax(prediction): tensor([[-1.7977, -1.7374, -2.5681,  ..., -2.0830, -2.1671, -1.8802],
+        [-1.7980, -1.7374, -2.5681,  ..., -2.0829, -2.1670, -1.8801],
+        [-1.7981, -1.7375, -2.5681,  ..., -2.0829, -2.1669, -1.8799],
+        ...,
+        [-1.7985, -1.7375, -2.5680,  ..., -2.0828, -2.1667, -1.8797],
+        [-1.7979, -1.7374, -2.5681,  ..., -2.0829, -2.1670, -1.8801],
+        [-1.7976, -1.7374, -2.5681,  ..., -2.0830, -2.1672, -1.8803]])
+              precision    recall  f1-score      support
+joy            0.000000  0.000000  0.000000   151.000000
+fear           0.000000  0.000000  0.000000   171.000000
+shame          0.000000  0.000000  0.000000   167.000000
+disgust        0.138502  1.000000  0.243305   159.000000
+guilt          0.000000  0.000000  0.000000   165.000000
+anger          0.000000  0.000000  0.000000   160.000000
+sadness        0.000000  0.000000  0.000000   175.000000
+accuracy       0.138502  0.138502  0.138502     0.138502
+macro avg      0.019786  0.142857  0.034758  1148.000000
+weighted avg   0.019183  0.138502  0.033698  1148.000000
+--------------------
+/usr/local/lib/python3.7/dist-packages/sklearn/metrics/_classification.py:1272: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+
+
+learning rate: 7.14286e-05, epochs: 1, batch size: 32
+loss_valid: 1.9514697790145874 softmax(prediction): tensor([[-2.2245, -1.7040, -2.0181,  ..., -1.8801, -1.9949, -1.8596],
+        [-2.2246, -1.7038, -2.0182,  ..., -1.8802, -1.9949, -1.8596],
+        [-2.2246, -1.7036, -2.0183,  ..., -1.8803, -1.9950, -1.8595],
+        ...,
+        [-2.2247, -1.7033, -2.0186,  ..., -1.8805, -1.9950, -1.8595],
+        [-2.2246, -1.7038, -2.0182,  ..., -1.8802, -1.9949, -1.8596],
+        [-2.2245, -1.7041, -2.0180,  ..., -1.8800, -1.9948, -1.8597]])
+              precision    recall  f1-score      support
+joy            0.000000  0.000000  0.000000   151.000000
+fear           0.148955  1.000000  0.259287   171.000000
+shame          0.000000  0.000000  0.000000   167.000000
+disgust        0.000000  0.000000  0.000000   159.000000
+guilt          0.000000  0.000000  0.000000   165.000000
+anger          0.000000  0.000000  0.000000   160.000000
+sadness        0.000000  0.000000  0.000000   175.000000
+accuracy       0.148955  0.148955  0.148955     0.148955
+macro avg      0.021279  0.142857  0.037041  1148.000000
+weighted avg   0.022188  0.148955  0.038622  1148.000000
+--------------------
+/usr/local/lib/python3.7/dist-packages/sklearn/metrics/_classification.py:1272: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+
+
+learning rate: 7.14286e-05, epochs: 1, batch size: 64
+loss_valid: 1.9834117889404297 softmax(prediction): tensor([[-1.9242, -1.8531, -2.6610,  ..., -1.9632, -1.7142, -1.7477],
+        [-1.9243, -1.8531, -2.6607,  ..., -1.9632, -1.7145, -1.7476],
+        [-1.9243, -1.8531, -2.6605,  ..., -1.9632, -1.7147, -1.7475],
+        ...,
+        [-1.9245, -1.8530, -2.6602,  ..., -1.9631, -1.7150, -1.7473],
+        [-1.9243, -1.8531, -2.6608,  ..., -1.9632, -1.7144, -1.7476],
+        [-1.9241, -1.8531, -2.6611,  ..., -1.9632, -1.7141, -1.7478]])
+              precision    recall  f1-score      support
+joy            0.000000  0.000000  0.000000   151.000000
+fear           0.000000  0.000000  0.000000   171.000000
+shame          0.000000  0.000000  0.000000   167.000000
+disgust        0.000000  0.000000  0.000000   159.000000
+guilt          0.000000  0.000000  0.000000   165.000000
+anger          0.139373  1.000000  0.244648   160.000000
+sadness        0.000000  0.000000  0.000000   175.000000
+accuracy       0.139373  0.139373  0.139373     0.139373
+macro avg      0.019910  0.142857  0.034950  1148.000000
+weighted avg   0.019425  0.139373  0.034097  1148.000000
+--------------------
+/usr/local/lib/python3.7/dist-packages/sklearn/metrics/_classification.py:1272: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+
+
+learning rate: 5.71429e-05, epochs: 1, batch size: 16
+loss_valid: 1.956325888633728 softmax(prediction): tensor([[-1.9274, -2.1857, -1.7393,  ..., -1.9175, -1.9840, -1.7973],
+        [-1.9274, -2.1856, -1.7394,  ..., -1.9175, -1.9839, -1.7973],
+        [-1.9274, -2.1855, -1.7394,  ..., -1.9174, -1.9839, -1.7973],
+        ...,
+        [-1.9274, -2.1854, -1.7396,  ..., -1.9174, -1.9838, -1.7973],
+        [-1.9274, -2.1856, -1.7394,  ..., -1.9175, -1.9839, -1.7973],
+        [-1.9274, -2.1858, -1.7392,  ..., -1.9175, -1.9840, -1.7973]])
+              precision    recall  f1-score     support
+joy            0.000000  0.000000  0.000000   151.00000
+fear           0.000000  0.000000  0.000000   171.00000
+shame          0.145470  1.000000  0.253992   167.00000
+disgust        0.000000  0.000000  0.000000   159.00000
+guilt          0.000000  0.000000  0.000000   165.00000
+anger          0.000000  0.000000  0.000000   160.00000
+sadness        0.000000  0.000000  0.000000   175.00000
+accuracy       0.145470  0.145470  0.145470     0.14547
+macro avg      0.020781  0.142857  0.036285  1148.00000
+weighted avg   0.021162  0.145470  0.036948  1148.00000
+--------------------
+/usr/local/lib/python3.7/dist-packages/sklearn/metrics/_classification.py:1272: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+
+
+learning rate: 5.71429e-05, epochs: 1, batch size: 32
+loss_valid: 2.27069354057312 softmax(prediction): tensor([[-1.7149, -2.3018, -1.5774,  ..., -4.1423, -1.5119, -1.4374],
+        [-1.7151, -2.3020, -1.5772,  ..., -4.1424, -1.5118, -1.4374],
+        [-1.7152, -2.3021, -1.5771,  ..., -4.1425, -1.5118, -1.4373],
+        ...,
+        [-1.7155, -2.3023, -1.5770,  ..., -4.1427, -1.5117, -1.4373],
+        [-1.7150, -2.3019, -1.5773,  ..., -4.1424, -1.5119, -1.4374],
+        [-1.7148, -2.3017, -1.5774,  ..., -4.1422, -1.5119, -1.4374]])
+              precision    recall  f1-score      support
+joy            0.000000  0.000000  0.000000   151.000000
+fear           0.000000  0.000000  0.000000   171.000000
+shame          0.000000  0.000000  0.000000   167.000000
+disgust        0.000000  0.000000  0.000000   159.000000
+guilt          0.000000  0.000000  0.000000   165.000000
+anger          0.000000  0.000000  0.000000   160.000000
+sadness        0.152439  1.000000  0.264550   175.000000
+accuracy       0.152439  0.152439  0.152439     0.152439
+macro avg      0.021777  0.142857  0.037793  1148.000000
+weighted avg   0.023238  0.152439  0.040328  1148.000000
+--------------------
+/usr/local/lib/python3.7/dist-packages/sklearn/metrics/_classification.py:1272: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+
+
+learning rate: 5.71429e-05, epochs: 1, batch size: 64
+loss_valid: 1.9492982625961304 softmax(prediction): tensor([[-2.0031, -1.8017, -2.0808,  ..., -2.0548, -1.9001, -1.7994],
+        [-2.0030, -1.8017, -2.0809,  ..., -2.0547, -1.9002, -1.7995],
+        [-2.0030, -1.8017, -2.0810,  ..., -2.0547, -1.9002, -1.7996],
+        ...,
+        [-2.0029, -1.8017, -2.0811,  ..., -2.0546, -1.9002, -1.7997],
+        [-2.0030, -1.8017, -2.0809,  ..., -2.0548, -1.9002, -1.7995],
+        [-2.0031, -1.8016, -2.0807,  ..., -2.0548, -1.9001, -1.7994]])
+              precision    recall  f1-score      support
+joy            0.000000  0.000000  0.000000   151.000000
+fear           0.263158  0.029240  0.052632   171.000000
+shame          0.000000  0.000000  0.000000   167.000000
+disgust        0.000000  0.000000  0.000000   159.000000
+guilt          0.000000  0.000000  0.000000   165.000000
+anger          0.000000  0.000000  0.000000   160.000000
+sadness        0.152347  0.982857  0.263804   175.000000
+accuracy       0.154181  0.154181  0.154181     0.154181
+macro avg      0.059358  0.144585  0.045205  1148.000000
+weighted avg   0.062422  0.154181  0.048054  1148.000000
+--------------------
+/usr/local/lib/python3.7/dist-packages/sklearn/metrics/_classification.py:1272: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+
+
+learning rate: 4.28572e-05, epochs: 1, batch size: 16
+loss_valid: 2.227037191390991 softmax(prediction): tensor([[-3.6209, -2.7345, -1.2593,  ..., -1.4537, -2.0266, -1.5337],
+        [-3.6209, -2.7345, -1.2592,  ..., -1.4537, -2.0268, -1.5337],
+        [-3.6210, -2.7345, -1.2591,  ..., -1.4537, -2.0269, -1.5337],
+        ...,
+        [-3.6210, -2.7344, -1.2590,  ..., -1.4537, -2.0272, -1.5337],
+        [-3.6209, -2.7345, -1.2592,  ..., -1.4537, -2.0267, -1.5337],
+        [-3.6208, -2.7346, -1.2593,  ..., -1.4537, -2.0265, -1.5337]])
+              precision    recall  f1-score     support
+joy            0.000000  0.000000  0.000000   151.00000
+fear           0.000000  0.000000  0.000000   171.00000
+shame          0.145470  1.000000  0.253992   167.00000
+disgust        0.000000  0.000000  0.000000   159.00000
+guilt          0.000000  0.000000  0.000000   165.00000
+anger          0.000000  0.000000  0.000000   160.00000
+sadness        0.000000  0.000000  0.000000   175.00000
+accuracy       0.145470  0.145470  0.145470     0.14547
+macro avg      0.020781  0.142857  0.036285  1148.00000
+weighted avg   0.021162  0.145470  0.036948  1148.00000
+--------------------
+/usr/local/lib/python3.7/dist-packages/sklearn/metrics/_classification.py:1272: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+
+
+learning rate: 4.28572e-05, epochs: 1, batch size: 32
+loss_valid: 1.996407389640808 softmax(prediction): tensor([[-2.7416, -1.6916, -2.3939,  ..., -1.8474, -1.7155, -1.8296],
+        [-2.7415, -1.6916, -2.3939,  ..., -1.8472, -1.7155, -1.8297],
+        [-2.7414, -1.6916, -2.3940,  ..., -1.8470, -1.7154, -1.8298],
+        ...,
+        [-2.7412, -1.6916, -2.3941,  ..., -1.8468, -1.7153, -1.8300],
+        [-2.7415, -1.6916, -2.3939,  ..., -1.8472, -1.7155, -1.8297],
+        [-2.7417, -1.6916, -2.3938,  ..., -1.8475, -1.7156, -1.8296]])
+              precision    recall  f1-score      support
+joy            0.000000  0.000000  0.000000   151.000000
+fear           0.148955  1.000000  0.259287   171.000000
+shame          0.000000  0.000000  0.000000   167.000000
+disgust        0.000000  0.000000  0.000000   159.000000
+guilt          0.000000  0.000000  0.000000   165.000000
+anger          0.000000  0.000000  0.000000   160.000000
+sadness        0.000000  0.000000  0.000000   175.000000
+accuracy       0.148955  0.148955  0.148955     0.148955
+macro avg      0.021279  0.142857  0.037041  1148.000000
+weighted avg   0.022188  0.148955  0.038622  1148.000000
+--------------------
+/usr/local/lib/python3.7/dist-packages/sklearn/metrics/_classification.py:1272: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+
+
+learning rate: 4.28572e-05, epochs: 1, batch size: 64
+loss_valid: 1.9565423727035522 softmax(prediction): tensor([[-1.9719, -2.0140, -2.0304,  ..., -2.2223, -1.9492, -1.6857],
+        [-1.9719, -2.0139, -2.0302,  ..., -2.2223, -1.9492, -1.6858],
+        [-1.9719, -2.0138, -2.0301,  ..., -2.2224, -1.9492, -1.6860],
+        ...,
+        [-1.9720, -2.0135, -2.0299,  ..., -2.2224, -1.9492, -1.6863],
+        [-1.9719, -2.0139, -2.0303,  ..., -2.2223, -1.9492, -1.6858],
+        [-1.9718, -2.0141, -2.0304,  ..., -2.2223, -1.9492, -1.6855]])
+              precision    recall  f1-score      support
+joy            0.000000  0.000000  0.000000   151.000000
+fear           0.000000  0.000000  0.000000   171.000000
+shame          0.000000  0.000000  0.000000   167.000000
+disgust        0.000000  0.000000  0.000000   159.000000
+guilt          0.000000  0.000000  0.000000   165.000000
+anger          0.000000  0.000000  0.000000   160.000000
+sadness        0.152439  1.000000  0.264550   175.000000
+accuracy       0.152439  0.152439  0.152439     0.152439
+macro avg      0.021777  0.142857  0.037793  1148.000000
+weighted avg   0.023238  0.152439  0.040328  1148.000000
+--------------------
+/usr/local/lib/python3.7/dist-packages/sklearn/metrics/_classification.py:1272: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+
+
+learning rate: 2.8571500000000002e-05, epochs: 1, batch size: 16
+loss_valid: 2.129337787628174 softmax(prediction): tensor([[-2.3146, -1.2173, -2.1573,  ..., -1.3609, -2.4164, -2.2369],
+        [-2.3146, -1.2173, -2.1574,  ..., -1.3610, -2.4162, -2.2367],
+        [-2.3146, -1.2172, -2.1576,  ..., -1.3611, -2.4161, -2.2365],
+        ...,
+        [-2.3145, -1.2171, -2.1579,  ..., -1.3613, -2.4158, -2.2362],
+        [-2.3146, -1.2173, -2.1574,  ..., -1.3610, -2.4163, -2.2367],
+        [-2.3146, -1.2174, -2.1571,  ..., -1.3608, -2.4165, -2.2370]])
+              precision    recall  f1-score      support
+joy            0.000000  0.000000  0.000000   151.000000
+fear           0.148955  1.000000  0.259287   171.000000
+shame          0.000000  0.000000  0.000000   167.000000
+disgust        0.000000  0.000000  0.000000   159.000000
+guilt          0.000000  0.000000  0.000000   165.000000
+anger          0.000000  0.000000  0.000000   160.000000
+sadness        0.000000  0.000000  0.000000   175.000000
+accuracy       0.148955  0.148955  0.148955     0.148955
+macro avg      0.021279  0.142857  0.037041  1148.000000
+weighted avg   0.022188  0.148955  0.038622  1148.000000
+--------------------
+/usr/local/lib/python3.7/dist-packages/sklearn/metrics/_classification.py:1272: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+
+
+learning rate: 2.8571500000000002e-05, epochs: 1, batch size: 32
+loss_valid: 2.399401903152466 softmax(prediction): tensor([[-2.6159, -1.0669, -1.9536,  ..., -2.0994, -1.7510, -5.2057],
+        [-2.6158, -1.0669, -1.9537,  ..., -2.0994, -1.7510, -5.2057],
+        [-2.6157, -1.0668, -1.9539,  ..., -2.0994, -1.7510, -5.2058],
+        ...,
+        [-2.6155, -1.0668, -1.9541,  ..., -2.0994, -1.7510, -5.2058],
+        [-2.6158, -1.0669, -1.9537,  ..., -2.0994, -1.7510, -5.2057],
+        [-2.6160, -1.0669, -1.9535,  ..., -2.0994, -1.7510, -5.2057]])
+/usr/local/lib/python3.7/dist-packages/sklearn/metrics/_classification.py:1272: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+              precision    recall  f1-score      support
+joy            0.000000  0.000000  0.000000   151.000000
+fear           0.148955  1.000000  0.259287   171.000000
+shame          0.000000  0.000000  0.000000   167.000000
+disgust        0.000000  0.000000  0.000000   159.000000
+guilt          0.000000  0.000000  0.000000   165.000000
+anger          0.000000  0.000000  0.000000   160.000000
+sadness        0.000000  0.000000  0.000000   175.000000
+accuracy       0.148955  0.148955  0.148955     0.148955
+macro avg      0.021279  0.142857  0.037041  1148.000000
+weighted avg   0.022188  0.148955  0.038622  1148.000000
+--------------------
+
+
+learning rate: 2.8571500000000002e-05, epochs: 1, batch size: 64
+loss_valid: 2.463192939758301 softmax(prediction): tensor([[-2.2413, -3.8240, -4.2734,  ..., -1.7217, -0.8500, -1.8214],
+        [-2.2413, -3.8240, -4.2733,  ..., -1.7215, -0.8501, -1.8214],
+        [-2.2412, -3.8240, -4.2731,  ..., -1.7213, -0.8501, -1.8214],
+        ...,
+        [-2.2411, -3.8240, -4.2728,  ..., -1.7210, -0.8503, -1.8214],
+        [-2.2413, -3.8240, -4.2733,  ..., -1.7215, -0.8500, -1.8214],
+        [-2.2414, -3.8240, -4.2735,  ..., -1.7218, -0.8499, -1.8214]])
+              precision    recall  f1-score      support
+joy            0.000000  0.000000  0.000000   151.000000
+fear           0.000000  0.000000  0.000000   171.000000
+shame          0.000000  0.000000  0.000000   167.000000
+disgust        0.000000  0.000000  0.000000   159.000000
+guilt          0.000000  0.000000  0.000000   165.000000
+anger          0.139373  1.000000  0.244648   160.000000
+sadness        0.000000  0.000000  0.000000   175.000000
+accuracy       0.139373  0.139373  0.139373     0.139373
+macro avg      0.019910  0.142857  0.034950  1148.000000
+weighted avg   0.019425  0.139373  0.034097  1148.000000
+--------------------
+/usr/local/lib/python3.7/dist-packages/sklearn/metrics/_classification.py:1272: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+
+
+learning rate: 1.4285799999999991e-05, epochs: 1, batch size: 16
+loss_valid: 2.6256723403930664 softmax(prediction): tensor([[-3.0423, -2.2947, -1.8499,  ..., -0.5492, -4.6969, -2.5288],
+        [-3.0423, -2.2947, -1.8498,  ..., -0.5492, -4.6973, -2.5290],
+        [-3.0423, -2.2946, -1.8498,  ..., -0.5492, -4.6976, -2.5291],
+        ...,
+        [-3.0424, -2.2946, -1.8497,  ..., -0.5492, -4.6982, -2.5293],
+        [-3.0423, -2.2947, -1.8498,  ..., -0.5492, -4.6972, -2.5289],
+        [-3.0422, -2.2947, -1.8499,  ..., -0.5492, -4.6967, -2.5287]])
+              precision    recall  f1-score      support
+joy            0.000000  0.000000  0.000000   151.000000
+fear           0.000000  0.000000  0.000000   171.000000
+shame          0.000000  0.000000  0.000000   167.000000
+disgust        0.000000  0.000000  0.000000   159.000000
+guilt          0.143728  1.000000  0.251333   165.000000
+anger          0.000000  0.000000  0.000000   160.000000
+sadness        0.000000  0.000000  0.000000   175.000000
+accuracy       0.143728  0.143728  0.143728     0.143728
+macro avg      0.020533  0.142857  0.035905  1148.000000
+weighted avg   0.020658  0.143728  0.036124  1148.000000
+--------------------
+/usr/local/lib/python3.7/dist-packages/sklearn/metrics/_classification.py:1272: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+
+
+learning rate: 1.4285799999999991e-05, epochs: 1, batch size: 32
+loss_valid: 2.751647472381592 softmax(prediction): tensor([[-2.4534, -3.4642, -3.3372,  ..., -3.6978, -1.9607, -0.4093],
+        [-2.4532, -3.4644, -3.3371,  ..., -3.6978, -1.9606, -0.4093],
+        [-2.4531, -3.4645, -3.3371,  ..., -3.6979, -1.9605, -0.4093],
+        ...,
+        [-2.4528, -3.4648, -3.3371,  ..., -3.6979, -1.9603, -0.4094],
+        [-2.4533, -3.4643, -3.3372,  ..., -3.6978, -1.9606, -0.4093],
+        [-2.4535, -3.4641, -3.3372,  ..., -3.6977, -1.9608, -0.4093]])
+              precision    recall  f1-score      support
+joy            0.000000  0.000000  0.000000   151.000000
+fear           0.000000  0.000000  0.000000   171.000000
+shame          0.000000  0.000000  0.000000   167.000000
+disgust        0.000000  0.000000  0.000000   159.000000
+guilt          0.000000  0.000000  0.000000   165.000000
+anger          0.000000  0.000000  0.000000   160.000000
+sadness        0.152439  1.000000  0.264550   175.000000
+accuracy       0.152439  0.152439  0.152439     0.152439
+macro avg      0.021777  0.142857  0.037793  1148.000000
+weighted avg   0.023238  0.152439  0.040328  1148.000000
+--------------------
+/usr/local/lib/python3.7/dist-packages/sklearn/metrics/_classification.py:1272: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+
+
+learning rate: 1.4285799999999991e-05, epochs: 1, batch size: 64
+loss_valid: 2.5149319171905518 softmax(prediction): tensor([[-1.9750, -3.6611, -2.7075,  ..., -1.0639, -3.7186, -0.9912],
+        [-1.9750, -3.6610, -2.7076,  ..., -1.0641, -3.7186, -0.9910],
+        [-1.9749, -3.6609, -2.7077,  ..., -1.0642, -3.7185, -0.9909],
+        ...,
+        [-1.9749, -3.6608, -2.7079,  ..., -1.0644, -3.7184, -0.9907],
+        [-1.9750, -3.6610, -2.7076,  ..., -1.0640, -3.7186, -0.9910],
+        [-1.9750, -3.6611, -2.7074,  ..., -1.0638, -3.7187, -0.9912]])
+              precision    recall  f1-score      support
+joy            0.000000  0.000000  0.000000   151.000000
+fear           0.000000  0.000000  0.000000   171.000000
+shame          0.000000  0.000000  0.000000   167.000000
+disgust        0.000000  0.000000  0.000000   159.000000
+guilt          0.000000  0.000000  0.000000   165.000000
+anger          0.000000  0.000000  0.000000   160.000000
+sadness        0.152439  1.000000  0.264550   175.000000
+accuracy       0.152439  0.152439  0.152439     0.152439
+macro avg      0.021777  0.142857  0.037793  1148.000000
+weighted avg   0.023238  0.152439  0.040328  1148.000000
+--------------------
+/usr/local/lib/python3.7/dist-packages/sklearn/metrics/_classification.py:1272: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+
+
+learning rate: 1e-10, epochs: 1, batch size: 16
+loss_valid: 3.2868738174438477 softmax(prediction): tensor([[-4.9123, -2.5132, -0.3927,  ..., -6.0727, -5.0276, -1.9871],
+        [-4.9124, -2.5134, -0.3927,  ..., -6.0727, -5.0274, -1.9871],
+        [-4.9124, -2.5135, -0.3926,  ..., -6.0727, -5.0273, -1.9872],
+        ...,
+        [-4.9126, -2.5138, -0.3925,  ..., -6.0728, -5.0270, -1.9873],
+        [-4.9123, -2.5133, -0.3927,  ..., -6.0727, -5.0275, -1.9871],
+        [-4.9122, -2.5131, -0.3928,  ..., -6.0726, -5.0277, -1.9870]])
+              precision    recall  f1-score     support
+joy            0.000000  0.000000  0.000000   151.00000
+fear           0.000000  0.000000  0.000000   171.00000
+shame          0.145470  1.000000  0.253992   167.00000
+disgust        0.000000  0.000000  0.000000   159.00000
+guilt          0.000000  0.000000  0.000000   165.00000
+anger          0.000000  0.000000  0.000000   160.00000
+sadness        0.000000  0.000000  0.000000   175.00000
+accuracy       0.145470  0.145470  0.145470     0.14547
+macro avg      0.020781  0.142857  0.036285  1148.00000
+weighted avg   0.021162  0.145470  0.036948  1148.00000
+--------------------
+/usr/local/lib/python3.7/dist-packages/sklearn/metrics/_classification.py:1272: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+
+
+learning rate: 1e-10, epochs: 1, batch size: 32
+loss_valid: 3.322787046432495 softmax(prediction): tensor([[-7.4488, -0.7593, -2.0867,  ..., -1.7642, -4.9598, -1.4931],
+        [-7.4487, -0.7594, -2.0866,  ..., -1.7642, -4.9599, -1.4931],
+        [-7.4486, -0.7594, -2.0864,  ..., -1.7642, -4.9600, -1.4931],
+        ...,
+        [-7.4484, -0.7594, -2.0861,  ..., -1.7642, -4.9602, -1.4931],
+        [-7.4487, -0.7594, -2.0866,  ..., -1.7642, -4.9599, -1.4931],
+        [-7.4488, -0.7593, -2.0868,  ..., -1.7642, -4.9597, -1.4930]])
+              precision    recall  f1-score      support
+joy            0.000000  0.000000  0.000000   151.000000
+fear           0.148955  1.000000  0.259287   171.000000
+shame          0.000000  0.000000  0.000000   167.000000
+disgust        0.000000  0.000000  0.000000   159.000000
+guilt          0.000000  0.000000  0.000000   165.000000
+anger          0.000000  0.000000  0.000000   160.000000
+sadness        0.000000  0.000000  0.000000   175.000000
+accuracy       0.148955  0.148955  0.148955     0.148955
+macro avg      0.021279  0.142857  0.037041  1148.000000
+weighted avg   0.022188  0.148955  0.038622  1148.000000
+--------------------
+/usr/local/lib/python3.7/dist-packages/sklearn/metrics/_classification.py:1272: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+
+
+learning rate: 1e-10, epochs: 1, batch size: 64
+loss_valid: 4.037972450256348 softmax(prediction): tensor([[-2.8378, -6.6046, -0.8215,  ..., -6.4829, -3.9639, -6.3943],
+        [-2.8381, -6.6048, -0.8214,  ..., -6.4831, -3.9640, -6.3945],
+        [-2.8385, -6.6050, -0.8214,  ..., -6.4833, -3.9640, -6.3946],
+        ...,
+        [-2.8391, -6.6054, -0.8213,  ..., -6.4837, -3.9641, -6.3948],
+        [-2.8381, -6.6048, -0.8214,  ..., -6.4831, -3.9640, -6.3945],
+        [-2.8375, -6.6045, -0.8215,  ..., -6.4827, -3.9639, -6.3943]])
+              precision    recall  f1-score      support
+joy            0.000000  0.000000  0.000000   151.000000
+fear           0.000000  0.000000  0.000000   171.000000
+shame          0.000000  0.000000  0.000000   167.000000
+disgust        0.138502  1.000000  0.243305   159.000000
+guilt          0.000000  0.000000  0.000000   165.000000
+anger          0.000000  0.000000  0.000000   160.000000
+sadness        0.000000  0.000000  0.000000   175.000000
+accuracy       0.138502  0.138502  0.138502     0.138502
+macro avg      0.019786  0.142857  0.034758  1148.000000
+weighted avg   0.019183  0.138502  0.033698  1148.000000
+--------------------
+/usr/local/lib/python3.7/dist-packages/sklearn/metrics/_classification.py:1272: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+
+
+learning rate: 0.0001, epochs: 2, batch size: 16
+loss_valid: 1.9479635953903198 softmax(prediction): tensor([[-1.9142, -1.9666, -2.0301,  ..., -1.9759, -1.8988, -1.9433],
+        [-1.9143, -1.9666, -2.0303,  ..., -1.9758, -1.8988, -1.9431],
+        [-1.9143, -1.9666, -2.0304,  ..., -1.9757, -1.8988, -1.9430],
+        ...,
+        [-1.9144, -1.9666, -2.0307,  ..., -1.9756, -1.8988, -1.9428],
+        [-1.9143, -1.9666, -2.0303,  ..., -1.9758, -1.8988, -1.9432],
+        [-1.9142, -1.9665, -2.0300,  ..., -1.9759, -1.8988, -1.9434]])
+              precision    recall  f1-score      support
+joy            0.000000  0.000000  0.000000   151.000000
+fear           0.000000  0.000000  0.000000   171.000000
+shame          0.000000  0.000000  0.000000   167.000000
+disgust        0.083333  0.006289  0.011696   159.000000
+guilt          0.000000  0.000000  0.000000   165.000000
+anger          0.140845  1.000000  0.246914   160.000000
+sadness        0.000000  0.000000  0.000000   175.000000
+accuracy       0.140244  0.140244  0.140244     0.140244
+macro avg      0.032025  0.143756  0.036944  1148.000000
+weighted avg   0.031172  0.140244  0.036033  1148.000000
+--------------------
+/usr/local/lib/python3.7/dist-packages/sklearn/metrics/_classification.py:1272: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+
+
+learning rate: 0.0001, epochs: 2, batch size: 32
+loss_valid: 1.9483102560043335 softmax(prediction): tensor([[-1.9241, -1.9730, -1.9863,  ..., -1.9269, -1.9061, -2.0165],
+        [-1.9240, -1.9731, -1.9865,  ..., -1.9268, -1.9059, -2.0165],
+        [-1.9240, -1.9732, -1.9866,  ..., -1.9268, -1.9058, -2.0165],
+        ...,
+        [-1.9239, -1.9734, -1.9869,  ..., -1.9267, -1.9056, -2.0165],
+        [-1.9240, -1.9731, -1.9865,  ..., -1.9268, -1.9060, -2.0165],
+        [-1.9241, -1.9729, -1.9862,  ..., -1.9269, -1.9061, -2.0165]])
+              precision    recall  f1-score      support
+joy            0.000000  0.000000  0.000000   151.000000
+fear           0.000000  0.000000  0.000000   171.000000
+shame          0.000000  0.000000  0.000000   167.000000
+disgust        0.139229  1.000000  0.244427   159.000000
+guilt          0.000000  0.000000  0.000000   165.000000
+anger          0.000000  0.000000  0.000000   160.000000
+sadness        0.000000  0.000000  0.000000   175.000000
+accuracy       0.138502  0.138502  0.138502     0.138502
+macro avg      0.019890  0.142857  0.034918  1148.000000
+weighted avg   0.019284  0.138502  0.033854  1148.000000
+--------------------
+/usr/local/lib/python3.7/dist-packages/sklearn/metrics/_classification.py:1272: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+
+
+learning rate: 0.0001, epochs: 2, batch size: 64
+loss_valid: 1.9467765092849731 softmax(prediction): tensor([[-1.9399, -1.9711, -2.0145,  ..., -1.9567, -1.9326, -1.9060],
+        [-1.9397, -1.9711, -2.0145,  ..., -1.9567, -1.9326, -1.9061],
+        [-1.9395, -1.9710, -2.0146,  ..., -1.9567, -1.9325, -1.9061],
+        ...,
+        [-1.9393, -1.9710, -2.0147,  ..., -1.9568, -1.9325, -1.9062],
+        [-1.9397, -1.9711, -2.0145,  ..., -1.9567, -1.9326, -1.9061],
+        [-1.9400, -1.9711, -2.0144,  ..., -1.9567, -1.9326, -1.9059]])
+              precision    recall  f1-score      support
+joy            0.000000  0.000000  0.000000   151.000000
+fear           0.000000  0.000000  0.000000   171.000000
+shame          0.000000  0.000000  0.000000   167.000000
+disgust        0.139965  1.000000  0.245560   159.000000
+guilt          0.000000  0.000000  0.000000   165.000000
+anger          0.000000  0.000000  0.000000   160.000000
+sadness        0.333333  0.022857  0.042781   175.000000
+accuracy       0.141986  0.141986  0.141986     0.141986
+macro avg      0.067614  0.146122  0.041192  1148.000000
+weighted avg   0.070198  0.141986  0.040532  1148.000000
+--------------------
+/usr/local/lib/python3.7/dist-packages/sklearn/metrics/_classification.py:1272: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+
+
+learning rate: 8.571430000000001e-05, epochs: 2, batch size: 16
+loss_valid: 1.9472159147262573 softmax(prediction): tensor([[-1.9289, -1.9723, -1.9929,  ..., -1.9379, -1.9442, -1.9578],
+        [-1.9291, -1.9722, -1.9929,  ..., -1.9378, -1.9444, -1.9578],
+        [-1.9293, -1.9722, -1.9929,  ..., -1.9378, -1.9445, -1.9577],
+        ...,
+        [-1.9297, -1.9721, -1.9929,  ..., -1.9377, -1.9448, -1.9576],
+        [-1.9291, -1.9722, -1.9929,  ..., -1.9378, -1.9443, -1.9578],
+        [-1.9287, -1.9723, -1.9929,  ..., -1.9379, -1.9441, -1.9579]])
+              precision    recall  f1-score      support
+joy            0.000000  0.000000  0.000000   151.000000
+fear           0.000000  0.000000  0.000000   171.000000
+shame          0.000000  0.000000  0.000000   167.000000
+disgust        0.138502  1.000000  0.243305   159.000000
+guilt          0.000000  0.000000  0.000000   165.000000
+anger          0.000000  0.000000  0.000000   160.000000
+sadness        0.000000  0.000000  0.000000   175.000000
+accuracy       0.138502  0.138502  0.138502     0.138502
+macro avg      0.019786  0.142857  0.034758  1148.000000
+weighted avg   0.019183  0.138502  0.033698  1148.000000
+--------------------
+/usr/local/lib/python3.7/dist-packages/sklearn/metrics/_classification.py:1272: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+
+
+learning rate: 8.571430000000001e-05, epochs: 2, batch size: 32
+loss_valid: 1.9468011856079102 softmax(prediction): tensor([[-1.8990, -1.9506, -1.9719,  ..., -1.9458, -1.9140, -1.9267],
+        [-1.8991, -1.9506, -1.9719,  ..., -1.9458, -1.9140, -1.9268],
+        [-1.8991, -1.9506, -1.9718,  ..., -1.9458, -1.9140, -1.9268],
+        ...,
+        [-1.8992, -1.9507, -1.9718,  ..., -1.9458, -1.9140, -1.9269],
+        [-1.8991, -1.9506, -1.9719,  ..., -1.9458, -1.9140, -1.9268],
+        [-1.8990, -1.9506, -1.9719,  ..., -1.9458, -1.9141, -1.9267]])
+              precision    recall  f1-score      support
+joy            0.131533  1.000000  0.232487   151.000000
+fear           0.000000  0.000000  0.000000   171.000000
+shame          0.000000  0.000000  0.000000   167.000000
+disgust        0.000000  0.000000  0.000000   159.000000
+guilt          0.000000  0.000000  0.000000   165.000000
+anger          0.000000  0.000000  0.000000   160.000000
+sadness        0.000000  0.000000  0.000000   175.000000
+accuracy       0.131533  0.131533  0.131533     0.131533
+macro avg      0.018790  0.142857  0.033212  1148.000000
+weighted avg   0.017301  0.131533  0.030580  1148.000000
+--------------------
+/usr/local/lib/python3.7/dist-packages/sklearn/metrics/_classification.py:1272: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+
+
+learning rate: 8.571430000000001e-05, epochs: 2, batch size: 64
+loss_valid: 1.947289228439331 softmax(prediction): tensor([[-1.9321, -1.9884, -2.0164,  ..., -1.9414, -1.9290, -1.9241],
+        [-1.9322, -1.9884, -2.0163,  ..., -1.9415, -1.9289, -1.9242],
+        [-1.9323, -1.9883, -2.0163,  ..., -1.9416, -1.9289, -1.9242],
+        ...,
+        [-1.9325, -1.9881, -2.0162,  ..., -1.9418, -1.9287, -1.9242],
+        [-1.9322, -1.9884, -2.0163,  ..., -1.9415, -1.9289, -1.9242],
+        [-1.9320, -1.9885, -2.0164,  ..., -1.9413, -1.9291, -1.9241]])
+              precision    recall  f1-score      support
+joy            0.000000  0.000000  0.000000   151.000000
+fear           0.000000  0.000000  0.000000   171.000000
+shame          0.000000  0.000000  0.000000   167.000000
+disgust        0.138502  1.000000  0.243305   159.000000
+guilt          0.000000  0.000000  0.000000   165.000000
+anger          0.000000  0.000000  0.000000   160.000000
+sadness        0.000000  0.000000  0.000000   175.000000
+accuracy       0.138502  0.138502  0.138502     0.138502
+macro avg      0.019786  0.142857  0.034758  1148.000000
+weighted avg   0.019183  0.138502  0.033698  1148.000000
+--------------------
+/usr/local/lib/python3.7/dist-packages/sklearn/metrics/_classification.py:1272: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+
+
+learning rate: 7.14286e-05, epochs: 2, batch size: 16
+loss_valid: 1.9652518033981323 softmax(prediction): tensor([[-1.8191, -1.9589, -2.3615,  ..., -2.1049, -1.8227, -1.8383],
+        [-1.8190, -1.9590, -2.3614,  ..., -2.1050, -1.8228, -1.8382],
+        [-1.8189, -1.9590, -2.3613,  ..., -2.1050, -1.8229, -1.8381],
+        ...,
+        [-1.8187, -1.9592, -2.3611,  ..., -2.1052, -1.8230, -1.8380],
+        [-1.8190, -1.9589, -2.3614,  ..., -2.1050, -1.8228, -1.8382],
+        [-1.8192, -1.9588, -2.3616,  ..., -2.1049, -1.8227, -1.8383]])
+              precision    recall  f1-score      support
+joy            0.131004  0.993377  0.231481   151.000000
+fear           0.000000  0.000000  0.000000   171.000000
+shame          0.000000  0.000000  0.000000   167.000000
+disgust        0.000000  0.000000  0.000000   159.000000
+guilt          0.000000  0.000000  0.000000   165.000000
+anger          0.000000  0.000000  0.000000   160.000000
+sadness        0.000000  0.000000  0.000000   175.000000
+accuracy       0.130662  0.130662  0.130662     0.130662
+macro avg      0.018715  0.141911  0.033069  1148.000000
+weighted avg   0.017231  0.130662  0.030447  1148.000000
+--------------------
+/usr/local/lib/python3.7/dist-packages/sklearn/metrics/_classification.py:1272: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+
+
+learning rate: 7.14286e-05, epochs: 2, batch size: 32
+loss_valid: 1.9487742185592651 softmax(prediction): tensor([[-2.0314, -1.9888, -2.0915,  ..., -1.9274, -1.8740, -1.8624],
+        [-2.0314, -1.9887, -2.0915,  ..., -1.9275, -1.8741, -1.8623],
+        [-2.0313, -1.9887, -2.0915,  ..., -1.9275, -1.8741, -1.8623],
+        ...,
+        [-2.0313, -1.9886, -2.0915,  ..., -1.9276, -1.8743, -1.8623],
+        [-2.0314, -1.9888, -2.0915,  ..., -1.9275, -1.8741, -1.8623],
+        [-2.0314, -1.9888, -2.0915,  ..., -1.9274, -1.8739, -1.8624]])
+              precision    recall  f1-score      support
+joy            0.000000  0.000000  0.000000   151.000000
+fear           0.000000  0.000000  0.000000   171.000000
+shame          0.000000  0.000000  0.000000   167.000000
+disgust        0.090909  0.006289  0.011765   159.000000
+guilt          0.000000  0.000000  0.000000   165.000000
+anger          0.000000  0.000000  0.000000   160.000000
+sadness        0.152155  0.988571  0.263720   175.000000
+accuracy       0.151568  0.151568  0.151568     0.151568
+macro avg      0.034723  0.142123  0.039355  1148.000000
+weighted avg   0.035785  0.151568  0.041831  1148.000000
+--------------------
+/usr/local/lib/python3.7/dist-packages/sklearn/metrics/_classification.py:1272: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+
+
+learning rate: 7.14286e-05, epochs: 2, batch size: 64
+loss_valid: 1.9471805095672607 softmax(prediction): tensor([[-1.9393, -1.9231, -1.9991,  ..., -1.9424, -1.9302, -1.9893],
+        [-1.9393, -1.9231, -1.9990,  ..., -1.9426, -1.9303, -1.9893],
+        [-1.9393, -1.9231, -1.9990,  ..., -1.9427, -1.9304, -1.9893],
+        ...,
+        [-1.9392, -1.9231, -1.9988,  ..., -1.9430, -1.9306, -1.9894],
+        [-1.9393, -1.9231, -1.9991,  ..., -1.9425, -1.9303, -1.9893],
+        [-1.9394, -1.9231, -1.9992,  ..., -1.9423, -1.9302, -1.9893]])
+              precision    recall  f1-score      support
+joy            0.000000  0.000000  0.000000   151.000000
+fear           0.000000  0.000000  0.000000   171.000000
+shame          0.000000  0.000000  0.000000   167.000000
+disgust        0.138502  1.000000  0.243305   159.000000
+guilt          0.000000  0.000000  0.000000   165.000000
+anger          0.000000  0.000000  0.000000   160.000000
+sadness        0.000000  0.000000  0.000000   175.000000
+accuracy       0.138502  0.138502  0.138502     0.138502
+macro avg      0.019786  0.142857  0.034758  1148.000000
+weighted avg   0.019183  0.138502  0.033698  1148.000000
+--------------------
+/usr/local/lib/python3.7/dist-packages/sklearn/metrics/_classification.py:1272: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+
+
+learning rate: 5.71429e-05, epochs: 2, batch size: 16
+loss_valid: 1.9674557447433472 softmax(prediction): tensor([[-1.8357, -1.9664, -1.8746,  ..., -2.4836, -1.8831, -1.8619],
+        [-1.8358, -1.9664, -1.8747,  ..., -2.4836, -1.8831, -1.8619],
+        [-1.8358, -1.9663, -1.8748,  ..., -2.4837, -1.8831, -1.8619],
+        ...,
+        [-1.8359, -1.9662, -1.8749,  ..., -2.4837, -1.8831, -1.8619],
+        [-1.8358, -1.9664, -1.8747,  ..., -2.4836, -1.8831, -1.8619],
+        [-1.8357, -1.9665, -1.8745,  ..., -2.4836, -1.8831, -1.8619]])
+              precision    recall  f1-score      support
+joy            0.131533  1.000000  0.232487   151.000000
+fear           0.000000  0.000000  0.000000   171.000000
+shame          0.000000  0.000000  0.000000   167.000000
+disgust        0.000000  0.000000  0.000000   159.000000
+guilt          0.000000  0.000000  0.000000   165.000000
+anger          0.000000  0.000000  0.000000   160.000000
+sadness        0.000000  0.000000  0.000000   175.000000
+accuracy       0.131533  0.131533  0.131533     0.131533
+macro avg      0.018790  0.142857  0.033212  1148.000000
+weighted avg   0.017301  0.131533  0.030580  1148.000000
+--------------------
+/usr/local/lib/python3.7/dist-packages/sklearn/metrics/_classification.py:1272: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+
+
+learning rate: 5.71429e-05, epochs: 2, batch size: 32
+loss_valid: 1.9736707210540771 softmax(prediction): tensor([[-2.7250, -1.8407, -1.8865,  ..., -1.9101, -1.8238, -1.8378],
+        [-2.7250, -1.8408, -1.8866,  ..., -1.9101, -1.8237, -1.8377],
+        [-2.7250, -1.8409, -1.8866,  ..., -1.9101, -1.8237, -1.8376],
+        ...,
+        [-2.7250, -1.8410, -1.8867,  ..., -1.9101, -1.8235, -1.8374],
+        [-2.7250, -1.8408, -1.8866,  ..., -1.9101, -1.8238, -1.8377],
+        [-2.7250, -1.8406, -1.8865,  ..., -1.9101, -1.8239, -1.8379]])
+              precision    recall  f1-score      support
+joy            0.000000  0.000000  0.000000   151.000000
+fear           0.000000  0.000000  0.000000   171.000000
+shame          0.000000  0.000000  0.000000   167.000000
+disgust        0.000000  0.000000  0.000000   159.000000
+guilt          0.000000  0.000000  0.000000   165.000000
+anger          0.139373  1.000000  0.244648   160.000000
+sadness        0.000000  0.000000  0.000000   175.000000
+accuracy       0.139373  0.139373  0.139373     0.139373
+macro avg      0.019910  0.142857  0.034950  1148.000000
+weighted avg   0.019425  0.139373  0.034097  1148.000000
+--------------------
+/usr/local/lib/python3.7/dist-packages/sklearn/metrics/_classification.py:1272: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+
+
+learning rate: 5.71429e-05, epochs: 2, batch size: 64
+loss_valid: 1.9548054933547974 softmax(prediction): tensor([[-1.7826, -2.1546, -1.9407,  ..., -1.9021, -1.9223, -2.0002],
+        [-1.7826, -2.1544, -1.9409,  ..., -1.9020, -1.9223, -2.0003],
+        [-1.7826, -2.1543, -1.9411,  ..., -1.9020, -1.9224, -2.0003],
+        ...,
+        [-1.7826, -2.1539, -1.9415,  ..., -1.9018, -1.9225, -2.0004],
+        [-1.7826, -2.1545, -1.9409,  ..., -1.9020, -1.9223, -2.0003],
+        [-1.7826, -2.1547, -1.9406,  ..., -1.9021, -1.9223, -2.0002]])
+              precision    recall  f1-score      support
+joy            0.131533  1.000000  0.232487   151.000000
+fear           0.000000  0.000000  0.000000   171.000000
+shame          0.000000  0.000000  0.000000   167.000000
+disgust        0.000000  0.000000  0.000000   159.000000
+guilt          0.000000  0.000000  0.000000   165.000000
+anger          0.000000  0.000000  0.000000   160.000000
+sadness        0.000000  0.000000  0.000000   175.000000
+accuracy       0.131533  0.131533  0.131533     0.131533
+macro avg      0.018790  0.142857  0.033212  1148.000000
+weighted avg   0.017301  0.131533  0.030580  1148.000000
+--------------------
+/usr/local/lib/python3.7/dist-packages/sklearn/metrics/_classification.py:1272: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+
+
+learning rate: 4.28572e-05, epochs: 2, batch size: 16
+loss_valid: 1.952903389930725 softmax(prediction): tensor([[-1.8180, -2.0150, -2.0045,  ..., -2.1256, -1.9593, -1.8882],
+        [-1.8179, -2.0150, -2.0045,  ..., -2.1257, -1.9593, -1.8884],
+        [-1.8179, -2.0150, -2.0045,  ..., -2.1257, -1.9593, -1.8885],
+        ...,
+        [-1.8178, -2.0150, -2.0046,  ..., -2.1257, -1.9593, -1.8886],
+        [-1.8179, -2.0150, -2.0045,  ..., -2.1256, -1.9593, -1.8883],
+        [-1.8180, -2.0151, -2.0045,  ..., -2.1256, -1.9593, -1.8882]])
+              precision    recall  f1-score      support
+joy            0.131533  1.000000  0.232487   151.000000
+fear           0.000000  0.000000  0.000000   171.000000
+shame          0.000000  0.000000  0.000000   167.000000
+disgust        0.000000  0.000000  0.000000   159.000000
+guilt          0.000000  0.000000  0.000000   165.000000
+anger          0.000000  0.000000  0.000000   160.000000
+sadness        0.000000  0.000000  0.000000   175.000000
+accuracy       0.131533  0.131533  0.131533     0.131533
+macro avg      0.018790  0.142857  0.033212  1148.000000
+weighted avg   0.017301  0.131533  0.030580  1148.000000
+--------------------
+/usr/local/lib/python3.7/dist-packages/sklearn/metrics/_classification.py:1272: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+
+
+learning rate: 4.28572e-05, epochs: 2, batch size: 32
+loss_valid: 1.9563289880752563 softmax(prediction): tensor([[-1.8672, -1.8576, -1.8967,  ..., -1.8479, -2.1543, -1.8054],
+        [-1.8675, -1.8577, -1.8966,  ..., -1.8478, -2.1542, -1.8051],
+        [-1.8678, -1.8578, -1.8966,  ..., -1.8477, -2.1541, -1.8049],
+        ...,
+        [-1.8683, -1.8580, -1.8964,  ..., -1.8476, -2.1539, -1.8045],
+        [-1.8675, -1.8577, -1.8966,  ..., -1.8478, -2.1542, -1.8052],
+        [-1.8670, -1.8575, -1.8968,  ..., -1.8479, -2.1543, -1.8055]])
+/usr/local/lib/python3.7/dist-packages/sklearn/metrics/_classification.py:1272: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+              precision    recall  f1-score      support
+joy            0.000000  0.000000  0.000000   151.000000
+fear           0.000000  0.000000  0.000000   171.000000
+shame          0.000000  0.000000  0.000000   167.000000
+disgust        0.000000  0.000000  0.000000   159.000000
+guilt          0.000000  0.000000  0.000000   165.000000
+anger          0.000000  0.000000  0.000000   160.000000
+sadness        0.152439  1.000000  0.264550   175.000000
+accuracy       0.152439  0.152439  0.152439     0.152439
+macro avg      0.021777  0.142857  0.037793  1148.000000
+weighted avg   0.023238  0.152439  0.040328  1148.000000
+--------------------
+
+
+learning rate: 4.28572e-05, epochs: 2, batch size: 64
+loss_valid: 1.9511854648590088 softmax(prediction): tensor([[-1.9635, -2.1375, -1.9581,  ..., -2.0185, -1.8687, -1.8475],
+        [-1.9633, -2.1375, -1.9582,  ..., -2.0185, -1.8685, -1.8477],
+        [-1.9632, -2.1374, -1.9582,  ..., -2.0185, -1.8684, -1.8479],
+        ...,
+        [-1.9629, -2.1374, -1.9582,  ..., -2.0185, -1.8682, -1.8482],
+        [-1.9633, -2.1375, -1.9582,  ..., -2.0185, -1.8686, -1.8477],
+        [-1.9636, -2.1375, -1.9581,  ..., -2.0185, -1.8688, -1.8474]])
+              precision    recall  f1-score      support
+joy            0.000000  0.000000  0.000000   151.000000
+fear           0.000000  0.000000  0.000000   171.000000
+shame          0.000000  0.000000  0.000000   167.000000
+disgust        0.000000  0.000000  0.000000   159.000000
+guilt          0.000000  0.000000  0.000000   165.000000
+anger          0.000000  0.000000  0.000000   160.000000
+sadness        0.152439  1.000000  0.264550   175.000000
+accuracy       0.152439  0.152439  0.152439     0.152439
+macro avg      0.021777  0.142857  0.037793  1148.000000
+weighted avg   0.023238  0.152439  0.040328  1148.000000
+--------------------
+/usr/local/lib/python3.7/dist-packages/sklearn/metrics/_classification.py:1272: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+
+
+learning rate: 2.8571500000000002e-05, epochs: 2, batch size: 16
+loss_valid: 2.0203304290771484 softmax(prediction): tensor([[-1.9701, -1.8320, -2.0644,  ..., -1.6793, -1.6761, -1.8667],
+        [-1.9703, -1.8320, -2.0644,  ..., -1.6794, -1.6760, -1.8666],
+        [-1.9704, -1.8320, -2.0644,  ..., -1.6796, -1.6760, -1.8664],
+        ...,
+        [-1.9706, -1.8319, -2.0643,  ..., -1.6798, -1.6759, -1.8662],
+        [-1.9702, -1.8320, -2.0644,  ..., -1.6794, -1.6760, -1.8666],
+        [-1.9701, -1.8320, -2.0644,  ..., -1.6792, -1.6761, -1.8668]])
+              precision    recall  f1-score      support
+joy            0.000000  0.000000  0.000000   151.000000
+fear           0.000000  0.000000  0.000000   171.000000
+shame          0.000000  0.000000  0.000000   167.000000
+disgust        0.000000  0.000000  0.000000   159.000000
+guilt          0.000000  0.000000  0.000000   165.000000
+anger          0.138743  0.993750  0.243492   160.000000
+sadness        0.000000  0.000000  0.000000   175.000000
+accuracy       0.138502  0.138502  0.138502     0.138502
+macro avg      0.019820  0.141964  0.034785  1148.000000
+weighted avg   0.019337  0.138502  0.033936  1148.000000
+--------------------
+/usr/local/lib/python3.7/dist-packages/sklearn/metrics/_classification.py:1272: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+
+
+learning rate: 2.8571500000000002e-05, epochs: 2, batch size: 32
+loss_valid: 1.9539754390716553 softmax(prediction): tensor([[-2.1702, -1.6844, -1.8372,  ..., -2.0899, -1.9302, -2.0328],
+        [-2.1703, -1.6843, -1.8370,  ..., -2.0899, -1.9303, -2.0328],
+        [-2.1704, -1.6842, -1.8370,  ..., -2.0898, -1.9305, -2.0328],
+        ...,
+        [-2.1705, -1.6840, -1.8368,  ..., -2.0898, -1.9307, -2.0328],
+        [-2.1703, -1.6843, -1.8371,  ..., -2.0899, -1.9303, -2.0328],
+        [-2.1702, -1.6844, -1.8372,  ..., -2.0899, -1.9301, -2.0328]])
+              precision    recall  f1-score      support
+joy            0.000000  0.000000  0.000000   151.000000
+fear           0.148955  1.000000  0.259287   171.000000
+shame          0.000000  0.000000  0.000000   167.000000
+disgust        0.000000  0.000000  0.000000   159.000000
+guilt          0.000000  0.000000  0.000000   165.000000
+anger          0.000000  0.000000  0.000000   160.000000
+sadness        0.000000  0.000000  0.000000   175.000000
+accuracy       0.148955  0.148955  0.148955     0.148955
+macro avg      0.021279  0.142857  0.037041  1148.000000
+weighted avg   0.022188  0.148955  0.038622  1148.000000
+--------------------
+/usr/local/lib/python3.7/dist-packages/sklearn/metrics/_classification.py:1272: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+
+
+learning rate: 2.8571500000000002e-05, epochs: 2, batch size: 64
+loss_valid: 1.972083568572998 softmax(prediction): tensor([[-1.9772, -1.8609, -1.9819,  ..., -2.1414, -1.8310, -2.3379],
+        [-1.9771, -1.8609, -1.9820,  ..., -2.1415, -1.8310, -2.3378],
+        [-1.9771, -1.8609, -1.9821,  ..., -2.1415, -1.8311, -2.3378],
+        ...,
+        [-1.9769, -1.8608, -1.9822,  ..., -2.1415, -1.8312, -2.3378],
+        [-1.9772, -1.8609, -1.9820,  ..., -2.1414, -1.8310, -2.3378],
+        [-1.9773, -1.8609, -1.9819,  ..., -2.1414, -1.8309, -2.3379]])
+              precision    recall  f1-score      support
+joy            0.000000  0.000000  0.000000   151.000000
+fear           0.000000  0.000000  0.000000   171.000000
+shame          0.000000  0.000000  0.000000   167.000000
+disgust        0.138502  1.000000  0.243305   159.000000
+guilt          0.000000  0.000000  0.000000   165.000000
+anger          0.000000  0.000000  0.000000   160.000000
+sadness        0.000000  0.000000  0.000000   175.000000
+accuracy       0.138502  0.138502  0.138502     0.138502
+macro avg      0.019786  0.142857  0.034758  1148.000000
+weighted avg   0.019183  0.138502  0.033698  1148.000000
+--------------------
+/usr/local/lib/python3.7/dist-packages/sklearn/metrics/_classification.py:1272: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+
+
+learning rate: 1.4285799999999991e-05, epochs: 2, batch size: 16
+loss_valid: 2.703181028366089 softmax(prediction): tensor([[-4.0749, -2.0347, -2.2868,  ..., -0.4925, -2.6054, -4.5710],
+        [-4.0750, -2.0347, -2.2867,  ..., -0.4925, -2.6054, -4.5710],
+        [-4.0750, -2.0347, -2.2866,  ..., -0.4925, -2.6055, -4.5710],
+        ...,
+        [-4.0751, -2.0347, -2.2865,  ..., -0.4925, -2.6056, -4.5710],
+        [-4.0750, -2.0347, -2.2867,  ..., -0.4925, -2.6054, -4.5710],
+        [-4.0749, -2.0347, -2.2868,  ..., -0.4925, -2.6054, -4.5710]])
+              precision    recall  f1-score      support
+joy            0.000000  0.000000  0.000000   151.000000
+fear           0.000000  0.000000  0.000000   171.000000
+shame          0.000000  0.000000  0.000000   167.000000
+disgust        0.000000  0.000000  0.000000   159.000000
+guilt          0.143728  1.000000  0.251333   165.000000
+anger          0.000000  0.000000  0.000000   160.000000
+sadness        0.000000  0.000000  0.000000   175.000000
+accuracy       0.143728  0.143728  0.143728     0.143728
+macro avg      0.020533  0.142857  0.035905  1148.000000
+weighted avg   0.020658  0.143728  0.036124  1148.000000
+--------------------
+/usr/local/lib/python3.7/dist-packages/sklearn/metrics/_classification.py:1272: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+
+
+learning rate: 1.4285799999999991e-05, epochs: 2, batch size: 32
+loss_valid: 2.329840898513794 softmax(prediction): tensor([[-0.7217, -2.4338, -2.5216,  ..., -2.9903, -1.9682, -3.3349],
+        [-0.7217, -2.4337, -2.5217,  ..., -2.9901, -1.9684, -3.3348],
+        [-0.7217, -2.4336, -2.5218,  ..., -2.9900, -1.9685, -3.3347],
+        ...,
+        [-0.7218, -2.4334, -2.5220,  ..., -2.9898, -1.9687, -3.3346],
+        [-0.7217, -2.4337, -2.5217,  ..., -2.9901, -1.9683, -3.3348],
+        [-0.7217, -2.4338, -2.5215,  ..., -2.9903, -1.9682, -3.3350]])
+              precision    recall  f1-score      support
+joy            0.131533  1.000000  0.232487   151.000000
+fear           0.000000  0.000000  0.000000   171.000000
+shame          0.000000  0.000000  0.000000   167.000000
+disgust        0.000000  0.000000  0.000000   159.000000
+guilt          0.000000  0.000000  0.000000   165.000000
+anger          0.000000  0.000000  0.000000   160.000000
+sadness        0.000000  0.000000  0.000000   175.000000
+accuracy       0.131533  0.131533  0.131533     0.131533
+macro avg      0.018790  0.142857  0.033212  1148.000000
+weighted avg   0.017301  0.131533  0.030580  1148.000000
+--------------------
+/usr/local/lib/python3.7/dist-packages/sklearn/metrics/_classification.py:1272: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+
+
+learning rate: 1.4285799999999991e-05, epochs: 2, batch size: 64
+loss_valid: 2.1883318424224854 softmax(prediction): tensor([[-2.3460, -2.2730, -2.6348,  ..., -2.2661, -0.8185, -2.8239],
+        [-2.3459, -2.2731, -2.6348,  ..., -2.2662, -0.8185, -2.8238],
+        [-2.3458, -2.2732, -2.6349,  ..., -2.2663, -0.8185, -2.8237],
+        ...,
+        [-2.3457, -2.2733, -2.6349,  ..., -2.2664, -0.8185, -2.8236],
+        [-2.3459, -2.2731, -2.6348,  ..., -2.2662, -0.8185, -2.8238],
+        [-2.3460, -2.2730, -2.6348,  ..., -2.2661, -0.8185, -2.8239]])
+              precision    recall  f1-score      support
+joy            0.000000  0.000000  0.000000   151.000000
+fear           0.000000  0.000000  0.000000   171.000000
+shame          0.000000  0.000000  0.000000   167.000000
+disgust        0.000000  0.000000  0.000000   159.000000
+guilt          0.000000  0.000000  0.000000   165.000000
+anger          0.139373  1.000000  0.244648   160.000000
+sadness        0.000000  0.000000  0.000000   175.000000
+accuracy       0.139373  0.139373  0.139373     0.139373
+macro avg      0.019910  0.142857  0.034950  1148.000000
+weighted avg   0.019425  0.139373  0.034097  1148.000000
+--------------------
+/usr/local/lib/python3.7/dist-packages/sklearn/metrics/_classification.py:1272: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+
+
+learning rate: 1e-10, epochs: 2, batch size: 16
+loss_valid: 5.162772178649902 softmax(prediction): tensor([[-7.7670, -2.8557, -0.0713,  ..., -7.1647, -4.9814, -7.6325],
+        [-7.7669, -2.8555, -0.0713,  ..., -7.1650, -4.9816, -7.6324],
+        [-7.7669, -2.8554, -0.0713,  ..., -7.1652, -4.9818, -7.6323],
+        ...,
+        [-7.7669, -2.8552, -0.0713,  ..., -7.1655, -4.9822, -7.6321],
+        [-7.7669, -2.8556, -0.0713,  ..., -7.1649, -4.9816, -7.6324],
+        [-7.7670, -2.8558, -0.0713,  ..., -7.1646, -4.9812, -7.6325]])
+              precision    recall  f1-score     support
+joy            0.000000  0.000000  0.000000   151.00000
+fear           0.000000  0.000000  0.000000   171.00000
+shame          0.145470  1.000000  0.253992   167.00000
+disgust        0.000000  0.000000  0.000000   159.00000
+guilt          0.000000  0.000000  0.000000   165.00000
+anger          0.000000  0.000000  0.000000   160.00000
+sadness        0.000000  0.000000  0.000000   175.00000
+accuracy       0.145470  0.145470  0.145470     0.14547
+macro avg      0.020781  0.142857  0.036285  1148.00000
+weighted avg   0.021162  0.145470  0.036948  1148.00000
+--------------------
+/usr/local/lib/python3.7/dist-packages/sklearn/metrics/_classification.py:1272: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+
+
+learning rate: 1e-10, epochs: 2, batch size: 32
+loss_valid: 4.307672500610352 softmax(prediction): tensor([[-5.8458, -5.3160, -5.7225,  ..., -5.9806, -3.3783, -0.0657],
+        [-5.8456, -5.3159, -5.7225,  ..., -5.9805, -3.3782, -0.0657],
+        [-5.8455, -5.3159, -5.7226,  ..., -5.9804, -3.3782, -0.0657],
+        ...,
+        [-5.8453, -5.3159, -5.7227,  ..., -5.9803, -3.3780, -0.0657],
+        [-5.8457, -5.3159, -5.7225,  ..., -5.9805, -3.3783, -0.0657],
+        [-5.8459, -5.3160, -5.7224,  ..., -5.9807, -3.3784, -0.0657]])
+              precision    recall  f1-score      support
+joy            0.000000  0.000000  0.000000   151.000000
+fear           0.000000  0.000000  0.000000   171.000000
+shame          0.000000  0.000000  0.000000   167.000000
+disgust        0.000000  0.000000  0.000000   159.000000
+guilt          0.000000  0.000000  0.000000   165.000000
+anger          0.000000  0.000000  0.000000   160.000000
+sadness        0.152439  1.000000  0.264550   175.000000
+accuracy       0.152439  0.152439  0.152439     0.152439
+macro avg      0.021777  0.142857  0.037793  1148.000000
+weighted avg   0.023238  0.152439  0.040328  1148.000000
+--------------------
+/usr/local/lib/python3.7/dist-packages/sklearn/metrics/_classification.py:1272: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+
+
+learning rate: 1e-10, epochs: 2, batch size: 64
+loss_valid: 5.160057067871094 softmax(prediction): tensor([[-7.2496, -0.0498, -8.2105,  ..., -3.2475, -6.4249, -5.4581],
+        [-7.2496, -0.0498, -8.2106,  ..., -3.2477, -6.4250, -5.4580],
+        [-7.2496, -0.0498, -8.2107,  ..., -3.2478, -6.4251, -5.4580],
+        ...,
+        [-7.2495, -0.0498, -8.2110,  ..., -3.2480, -6.4252, -5.4578],
+        [-7.2496, -0.0498, -8.2106,  ..., -3.2476, -6.4250, -5.4581],
+        [-7.2496, -0.0498, -8.2104,  ..., -3.2475, -6.4249, -5.4582]])
+              precision    recall  f1-score      support
+joy            0.000000  0.000000  0.000000   151.000000
+fear           0.148955  1.000000  0.259287   171.000000
+shame          0.000000  0.000000  0.000000   167.000000
+disgust        0.000000  0.000000  0.000000   159.000000
+guilt          0.000000  0.000000  0.000000   165.000000
+anger          0.000000  0.000000  0.000000   160.000000
+sadness        0.000000  0.000000  0.000000   175.000000
+accuracy       0.148955  0.148955  0.148955     0.148955
+macro avg      0.021279  0.142857  0.037041  1148.000000
+weighted avg   0.022188  0.148955  0.038622  1148.000000
+--------------------
+/usr/local/lib/python3.7/dist-packages/sklearn/metrics/_classification.py:1272: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+
+
+learning rate: 0.0001, epochs: 3, batch size: 16
+loss_valid: 1.9469974040985107 softmax(prediction): tensor([[-1.9400, -1.9773, -2.0224,  ..., -1.9479, -1.9210, -1.9105],
+        [-1.9401, -1.9773, -2.0223,  ..., -1.9479, -1.9208, -1.9107],
+        [-1.9401, -1.9773, -2.0222,  ..., -1.9479, -1.9207, -1.9108],
+        ...,
+        [-1.9402, -1.9774, -2.0220,  ..., -1.9479, -1.9204, -1.9111],
+        [-1.9401, -1.9773, -2.0224,  ..., -1.9479, -1.9209, -1.9106],
+        [-1.9400, -1.9772, -2.0225,  ..., -1.9479, -1.9211, -1.9104]])
+              precision    recall  f1-score      support
+joy            0.000000  0.000000  0.000000   151.000000
+fear           0.000000  0.000000  0.000000   171.000000
+shame          0.000000  0.000000  0.000000   167.000000
+disgust        0.138986  1.000000  0.244052   159.000000
+guilt          0.000000  0.000000  0.000000   165.000000
+anger          0.333333  0.006250  0.012270   160.000000
+sadness        0.000000  0.000000  0.000000   175.000000
+accuracy       0.139373  0.139373  0.139373     0.139373
+macro avg      0.067474  0.143750  0.036617  1148.000000
+weighted avg   0.065707  0.139373  0.035512  1148.000000
+--------------------
+/usr/local/lib/python3.7/dist-packages/sklearn/metrics/_classification.py:1272: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+
+
+learning rate: 0.0001, epochs: 3, batch size: 32
+loss_valid: 1.947094440460205 softmax(prediction): tensor([[-1.9138, -1.9460, -1.9793,  ..., -1.9907, -1.9359, -1.9547],
+        [-1.9139, -1.9459, -1.9793,  ..., -1.9907, -1.9359, -1.9548],
+        [-1.9140, -1.9459, -1.9794,  ..., -1.9907, -1.9359, -1.9549],
+        ...,
+        [-1.9141, -1.9458, -1.9794,  ..., -1.9906, -1.9358, -1.9551],
+        [-1.9139, -1.9459, -1.9793,  ..., -1.9907, -1.9359, -1.9548],
+        [-1.9138, -1.9460, -1.9793,  ..., -1.9908, -1.9359, -1.9547]])
+              precision    recall  f1-score      support
+joy            0.500000  0.006623  0.013072   151.000000
+fear           0.000000  0.000000  0.000000   171.000000
+shame          0.000000  0.000000  0.000000   167.000000
+disgust        0.138743  1.000000  0.243678   159.000000
+guilt          0.000000  0.000000  0.000000   165.000000
+anger          0.000000  0.000000  0.000000   160.000000
+sadness        0.000000  0.000000  0.000000   175.000000
+accuracy       0.139373  0.139373  0.139373     0.139373
+macro avg      0.091249  0.143803  0.036679  1148.000000
+weighted avg   0.084983  0.139373  0.035469  1148.000000
+--------------------
+/usr/local/lib/python3.7/dist-packages/sklearn/metrics/_classification.py:1272: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+
+
+learning rate: 0.0001, epochs: 3, batch size: 64
+loss_valid: 1.9472832679748535 softmax(prediction): tensor([[-1.9458, -1.9826, -2.0319,  ..., -1.9559, -1.9124, -1.9021],
+        [-1.9459, -1.9823, -2.0321,  ..., -1.9560, -1.9124, -1.9023],
+        [-1.9459, -1.9820, -2.0323,  ..., -1.9560, -1.9123, -1.9025],
+        ...,
+        [-1.9460, -1.9814, -2.0327,  ..., -1.9560, -1.9122, -1.9029],
+        [-1.9459, -1.9823, -2.0321,  ..., -1.9559, -1.9124, -1.9023],
+        [-1.9457, -1.9828, -2.0317,  ..., -1.9559, -1.9125, -1.9019]])
+              precision    recall  f1-score      support
+joy            0.000000  0.000000  0.000000   151.000000
+fear           0.000000  0.000000  0.000000   171.000000
+shame          0.000000  0.000000  0.000000   167.000000
+disgust        0.138502  1.000000  0.243305   159.000000
+guilt          0.000000  0.000000  0.000000   165.000000
+anger          0.000000  0.000000  0.000000   160.000000
+sadness        0.000000  0.000000  0.000000   175.000000
+accuracy       0.138502  0.138502  0.138502     0.138502
+macro avg      0.019786  0.142857  0.034758  1148.000000
+weighted avg   0.019183  0.138502  0.033698  1148.000000
+--------------------
+/usr/local/lib/python3.7/dist-packages/sklearn/metrics/_classification.py:1272: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+
+
+learning rate: 8.571430000000001e-05, epochs: 3, batch size: 16
+loss_valid: 1.9470059871673584 softmax(prediction): tensor([[-1.9383, -1.9785, -2.0205,  ..., -1.9544, -1.9205, -1.9073],
+        [-1.9385, -1.9785, -2.0206,  ..., -1.9544, -1.9203, -1.9072],
+        [-1.9386, -1.9785, -2.0208,  ..., -1.9544, -1.9201, -1.9072],
+        ...,
+        [-1.9388, -1.9785, -2.0210,  ..., -1.9543, -1.9198, -1.9071],
+        [-1.9384, -1.9785, -2.0206,  ..., -1.9544, -1.9203, -1.9072],
+        [-1.9383, -1.9785, -2.0204,  ..., -1.9544, -1.9206, -1.9073]])
+              precision    recall  f1-score      support
+joy            0.000000  0.000000  0.000000   151.000000
+fear           0.000000  0.000000  0.000000   171.000000
+shame          0.000000  0.000000  0.000000   167.000000
+disgust        0.138475  0.993711  0.243077   159.000000
+guilt          0.000000  0.000000  0.000000   165.000000
+anger          0.000000  0.000000  0.000000   160.000000
+sadness        0.142857  0.005714  0.010989   175.000000
+accuracy       0.138502  0.138502  0.138502     0.138502
+macro avg      0.040190  0.142775  0.036295  1148.000000
+weighted avg   0.040956  0.138502  0.035342  1148.000000
+--------------------
+/usr/local/lib/python3.7/dist-packages/sklearn/metrics/_classification.py:1272: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+
+
+learning rate: 8.571430000000001e-05, epochs: 3, batch size: 32
+loss_valid: 1.9468262195587158 softmax(prediction): tensor([[-1.9452, -1.9732, -2.0186,  ..., -1.9475, -1.9325, -1.9092],
+        [-1.9452, -1.9731, -2.0185,  ..., -1.9474, -1.9326, -1.9094],
+        [-1.9452, -1.9730, -2.0184,  ..., -1.9473, -1.9326, -1.9095],
+        ...,
+        [-1.9452, -1.9728, -2.0182,  ..., -1.9471, -1.9328, -1.9098],
+        [-1.9452, -1.9731, -2.0185,  ..., -1.9474, -1.9326, -1.9094],
+        [-1.9451, -1.9732, -2.0186,  ..., -1.9476, -1.9324, -1.9092]])
+              precision    recall  f1-score      support
+joy            0.000000  0.000000  0.000000   151.000000
+fear           0.000000  0.000000  0.000000   171.000000
+shame          0.000000  0.000000  0.000000   167.000000
+disgust        0.138743  1.000000  0.243678   159.000000
+guilt          0.000000  0.000000  0.000000   165.000000
+anger          0.000000  0.000000  0.000000   160.000000
+sadness        0.000000  0.000000  0.000000   175.000000
+accuracy       0.138502  0.138502  0.138502     0.138502
+macro avg      0.019820  0.142857  0.034811  1148.000000
+weighted avg   0.019216  0.138502  0.033750  1148.000000
+--------------------
+/usr/local/lib/python3.7/dist-packages/sklearn/metrics/_classification.py:1272: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+
+
+learning rate: 8.571430000000001e-05, epochs: 3, batch size: 64
+loss_valid: 1.946829915046692 softmax(prediction): tensor([[-1.9383, -1.9756, -2.0123,  ..., -1.9497, -1.9225, -1.9143],
+        [-1.9382, -1.9757, -2.0124,  ..., -1.9498, -1.9224, -1.9142],
+        [-1.9382, -1.9758, -2.0126,  ..., -1.9499, -1.9222, -1.9142],
+        ...,
+        [-1.9380, -1.9759, -2.0129,  ..., -1.9500, -1.9220, -1.9141],
+        [-1.9382, -1.9757, -2.0124,  ..., -1.9498, -1.9224, -1.9142],
+        [-1.9383, -1.9756, -2.0122,  ..., -1.9496, -1.9226, -1.9143]])
+              precision    recall  f1-score      support
+joy            0.000000  0.000000  0.000000   151.000000
+fear           0.000000  0.000000  0.000000   171.000000
+shame          0.000000  0.000000  0.000000   167.000000
+disgust        0.138233  0.993711  0.242704   159.000000
+guilt          0.000000  0.000000  0.000000   165.000000
+anger          0.000000  0.000000  0.000000   160.000000
+sadness        0.000000  0.000000  0.000000   175.000000
+accuracy       0.137631  0.137631  0.137631     0.137631
+macro avg      0.019748  0.141959  0.034672  1148.000000
+weighted avg   0.019145  0.137631  0.033615  1148.000000
+--------------------
+/usr/local/lib/python3.7/dist-packages/sklearn/metrics/_classification.py:1272: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+
+
+learning rate: 7.14286e-05, epochs: 3, batch size: 16
+loss_valid: 1.9466769695281982 softmax(prediction): tensor([[-1.9291, -1.9677, -1.9886,  ..., -1.9401, -2.0062, -1.9011],
+        [-1.9290, -1.9677, -1.9886,  ..., -1.9402, -2.0063, -1.9012],
+        [-1.9289, -1.9678, -1.9886,  ..., -1.9402, -2.0063, -1.9013],
+        ...,
+        [-1.9287, -1.9678, -1.9887,  ..., -1.9402, -2.0064, -1.9015],
+        [-1.9290, -1.9677, -1.9886,  ..., -1.9402, -2.0063, -1.9012],
+        [-1.9291, -1.9676, -1.9886,  ..., -1.9401, -2.0062, -1.9010]])
+              precision    recall  f1-score      support
+joy            0.000000  0.000000  0.000000   151.000000
+fear           0.000000  0.000000  0.000000   171.000000
+shame          0.000000  0.000000  0.000000   167.000000
+disgust        0.138718  0.993711  0.243451   159.000000
+guilt          0.000000  0.000000  0.000000   165.000000
+anger          0.000000  0.000000  0.000000   160.000000
+sadness        0.222222  0.011429  0.021739   175.000000
+accuracy       0.139373  0.139373  0.139373     0.139373
+macro avg      0.051563  0.143591  0.037884  1148.000000
+weighted avg   0.053088  0.139373  0.037032  1148.000000
+--------------------
+/usr/local/lib/python3.7/dist-packages/sklearn/metrics/_classification.py:1272: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+
+
+learning rate: 7.14286e-05, epochs: 3, batch size: 32
+loss_valid: 1.946778655052185 softmax(prediction): tensor([[-1.9328, -1.9723, -2.0016,  ..., -1.9558, -1.9257, -1.9226],
+        [-1.9328, -1.9720, -2.0017,  ..., -1.9558, -1.9257, -1.9227],
+        [-1.9328, -1.9718, -2.0018,  ..., -1.9558, -1.9256, -1.9227],
+        ...,
+        [-1.9328, -1.9714, -2.0020,  ..., -1.9558, -1.9256, -1.9229],
+        [-1.9328, -1.9721, -2.0017,  ..., -1.9558, -1.9257, -1.9227],
+        [-1.9328, -1.9724, -2.0015,  ..., -1.9558, -1.9257, -1.9225]])
+              precision    recall  f1-score      support
+joy            0.000000  0.000000  0.000000   151.000000
+fear           0.000000  0.000000  0.000000   171.000000
+shame          0.000000  0.000000  0.000000   167.000000
+disgust        0.139474  1.000000  0.244804   159.000000
+guilt          0.000000  0.000000  0.000000   165.000000
+anger          0.000000  0.000000  0.000000   160.000000
+sadness        0.285714  0.011429  0.021978   175.000000
+accuracy       0.140244  0.140244  0.140244     0.140244
+macro avg      0.060741  0.144490  0.038112  1148.000000
+weighted avg   0.062871  0.140244  0.037256  1148.000000
+--------------------
+/usr/local/lib/python3.7/dist-packages/sklearn/metrics/_classification.py:1272: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+
+
+learning rate: 7.14286e-05, epochs: 3, batch size: 64
+loss_valid: 1.9470871686935425 softmax(prediction): tensor([[-1.9333, -1.9929, -2.0102,  ..., -1.9494, -1.9228, -1.9096],
+        [-1.9334, -1.9929, -2.0102,  ..., -1.9494, -1.9230, -1.9094],
+        [-1.9335, -1.9929, -2.0103,  ..., -1.9494, -1.9231, -1.9092],
+        ...,
+        [-1.9336, -1.9929, -2.0104,  ..., -1.9494, -1.9233, -1.9088],
+        [-1.9334, -1.9929, -2.0102,  ..., -1.9494, -1.9229, -1.9094],
+        [-1.9332, -1.9929, -2.0101,  ..., -1.9494, -1.9228, -1.9097]])
+              precision    recall  f1-score      support
+joy            0.000000  0.000000  0.000000   151.000000
+fear           0.000000  0.000000  0.000000   171.000000
+shame          0.000000  0.000000  0.000000   167.000000
+disgust        0.139108  1.000000  0.244240   159.000000
+guilt          0.000000  0.000000  0.000000   165.000000
+anger          0.000000  0.000000  0.000000   160.000000
+sadness        0.200000  0.005714  0.011111   175.000000
+accuracy       0.139373  0.139373  0.139373     0.139373
+macro avg      0.048444  0.143673  0.036479  1148.000000
+weighted avg   0.049754  0.139373  0.035521  1148.000000
+--------------------
+/usr/local/lib/python3.7/dist-packages/sklearn/metrics/_classification.py:1272: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+
+
+learning rate: 5.71429e-05, epochs: 3, batch size: 16
+loss_valid: 1.9468460083007812 softmax(prediction): tensor([[-1.9254, -1.9721, -1.9948,  ..., -1.9638, -1.9250, -1.9251],
+        [-1.9254, -1.9722, -1.9949,  ..., -1.9636, -1.9251, -1.9251],
+        [-1.9254, -1.9723, -1.9950,  ..., -1.9635, -1.9252, -1.9251],
+        ...,
+        [-1.9254, -1.9726, -1.9953,  ..., -1.9633, -1.9254, -1.9250],
+        [-1.9254, -1.9722, -1.9949,  ..., -1.9637, -1.9251, -1.9251],
+        [-1.9254, -1.9720, -1.9947,  ..., -1.9639, -1.9250, -1.9251]])
+              precision    recall  f1-score      support
+joy            0.000000  0.000000  0.000000   151.000000
+fear           0.000000  0.000000  0.000000   171.000000
+shame          0.000000  0.000000  0.000000   167.000000
+disgust        0.138502  1.000000  0.243305   159.000000
+guilt          0.000000  0.000000  0.000000   165.000000
+anger          0.000000  0.000000  0.000000   160.000000
+sadness        0.000000  0.000000  0.000000   175.000000
+accuracy       0.138502  0.138502  0.138502     0.138502
+macro avg      0.019786  0.142857  0.034758  1148.000000
+weighted avg   0.019183  0.138502  0.033698  1148.000000
+--------------------
+/usr/local/lib/python3.7/dist-packages/sklearn/metrics/_classification.py:1272: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+
+
+learning rate: 5.71429e-05, epochs: 3, batch size: 32
+loss_valid: 1.9473925828933716 softmax(prediction): tensor([[-1.9575, -2.0220, -1.9885,  ..., -1.9396, -1.9041, -1.9196],
+        [-1.9575, -2.0220, -1.9885,  ..., -1.9396, -1.9040, -1.9196],
+        [-1.9575, -2.0221, -1.9885,  ..., -1.9396, -1.9040, -1.9195],
+        ...,
+        [-1.9575, -2.0222, -1.9884,  ..., -1.9395, -1.9040, -1.9195],
+        [-1.9575, -2.0220, -1.9885,  ..., -1.9396, -1.9041, -1.9196],
+        [-1.9575, -2.0219, -1.9886,  ..., -1.9396, -1.9041, -1.9196]])
+              precision    recall  f1-score      support
+joy            0.000000  0.000000  0.000000   151.000000
+fear           0.000000  0.000000  0.000000   171.000000
+shame          0.000000  0.000000  0.000000   167.000000
+disgust        0.138938  0.987421  0.243600   159.000000
+guilt          0.000000  0.000000  0.000000   165.000000
+anger          0.055556  0.006250  0.011236   160.000000
+sadness        0.000000  0.000000  0.000000   175.000000
+accuracy       0.137631  0.137631  0.137631     0.137631
+macro avg      0.027785  0.141953  0.036405  1148.000000
+weighted avg   0.026986  0.137631  0.035305  1148.000000
+--------------------
+/usr/local/lib/python3.7/dist-packages/sklearn/metrics/_classification.py:1272: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+
+
+learning rate: 5.71429e-05, epochs: 3, batch size: 64
+loss_valid: 1.9467809200286865 softmax(prediction): tensor([[-1.9247, -1.9645, -2.0154,  ..., -1.9321, -1.9134, -1.9173],
+        [-1.9248, -1.9645, -2.0154,  ..., -1.9320, -1.9133, -1.9172],
+        [-1.9248, -1.9645, -2.0154,  ..., -1.9320, -1.9133, -1.9172],
+        ...,
+        [-1.9250, -1.9645, -2.0154,  ..., -1.9319, -1.9133, -1.9171],
+        [-1.9248, -1.9645, -2.0154,  ..., -1.9320, -1.9133, -1.9172],
+        [-1.9247, -1.9644, -2.0154,  ..., -1.9321, -1.9134, -1.9173]])
+/usr/local/lib/python3.7/dist-packages/sklearn/metrics/_classification.py:1272: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+              precision    recall  f1-score      support
+joy            0.000000  0.000000  0.000000   151.000000
+fear           0.000000  0.000000  0.000000   171.000000
+shame          0.000000  0.000000  0.000000   167.000000
+disgust        0.000000  0.000000  0.000000   159.000000
+guilt          0.000000  0.000000  0.000000   165.000000
+anger          0.139983  1.000000  0.245587   160.000000
+sadness        0.250000  0.005714  0.011173   175.000000
+accuracy       0.140244  0.140244  0.140244     0.140244
+macro avg      0.055712  0.143673  0.036680  1148.000000
+weighted avg   0.057620  0.140244  0.035931  1148.000000
+--------------------
+
+
+learning rate: 4.28572e-05, epochs: 3, batch size: 16
+loss_valid: 1.9466527700424194 softmax(prediction): tensor([[-1.9206, -1.9492, -1.9842,  ..., -1.9780, -1.9403, -1.9337],
+        [-1.9205, -1.9492, -1.9843,  ..., -1.9779, -1.9403, -1.9338],
+        [-1.9204, -1.9492, -1.9843,  ..., -1.9778, -1.9403, -1.9340],
+        ...,
+        [-1.9203, -1.9491, -1.9845,  ..., -1.9776, -1.9404, -1.9342],
+        [-1.9205, -1.9492, -1.9843,  ..., -1.9779, -1.9403, -1.9338],
+        [-1.9207, -1.9493, -1.9842,  ..., -1.9780, -1.9403, -1.9336]])
+              precision    recall  f1-score      support
+joy            0.230769  0.019868  0.036585   151.000000
+fear           0.000000  0.000000  0.000000   171.000000
+shame          0.000000  0.000000  0.000000   167.000000
+disgust        0.139330  0.993711  0.244393   159.000000
+guilt          0.000000  0.000000  0.000000   165.000000
+anger          0.000000  0.000000  0.000000   160.000000
+sadness        1.000000  0.005714  0.011364   175.000000
+accuracy       0.141115  0.141115  0.141115     0.141115
+macro avg      0.195728  0.145613  0.041763  1148.000000
+weighted avg   0.202090  0.141115  0.040393  1148.000000
+--------------------
+/usr/local/lib/python3.7/dist-packages/sklearn/metrics/_classification.py:1272: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+
+
+learning rate: 4.28572e-05, epochs: 3, batch size: 32
+loss_valid: 1.945888876914978 softmax(prediction): tensor([[-1.9611, -1.9764, -1.9654,  ..., -1.9028, -1.9497, -1.9134],
+        [-1.9609, -1.9765, -1.9653,  ..., -1.9028, -1.9499, -1.9134],
+        [-1.9608, -1.9766, -1.9653,  ..., -1.9029, -1.9501, -1.9133],
+        ...,
+        [-1.9605, -1.9768, -1.9653,  ..., -1.9030, -1.9505, -1.9133],
+        [-1.9609, -1.9765, -1.9653,  ..., -1.9028, -1.9499, -1.9134],
+        [-1.9612, -1.9764, -1.9654,  ..., -1.9027, -1.9496, -1.9134]])
+              precision    recall  f1-score      support
+joy            0.000000  0.000000  0.000000   151.000000
+fear           0.000000  0.000000  0.000000   171.000000
+shame          0.000000  0.000000  0.000000   167.000000
+disgust        0.000000  0.000000  0.000000   159.000000
+guilt          0.143728  1.000000  0.251333   165.000000
+anger          0.000000  0.000000  0.000000   160.000000
+sadness        0.000000  0.000000  0.000000   175.000000
+accuracy       0.143728  0.143728  0.143728     0.143728
+macro avg      0.020533  0.142857  0.035905  1148.000000
+weighted avg   0.020658  0.143728  0.036124  1148.000000
+--------------------
+/usr/local/lib/python3.7/dist-packages/sklearn/metrics/_classification.py:1272: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+
+
+learning rate: 4.28572e-05, epochs: 3, batch size: 64
+loss_valid: 1.9681968688964844 softmax(prediction): tensor([[-1.8863, -2.1042, -1.8766,  ..., -1.7975, -1.8169, -2.3619],
+        [-1.8862, -2.1042, -1.8764,  ..., -1.7976, -1.8171, -2.3619],
+        [-1.8861, -2.1042, -1.8763,  ..., -1.7977, -1.8172, -2.3620],
+        ...,
+        [-1.8859, -2.1042, -1.8760,  ..., -1.7979, -1.8175, -2.3621],
+        [-1.8862, -2.1042, -1.8764,  ..., -1.7976, -1.8171, -2.3619],
+        [-1.8864, -2.1042, -1.8766,  ..., -1.7975, -1.8168, -2.3619]])
+              precision    recall  f1-score      support
+joy            0.000000  0.000000  0.000000   151.000000
+fear           0.000000  0.000000  0.000000   171.000000
+shame          0.000000  0.000000  0.000000   167.000000
+disgust        0.000000  0.000000  0.000000   159.000000
+guilt          0.143728  1.000000  0.251333   165.000000
+anger          0.000000  0.000000  0.000000   160.000000
+sadness        0.000000  0.000000  0.000000   175.000000
+accuracy       0.143728  0.143728  0.143728     0.143728
+macro avg      0.020533  0.142857  0.035905  1148.000000
+weighted avg   0.020658  0.143728  0.036124  1148.000000
+--------------------
+/usr/local/lib/python3.7/dist-packages/sklearn/metrics/_classification.py:1272: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+
+
+learning rate: 2.8571500000000002e-05, epochs: 3, batch size: 16
+loss_valid: 1.947670578956604 softmax(prediction): tensor([[-1.9318, -1.9821, -2.0330,  ..., -2.0016, -1.9187, -1.8696],
+        [-1.9319, -1.9821, -2.0331,  ..., -2.0016, -1.9188, -1.8695],
+        [-1.9319, -1.9820, -2.0331,  ..., -2.0015, -1.9188, -1.8695],
+        ...,
+        [-1.9320, -1.9820, -2.0332,  ..., -2.0014, -1.9189, -1.8694],
+        [-1.9319, -1.9821, -2.0330,  ..., -2.0016, -1.9188, -1.8695],
+        [-1.9318, -1.9821, -2.0330,  ..., -2.0017, -1.9187, -1.8696]])
+              precision    recall  f1-score      support
+joy            0.000000  0.000000  0.000000   151.000000
+fear           0.000000  0.000000  0.000000   171.000000
+shame          0.000000  0.000000  0.000000   167.000000
+disgust        0.000000  0.000000  0.000000   159.000000
+guilt          0.000000  0.000000  0.000000   165.000000
+anger          0.000000  0.000000  0.000000   160.000000
+sadness        0.152439  1.000000  0.264550   175.000000
+accuracy       0.152439  0.152439  0.152439     0.152439
+macro avg      0.021777  0.142857  0.037793  1148.000000
+weighted avg   0.023238  0.152439  0.040328  1148.000000
+--------------------
+/usr/local/lib/python3.7/dist-packages/sklearn/metrics/_classification.py:1272: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+
+
+learning rate: 2.8571500000000002e-05, epochs: 3, batch size: 32
+loss_valid: 1.967186689376831 softmax(prediction): tensor([[-1.8080, -1.9476, -2.0689,  ..., -2.1367, -2.3457, -1.7249],
+        [-1.8079, -1.9475, -2.0690,  ..., -2.1368, -2.3456, -1.7250],
+        [-1.8077, -1.9473, -2.0690,  ..., -2.1368, -2.3455, -1.7251],
+        ...,
+        [-1.8074, -1.9471, -2.0691,  ..., -2.1370, -2.3453, -1.7253],
+        [-1.8079, -1.9475, -2.0689,  ..., -2.1368, -2.3456, -1.7250],
+        [-1.8081, -1.9477, -2.0689,  ..., -2.1366, -2.3458, -1.7249]])
+              precision    recall  f1-score      support
+joy            0.000000  0.000000  0.000000   151.000000
+fear           0.000000  0.000000  0.000000   171.000000
+shame          0.000000  0.000000  0.000000   167.000000
+disgust        0.000000  0.000000  0.000000   159.000000
+guilt          0.000000  0.000000  0.000000   165.000000
+anger          0.000000  0.000000  0.000000   160.000000
+sadness        0.152439  1.000000  0.264550   175.000000
+accuracy       0.152439  0.152439  0.152439     0.152439
+macro avg      0.021777  0.142857  0.037793  1148.000000
+weighted avg   0.023238  0.152439  0.040328  1148.000000
+--------------------
+/usr/local/lib/python3.7/dist-packages/sklearn/metrics/_classification.py:1272: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+
+
+learning rate: 2.8571500000000002e-05, epochs: 3, batch size: 64
+loss_valid: 1.9611270427703857 softmax(prediction): tensor([[-2.1863, -2.0855, -2.2001,  ..., -1.8550, -1.9150, -1.8050],
+        [-2.1863, -2.0855, -2.2002,  ..., -1.8548, -1.9150, -1.8049],
+        [-2.1862, -2.0855, -2.2003,  ..., -1.8547, -1.9150, -1.8049],
+        ...,
+        [-2.1862, -2.0856, -2.2005,  ..., -1.8544, -1.9150, -1.8048],
+        [-2.1863, -2.0855, -2.2002,  ..., -1.8548, -1.9150, -1.8049],
+        [-2.1863, -2.0854, -2.2001,  ..., -1.8551, -1.9150, -1.8050]])
+              precision    recall  f1-score      support
+joy            0.000000  0.000000  0.000000   151.000000
+fear           0.000000  0.000000  0.000000   171.000000
+shame          0.000000  0.000000  0.000000   167.000000
+disgust        0.138502  1.000000  0.243305   159.000000
+guilt          0.000000  0.000000  0.000000   165.000000
+anger          0.000000  0.000000  0.000000   160.000000
+sadness        0.000000  0.000000  0.000000   175.000000
+accuracy       0.138502  0.138502  0.138502     0.138502
+macro avg      0.019786  0.142857  0.034758  1148.000000
+weighted avg   0.019183  0.138502  0.033698  1148.000000
+--------------------
+/usr/local/lib/python3.7/dist-packages/sklearn/metrics/_classification.py:1272: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+
+
+learning rate: 1.4285799999999991e-05, epochs: 3, batch size: 16
+loss_valid: 1.9830721616744995 softmax(prediction): tensor([[-1.7168, -2.2943, -1.7498,  ..., -2.4419, -1.9705, -1.6844],
+        [-1.7168, -2.2943, -1.7499,  ..., -2.4418, -1.9705, -1.6843],
+        [-1.7167, -2.2942, -1.7500,  ..., -2.4416, -1.9705, -1.6843],
+        ...,
+        [-1.7167, -2.2941, -1.7502,  ..., -2.4413, -1.9705, -1.6842],
+        [-1.7168, -2.2943, -1.7499,  ..., -2.4418, -1.9705, -1.6843],
+        [-1.7168, -2.2944, -1.7498,  ..., -2.4420, -1.9705, -1.6844]])
+              precision    recall  f1-score      support
+joy            0.000000  0.000000  0.000000   151.000000
+fear           0.000000  0.000000  0.000000   171.000000
+shame          0.000000  0.000000  0.000000   167.000000
+disgust        0.000000  0.000000  0.000000   159.000000
+guilt          0.000000  0.000000  0.000000   165.000000
+anger          0.000000  0.000000  0.000000   160.000000
+sadness        0.152439  1.000000  0.264550   175.000000
+accuracy       0.152439  0.152439  0.152439     0.152439
+macro avg      0.021777  0.142857  0.037793  1148.000000
+weighted avg   0.023238  0.152439  0.040328  1148.000000
+--------------------
+/usr/local/lib/python3.7/dist-packages/sklearn/metrics/_classification.py:1272: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+
+
+learning rate: 1.4285799999999991e-05, epochs: 3, batch size: 32
+loss_valid: 2.099813222885132 softmax(prediction): tensor([[-1.5389, -1.6503, -3.5776,  ..., -2.2656, -1.8675, -1.7727],
+        [-1.5389, -1.6503, -3.5776,  ..., -2.2656, -1.8675, -1.7728],
+        [-1.5388, -1.6503, -3.5776,  ..., -2.2655, -1.8674, -1.7729],
+        ...,
+        [-1.5388, -1.6503, -3.5776,  ..., -2.2653, -1.8673, -1.7731],
+        [-1.5389, -1.6503, -3.5776,  ..., -2.2656, -1.8675, -1.7728],
+        [-1.5389, -1.6503, -3.5776,  ..., -2.2657, -1.8675, -1.7726]])
+              precision    recall  f1-score      support
+joy            0.131533  1.000000  0.232487   151.000000
+fear           0.000000  0.000000  0.000000   171.000000
+shame          0.000000  0.000000  0.000000   167.000000
+disgust        0.000000  0.000000  0.000000   159.000000
+guilt          0.000000  0.000000  0.000000   165.000000
+anger          0.000000  0.000000  0.000000   160.000000
+sadness        0.000000  0.000000  0.000000   175.000000
+accuracy       0.131533  0.131533  0.131533     0.131533
+macro avg      0.018790  0.142857  0.033212  1148.000000
+weighted avg   0.017301  0.131533  0.030580  1148.000000
+--------------------
+/usr/local/lib/python3.7/dist-packages/sklearn/metrics/_classification.py:1272: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+
+
+learning rate: 1.4285799999999991e-05, epochs: 3, batch size: 64
+loss_valid: 1.9764045476913452 softmax(prediction): tensor([[-1.9331, -1.4559, -2.0889,  ..., -1.9751, -2.2955, -1.8704],
+        [-1.9331, -1.4557, -2.0889,  ..., -1.9751, -2.2955, -1.8706],
+        [-1.9331, -1.4556, -2.0889,  ..., -1.9752, -2.2955, -1.8708],
+        ...,
+        [-1.9331, -1.4554, -2.0889,  ..., -1.9753, -2.2955, -1.8712],
+        [-1.9331, -1.4557, -2.0889,  ..., -1.9751, -2.2955, -1.8706],
+        [-1.9331, -1.4559, -2.0889,  ..., -1.9750, -2.2956, -1.8703]])
+              precision    recall  f1-score      support
+joy            0.000000  0.000000  0.000000   151.000000
+fear           0.148955  1.000000  0.259287   171.000000
+shame          0.000000  0.000000  0.000000   167.000000
+disgust        0.000000  0.000000  0.000000   159.000000
+guilt          0.000000  0.000000  0.000000   165.000000
+anger          0.000000  0.000000  0.000000   160.000000
+sadness        0.000000  0.000000  0.000000   175.000000
+accuracy       0.148955  0.148955  0.148955     0.148955
+macro avg      0.021279  0.142857  0.037041  1148.000000
+weighted avg   0.022188  0.148955  0.038622  1148.000000
+--------------------
+/usr/local/lib/python3.7/dist-packages/sklearn/metrics/_classification.py:1272: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+
+
+learning rate: 1e-10, epochs: 3, batch size: 16
+loss_valid: 2.5673091411590576 softmax(prediction): tensor([[-0.5010, -2.6095, -3.0886,  ..., -2.0270, -3.5439, -3.5170],
+        [-0.5009, -2.6096, -3.0885,  ..., -2.0272, -3.5439, -3.5169],
+        [-0.5009, -2.6097, -3.0884,  ..., -2.0273, -3.5440, -3.5169],
+        ...,
+        [-0.5008, -2.6099, -3.0883,  ..., -2.0276, -3.5440, -3.5168],
+        [-0.5009, -2.6096, -3.0885,  ..., -2.0272, -3.5439, -3.5169],
+        [-0.5010, -2.6094, -3.0886,  ..., -2.0269, -3.5439, -3.5170]])
+              precision    recall  f1-score      support
+joy            0.131533  1.000000  0.232487   151.000000
+fear           0.000000  0.000000  0.000000   171.000000
+shame          0.000000  0.000000  0.000000   167.000000
+disgust        0.000000  0.000000  0.000000   159.000000
+guilt          0.000000  0.000000  0.000000   165.000000
+anger          0.000000  0.000000  0.000000   160.000000
+sadness        0.000000  0.000000  0.000000   175.000000
+accuracy       0.131533  0.131533  0.131533     0.131533
+macro avg      0.018790  0.142857  0.033212  1148.000000
+weighted avg   0.017301  0.131533  0.030580  1148.000000
+--------------------
+/usr/local/lib/python3.7/dist-packages/sklearn/metrics/_classification.py:1272: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+
+
+learning rate: 1e-10, epochs: 3, batch size: 32
+loss_valid: 4.105949878692627 softmax(prediction): tensor([[-2.9168, -4.8079, -1.9470,  ..., -0.2372, -6.4068, -6.5194],
+        [-2.9169, -4.8077, -1.9471,  ..., -0.2372, -6.4070, -6.5196],
+        [-2.9170, -4.8076, -1.9471,  ..., -0.2371, -6.4073, -6.5198],
+        ...,
+        [-2.9173, -4.8073, -1.9473,  ..., -0.2371, -6.4077, -6.5202],
+        [-2.9169, -4.8077, -1.9471,  ..., -0.2372, -6.4070, -6.5196],
+        [-2.9167, -4.8080, -1.9469,  ..., -0.2372, -6.4066, -6.5193]])
+              precision    recall  f1-score      support
+joy            0.000000  0.000000  0.000000   151.000000
+fear           0.000000  0.000000  0.000000   171.000000
+shame          0.000000  0.000000  0.000000   167.000000
+disgust        0.000000  0.000000  0.000000   159.000000
+guilt          0.143728  1.000000  0.251333   165.000000
+anger          0.000000  0.000000  0.000000   160.000000
+sadness        0.000000  0.000000  0.000000   175.000000
+accuracy       0.143728  0.143728  0.143728     0.143728
+macro avg      0.020533  0.142857  0.035905  1148.000000
+weighted avg   0.020658  0.143728  0.036124  1148.000000
+--------------------
+/usr/local/lib/python3.7/dist-packages/sklearn/metrics/_classification.py:1272: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+
+
+learning rate: 1e-10, epochs: 3, batch size: 64
+loss_valid: 3.886164903640747 softmax(prediction): tensor([[-3.1999, -2.5355, -6.5639,  ..., -4.2862, -6.0827, -4.2404],
+        [-3.1996, -2.5352, -6.5638,  ..., -4.2861, -6.0825, -4.2403],
+        [-3.1994, -2.5350, -6.5636,  ..., -4.2860, -6.0824, -4.2402],
+        ...,
+        [-3.1989, -2.5347, -6.5633,  ..., -4.2859, -6.0822, -4.2401],
+        [-3.1997, -2.5353, -6.5638,  ..., -4.2861, -6.0826, -4.2403],
+        [-3.2001, -2.5356, -6.5640,  ..., -4.2862, -6.0828, -4.2404]])
+              precision    recall  f1-score      support
+joy            0.000000  0.000000  0.000000   151.000000
+fear           0.000000  0.000000  0.000000   171.000000
+shame          0.000000  0.000000  0.000000   167.000000
+disgust        0.138502  1.000000  0.243305   159.000000
+guilt          0.000000  0.000000  0.000000   165.000000
+anger          0.000000  0.000000  0.000000   160.000000
+sadness        0.000000  0.000000  0.000000   175.000000
+accuracy       0.138502  0.138502  0.138502     0.138502
+macro avg      0.019786  0.142857  0.034758  1148.000000
+weighted avg   0.019183  0.138502  0.033698  1148.000000
+--------------------
+/usr/local/lib/python3.7/dist-packages/sklearn/metrics/_classification.py:1272: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+
+
+learning rate: 0.0001, epochs: 4, batch size: 16
+loss_valid: 1.9470059871673584 softmax(prediction): tensor([[-1.9386, -1.9749, -2.0213,  ..., -1.9519, -1.9198, -1.9105],
+        [-1.9386, -1.9749, -2.0213,  ..., -1.9520, -1.9197, -1.9105],
+        [-1.9385, -1.9749, -2.0213,  ..., -1.9520, -1.9196, -1.9105],
+        ...,
+        [-1.9384, -1.9749, -2.0213,  ..., -1.9522, -1.9195, -1.9105],
+        [-1.9386, -1.9749, -2.0213,  ..., -1.9519, -1.9197, -1.9105],
+        [-1.9387, -1.9749, -2.0213,  ..., -1.9518, -1.9198, -1.9105]])
+              precision    recall  f1-score      support
+joy            0.000000  0.000000  0.000000   151.000000
+fear           0.000000  0.000000  0.000000   171.000000
+shame          0.000000  0.000000  0.000000   167.000000
+disgust        0.139842  1.000000  0.245370   159.000000
+guilt          0.000000  0.000000  0.000000   165.000000
+anger          0.000000  0.000000  0.000000   160.000000
+sadness        0.090909  0.005714  0.010753   175.000000
+accuracy       0.139373  0.139373  0.139373     0.139373
+macro avg      0.032964  0.143673  0.036589  1148.000000
+weighted avg   0.033226  0.139373  0.035623  1148.000000
+--------------------
+/usr/local/lib/python3.7/dist-packages/sklearn/metrics/_classification.py:1272: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+
+
+learning rate: 0.0001, epochs: 4, batch size: 32
+loss_valid: 1.9468464851379395 softmax(prediction): tensor([[-1.9341, -1.9754, -2.0113,  ..., -1.9496, -1.9261, -1.9150],
+        [-1.9342, -1.9754, -2.0111,  ..., -1.9497, -1.9260, -1.9151],
+        [-1.9343, -1.9753, -2.0109,  ..., -1.9497, -1.9260, -1.9152],
+        ...,
+        [-1.9344, -1.9753, -2.0105,  ..., -1.9498, -1.9259, -1.9153],
+        [-1.9342, -1.9754, -2.0111,  ..., -1.9496, -1.9260, -1.9151],
+        [-1.9340, -1.9754, -2.0114,  ..., -1.9496, -1.9261, -1.9150]])
+              precision    recall  f1-score      support
+joy            0.000000  0.000000  0.000000   151.000000
+fear           0.000000  0.000000  0.000000   171.000000
+shame          0.000000  0.000000  0.000000   167.000000
+disgust        0.139453  0.993711  0.244582   159.000000
+guilt          0.000000  0.000000  0.000000   165.000000
+anger          0.000000  0.000000  0.000000   160.000000
+sadness        0.000000  0.000000  0.000000   175.000000
+accuracy       0.137631  0.137631  0.137631     0.137631
+macro avg      0.019922  0.141959  0.034940  1148.000000
+weighted avg   0.019314  0.137631  0.033875  1148.000000
+--------------------
+/usr/local/lib/python3.7/dist-packages/sklearn/metrics/_classification.py:1272: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+
+
+learning rate: 0.0001, epochs: 4, batch size: 64
+loss_valid: 1.9470280408859253 softmax(prediction): tensor([[-1.9445, -1.9760, -2.0265,  ..., -1.9539, -1.9198, -1.9040],
+        [-1.9445, -1.9762, -2.0264,  ..., -1.9537, -1.9196, -1.9041],
+        [-1.9445, -1.9763, -2.0263,  ..., -1.9536, -1.9195, -1.9042],
+        ...,
+        [-1.9446, -1.9766, -2.0261,  ..., -1.9534, -1.9192, -1.9044],
+        [-1.9445, -1.9761, -2.0264,  ..., -1.9537, -1.9196, -1.9041],
+        [-1.9445, -1.9759, -2.0266,  ..., -1.9539, -1.9199, -1.9040]])
+              precision    recall  f1-score      support
+joy            0.000000  0.000000  0.000000   151.000000
+fear           0.000000  0.000000  0.000000   171.000000
+shame          0.000000  0.000000  0.000000   167.000000
+disgust        0.139576  0.993711  0.244771   159.000000
+guilt          0.000000  0.000000  0.000000   165.000000
+anger          0.000000  0.000000  0.000000   160.000000
+sadness        0.125000  0.011429  0.020942   175.000000
+accuracy       0.139373  0.139373  0.139373     0.139373
+macro avg      0.037797  0.143591  0.037959  1148.000000
+weighted avg   0.038386  0.139373  0.037094  1148.000000
+--------------------
+/usr/local/lib/python3.7/dist-packages/sklearn/metrics/_classification.py:1272: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+
+
+learning rate: 8.571430000000001e-05, epochs: 4, batch size: 16
+loss_valid: 1.9469151496887207 softmax(prediction): tensor([[-1.9442, -1.9778, -2.0153,  ..., -1.9558, -1.9198, -1.9072],
+        [-1.9440, -1.9779, -2.0153,  ..., -1.9557, -1.9198, -1.9075],
+        [-1.9438, -1.9780, -2.0152,  ..., -1.9555, -1.9197, -1.9077],
+        ...,
+        [-1.9435, -1.9782, -2.0152,  ..., -1.9552, -1.9196, -1.9081],
+        [-1.9440, -1.9779, -2.0153,  ..., -1.9557, -1.9198, -1.9074],
+        [-1.9443, -1.9777, -2.0153,  ..., -1.9559, -1.9199, -1.9071]])
+              precision    recall  f1-score      support
+joy            0.000000  0.000000  0.000000   151.000000
+fear           0.000000  0.000000  0.000000   171.000000
+shame          0.000000  0.000000  0.000000   167.000000
+disgust        0.139842  1.000000  0.245370   159.000000
+guilt          0.000000  0.000000  0.000000   165.000000
+anger          0.000000  0.000000  0.000000   160.000000
+sadness        0.363636  0.022857  0.043011   175.000000
+accuracy       0.141986  0.141986  0.141986     0.141986
+macro avg      0.071925  0.146122  0.041197  1148.000000
+weighted avg   0.074801  0.141986  0.040541  1148.000000
+--------------------
+/usr/local/lib/python3.7/dist-packages/sklearn/metrics/_classification.py:1272: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+
+
+learning rate: 8.571430000000001e-05, epochs: 4, batch size: 32
+loss_valid: 1.9470244646072388 softmax(prediction): tensor([[-1.9326, -1.9801, -2.0145,  ..., -1.9546, -1.9180, -1.9136],
+        [-1.9327, -1.9801, -2.0142,  ..., -1.9545, -1.9181, -1.9136],
+        [-1.9328, -1.9801, -2.0140,  ..., -1.9545, -1.9182, -1.9136],
+        ...,
+        [-1.9329, -1.9802, -2.0137,  ..., -1.9544, -1.9184, -1.9136],
+        [-1.9327, -1.9801, -2.0143,  ..., -1.9546, -1.9181, -1.9136],
+        [-1.9326, -1.9801, -2.0146,  ..., -1.9546, -1.9179, -1.9136]])
+              precision    recall  f1-score      support
+joy            0.000000  0.000000  0.000000   151.000000
+fear           0.000000  0.000000  0.000000   171.000000
+shame          0.000000  0.000000  0.000000   167.000000
+disgust        0.138938  0.987421  0.243600   159.000000
+guilt          0.000000  0.000000  0.000000   165.000000
+anger          0.000000  0.000000  0.000000   160.000000
+sadness        0.166667  0.017143  0.031088   175.000000
+accuracy       0.139373  0.139373  0.139373     0.139373
+macro avg      0.043658  0.143509  0.039241  1148.000000
+weighted avg   0.044650  0.139373  0.038478  1148.000000
+--------------------
+/usr/local/lib/python3.7/dist-packages/sklearn/metrics/_classification.py:1272: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+
+
+learning rate: 8.571430000000001e-05, epochs: 4, batch size: 64
+loss_valid: 1.947313666343689 softmax(prediction): tensor([[-1.9401, -1.9832, -2.0282,  ..., -1.9582, -1.9148, -1.9063],
+        [-1.9403, -1.9832, -2.0281,  ..., -1.9579, -1.9149, -1.9065],
+        [-1.9404, -1.9831, -2.0280,  ..., -1.9576, -1.9150, -1.9067],
+        ...,
+        [-1.9407, -1.9831, -2.0278,  ..., -1.9571, -1.9152, -1.9070],
+        [-1.9402, -1.9832, -2.0281,  ..., -1.9579, -1.9149, -1.9065],
+        [-1.9400, -1.9833, -2.0282,  ..., -1.9584, -1.9147, -1.9062]])
+              precision    recall  f1-score      support
+joy            0.000000  0.000000  0.000000   151.000000
+fear           0.000000  0.000000  0.000000   171.000000
+shame          0.000000  0.000000  0.000000   167.000000
+disgust        0.138475  0.993711  0.243077   159.000000
+guilt          0.000000  0.000000  0.000000   165.000000
+anger          0.000000  0.000000  0.000000   160.000000
+sadness        0.142857  0.005714  0.010989   175.000000
+accuracy       0.138502  0.138502  0.138502     0.138502
+macro avg      0.040190  0.142775  0.036295  1148.000000
+weighted avg   0.040956  0.138502  0.035342  1148.000000
+--------------------
+/usr/local/lib/python3.7/dist-packages/sklearn/metrics/_classification.py:1272: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+
+
+learning rate: 7.14286e-05, epochs: 4, batch size: 16
+loss_valid: 1.946717381477356 softmax(prediction): tensor([[-1.9385, -1.9739, -2.0104,  ..., -1.9452, -1.9247, -1.9134],
+        [-1.9386, -1.9739, -2.0103,  ..., -1.9453, -1.9248, -1.9133],
+        [-1.9386, -1.9738, -2.0102,  ..., -1.9454, -1.9249, -1.9132],
+        ...,
+        [-1.9386, -1.9738, -2.0100,  ..., -1.9456, -1.9250, -1.9131],
+        [-1.9386, -1.9739, -2.0103,  ..., -1.9453, -1.9248, -1.9133],
+        [-1.9385, -1.9739, -2.0105,  ..., -1.9451, -1.9247, -1.9135]])
+              precision    recall  f1-score      support
+joy            0.000000  0.000000  0.000000   151.000000
+fear           0.000000  0.000000  0.000000   171.000000
+shame          0.000000  0.000000  0.000000   167.000000
+disgust        0.000000  0.000000  0.000000   159.000000
+guilt          0.000000  0.000000  0.000000   165.000000
+anger          0.000000  0.000000  0.000000   160.000000
+sadness        0.152705  1.000000  0.264951   175.000000
+accuracy       0.152439  0.152439  0.152439     0.152439
+macro avg      0.021815  0.142857  0.037850  1148.000000
+weighted avg   0.023278  0.152439  0.040389  1148.000000
+--------------------
+/usr/local/lib/python3.7/dist-packages/sklearn/metrics/_classification.py:1272: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+
+
+learning rate: 7.14286e-05, epochs: 4, batch size: 32
+loss_valid: 1.9465817213058472 softmax(prediction): tensor([[-1.9365, -1.9720, -2.0002,  ..., -1.9522, -1.9258, -1.9153],
+        [-1.9366, -1.9719, -2.0002,  ..., -1.9521, -1.9257, -1.9154],
+        [-1.9367, -1.9719, -2.0003,  ..., -1.9520, -1.9257, -1.9155],
+        ...,
+        [-1.9369, -1.9717, -2.0003,  ..., -1.9519, -1.9255, -1.9156],
+        [-1.9366, -1.9720, -2.0002,  ..., -1.9521, -1.9257, -1.9154],
+        [-1.9364, -1.9721, -2.0002,  ..., -1.9522, -1.9259, -1.9153]])
+              precision    recall  f1-score      support
+joy            0.000000  0.000000  0.000000   151.000000
+fear           0.000000  0.000000  0.000000   171.000000
+shame          0.000000  0.000000  0.000000   167.000000
+disgust        0.100000  0.006289  0.011834   159.000000
+guilt          0.000000  0.000000  0.000000   165.000000
+anger          0.000000  0.000000  0.000000   160.000000
+sadness        0.152155  0.988571  0.263720   175.000000
+accuracy       0.151568  0.151568  0.151568     0.151568
+macro avg      0.036022  0.142123  0.039365  1148.000000
+weighted avg   0.037045  0.151568  0.041840  1148.000000
+--------------------
+/usr/local/lib/python3.7/dist-packages/sklearn/metrics/_classification.py:1272: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+
+
+learning rate: 7.14286e-05, epochs: 4, batch size: 64
+loss_valid: 1.9468028545379639 softmax(prediction): tensor([[-1.9306, -1.9761, -2.0043,  ..., -1.9445, -1.9263, -1.9194],
+        [-1.9304, -1.9762, -2.0043,  ..., -1.9446, -1.9264, -1.9194],
+        [-1.9302, -1.9762, -2.0042,  ..., -1.9448, -1.9265, -1.9194],
+        ...,
+        [-1.9299, -1.9763, -2.0042,  ..., -1.9450, -1.9267, -1.9194],
+        [-1.9304, -1.9762, -2.0043,  ..., -1.9446, -1.9264, -1.9194],
+        [-1.9307, -1.9761, -2.0043,  ..., -1.9444, -1.9262, -1.9194]])
+/usr/local/lib/python3.7/dist-packages/sklearn/metrics/_classification.py:1272: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+              precision    recall  f1-score      support
+joy            0.000000  0.000000  0.000000   151.000000
+fear           0.000000  0.000000  0.000000   171.000000
+shame          0.000000  0.000000  0.000000   167.000000
+disgust        0.000000  0.000000  0.000000   159.000000
+guilt          0.000000  0.000000  0.000000   165.000000
+anger          0.000000  0.000000  0.000000   160.000000
+sadness        0.150877  0.982857  0.261597   175.000000
+accuracy       0.149826  0.149826  0.149826     0.149826
+macro avg      0.021554  0.140408  0.037371  1148.000000
+weighted avg   0.023000  0.149826  0.039878  1148.000000
+--------------------
+
+
+learning rate: 5.71429e-05, epochs: 4, batch size: 16
+loss_valid: 1.946581244468689 softmax(prediction): tensor([[-1.9320, -1.9696, -1.9978,  ..., -1.9411, -1.9351, -1.9228],
+        [-1.9320, -1.9697, -1.9979,  ..., -1.9413, -1.9350, -1.9227],
+        [-1.9320, -1.9697, -1.9979,  ..., -1.9414, -1.9350, -1.9226],
+        ...,
+        [-1.9320, -1.9698, -1.9980,  ..., -1.9416, -1.9349, -1.9225],
+        [-1.9320, -1.9696, -1.9979,  ..., -1.9413, -1.9350, -1.9227],
+        [-1.9320, -1.9696, -1.9978,  ..., -1.9411, -1.9351, -1.9229]])
+              precision    recall  f1-score      support
+joy            0.000000  0.000000  0.000000   151.000000
+fear           0.000000  0.000000  0.000000   171.000000
+shame          0.000000  0.000000  0.000000   167.000000
+disgust        0.000000  0.000000  0.000000   159.000000
+guilt          0.000000  0.000000  0.000000   165.000000
+anger          0.000000  0.000000  0.000000   160.000000
+sadness        0.153034  0.994286  0.265244   175.000000
+accuracy       0.151568  0.151568  0.151568     0.151568
+macro avg      0.021862  0.142041  0.037892  1148.000000
+weighted avg   0.023328  0.151568  0.040434  1148.000000
+--------------------
+/usr/local/lib/python3.7/dist-packages/sklearn/metrics/_classification.py:1272: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+
+
+learning rate: 5.71429e-05, epochs: 4, batch size: 32
+loss_valid: 1.946567177772522 softmax(prediction): tensor([[-1.9382, -1.9654, -2.0058,  ..., -1.9476, -1.9299, -1.9153],
+        [-1.9381, -1.9654, -2.0057,  ..., -1.9477, -1.9301, -1.9154],
+        [-1.9380, -1.9654, -2.0056,  ..., -1.9477, -1.9302, -1.9155],
+        ...,
+        [-1.9378, -1.9654, -2.0054,  ..., -1.9478, -1.9304, -1.9157],
+        [-1.9381, -1.9654, -2.0057,  ..., -1.9476, -1.9301, -1.9154],
+        [-1.9383, -1.9654, -2.0059,  ..., -1.9476, -1.9299, -1.9153]])
+              precision    recall  f1-score      support
+joy            0.000000  0.000000  0.000000   151.000000
+fear           0.000000  0.000000  0.000000   171.000000
+shame          0.000000  0.000000  0.000000   167.000000
+disgust        0.041667  0.006289  0.010929   159.000000
+guilt          0.000000  0.000000  0.000000   165.000000
+anger          0.000000  0.000000  0.000000   160.000000
+sadness        0.151246  0.971429  0.261740   175.000000
+accuracy       0.148955  0.148955  0.148955     0.148955
+macro avg      0.027559  0.139674  0.038953  1148.000000
+weighted avg   0.028827  0.148955  0.041413  1148.000000
+--------------------
+/usr/local/lib/python3.7/dist-packages/sklearn/metrics/_classification.py:1272: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+
+
+learning rate: 5.71429e-05, epochs: 4, batch size: 64
+loss_valid: 1.946532964706421 softmax(prediction): tensor([[-1.9327, -1.9682, -1.9958,  ..., -1.9456, -1.9307, -1.9234],
+        [-1.9327, -1.9682, -1.9958,  ..., -1.9455, -1.9308, -1.9234],
+        [-1.9327, -1.9681, -1.9958,  ..., -1.9454, -1.9309, -1.9234],
+        ...,
+        [-1.9328, -1.9680, -1.9958,  ..., -1.9452, -1.9310, -1.9235],
+        [-1.9327, -1.9682, -1.9958,  ..., -1.9455, -1.9308, -1.9234],
+        [-1.9327, -1.9683, -1.9957,  ..., -1.9457, -1.9307, -1.9234]])
+              precision    recall  f1-score      support
+joy            0.000000  0.000000  0.000000   151.000000
+fear           0.000000  0.000000  0.000000   171.000000
+shame          0.000000  0.000000  0.000000   167.000000
+disgust        0.000000  0.000000  0.000000   159.000000
+guilt          0.000000  0.000000  0.000000   165.000000
+anger          0.000000  0.000000  0.000000   160.000000
+sadness        0.152098  0.994286  0.263836   175.000000
+accuracy       0.151568  0.151568  0.151568     0.151568
+macro avg      0.021728  0.142041  0.037691  1148.000000
+weighted avg   0.023186  0.151568  0.040219  1148.000000
+--------------------
+/usr/local/lib/python3.7/dist-packages/sklearn/metrics/_classification.py:1272: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+
+
+learning rate: 4.28572e-05, epochs: 4, batch size: 16
+loss_valid: 1.9463341236114502 softmax(prediction): tensor([[-1.9297, -1.9653, -1.9870,  ..., -1.9446, -1.9390, -1.9185],
+        [-1.9297, -1.9655, -1.9871,  ..., -1.9445, -1.9389, -1.9183],
+        [-1.9297, -1.9657, -1.9873,  ..., -1.9444, -1.9389, -1.9182],
+        ...,
+        [-1.9297, -1.9660, -1.9875,  ..., -1.9442, -1.9388, -1.9179],
+        [-1.9297, -1.9655, -1.9871,  ..., -1.9445, -1.9389, -1.9183],
+        [-1.9297, -1.9652, -1.9869,  ..., -1.9447, -1.9390, -1.9186]])
+              precision    recall  f1-score     support
+joy            0.333333  0.006623  0.012987   151.00000
+fear           0.000000  0.000000  0.000000   171.00000
+shame          0.000000  0.000000  0.000000   167.00000
+disgust        0.000000  0.000000  0.000000   159.00000
+guilt          0.000000  0.000000  0.000000   165.00000
+anger          0.000000  0.000000  0.000000   160.00000
+sadness        0.152838  1.000000  0.265152   175.00000
+accuracy       0.153310  0.153310  0.153310     0.15331
+macro avg      0.069453  0.143803  0.039734  1148.00000
+weighted avg   0.067143  0.153310  0.042128  1148.00000
+--------------------
+/usr/local/lib/python3.7/dist-packages/sklearn/metrics/_classification.py:1272: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+
+
+learning rate: 4.28572e-05, epochs: 4, batch size: 32
+loss_valid: 1.9462497234344482 softmax(prediction): tensor([[-1.9346, -1.9541, -1.9658,  ..., -1.9215, -2.0298, -1.8988],
+        [-1.9345, -1.9541, -1.9659,  ..., -1.9216, -2.0299, -1.8989],
+        [-1.9344, -1.9540, -1.9660,  ..., -1.9217, -2.0299, -1.8989],
+        ...,
+        [-1.9343, -1.9540, -1.9662,  ..., -1.9218, -2.0300, -1.8991],
+        [-1.9345, -1.9541, -1.9659,  ..., -1.9215, -2.0299, -1.8989],
+        [-1.9347, -1.9541, -1.9657,  ..., -1.9214, -2.0298, -1.8988]])
+              precision    recall  f1-score      support
+joy            0.000000  0.000000  0.000000   151.000000
+fear           0.000000  0.000000  0.000000   171.000000
+shame          0.000000  0.000000  0.000000   167.000000
+disgust        0.000000  0.000000  0.000000   159.000000
+guilt          0.000000  0.000000  0.000000   165.000000
+anger          0.000000  0.000000  0.000000   160.000000
+sadness        0.152439  1.000000  0.264550   175.000000
+accuracy       0.152439  0.152439  0.152439     0.152439
+macro avg      0.021777  0.142857  0.037793  1148.000000
+weighted avg   0.023238  0.152439  0.040328  1148.000000
+--------------------
+/usr/local/lib/python3.7/dist-packages/sklearn/metrics/_classification.py:1272: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+
+
+learning rate: 4.28572e-05, epochs: 4, batch size: 64
+loss_valid: 1.9469821453094482 softmax(prediction): tensor([[-1.9278, -1.9927, -1.9977,  ..., -1.9233, -1.9323, -1.9291],
+        [-1.9279, -1.9928, -1.9978,  ..., -1.9233, -1.9323, -1.9290],
+        [-1.9280, -1.9928, -1.9978,  ..., -1.9234, -1.9323, -1.9290],
+        ...,
+        [-1.9282, -1.9929, -1.9978,  ..., -1.9235, -1.9322, -1.9288],
+        [-1.9279, -1.9928, -1.9977,  ..., -1.9233, -1.9323, -1.9290],
+        [-1.9277, -1.9927, -1.9977,  ..., -1.9232, -1.9323, -1.9291]])
+              precision    recall  f1-score      support
+joy            0.000000  0.000000  0.000000   151.000000
+fear           0.000000  0.000000  0.000000   171.000000
+shame          0.000000  0.000000  0.000000   167.000000
+disgust        0.139842  1.000000  0.245370   159.000000
+guilt          0.000000  0.000000  0.000000   165.000000
+anger          0.000000  0.000000  0.000000   160.000000
+sadness        0.000000  0.000000  0.000000   175.000000
+accuracy       0.138502  0.138502  0.138502     0.138502
+macro avg      0.019977  0.142857  0.035053  1148.000000
+weighted avg   0.019368  0.138502  0.033984  1148.000000
+--------------------
+/usr/local/lib/python3.7/dist-packages/sklearn/metrics/_classification.py:1272: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+
+
+learning rate: 2.8571500000000002e-05, epochs: 4, batch size: 16
+loss_valid: 1.9456219673156738 softmax(prediction): tensor([[-2.0681, -1.9504, -1.9334,  ..., -1.9058, -1.9418, -1.9114],
+        [-2.0680, -1.9504, -1.9336,  ..., -1.9059, -1.9418, -1.9112],
+        [-2.0679, -1.9504, -1.9337,  ..., -1.9060, -1.9419, -1.9111],
+        ...,
+        [-2.0676, -1.9503, -1.9339,  ..., -1.9061, -1.9420, -1.9108],
+        [-2.0680, -1.9504, -1.9336,  ..., -1.9059, -1.9418, -1.9113],
+        [-2.0682, -1.9504, -1.9333,  ..., -1.9058, -1.9417, -1.9115]])
+              precision    recall  f1-score      support
+joy            0.000000  0.000000  0.000000   151.000000
+fear           0.000000  0.000000  0.000000   171.000000
+shame          0.000000  0.000000  0.000000   167.000000
+disgust        0.000000  0.000000  0.000000   159.000000
+guilt          0.143866  0.987879  0.251156   165.000000
+anger          0.000000  0.000000  0.000000   160.000000
+sadness        0.066667  0.005714  0.010526   175.000000
+accuracy       0.142857  0.142857  0.142857     0.142857
+macro avg      0.030076  0.141942  0.037383  1148.000000
+weighted avg   0.030840  0.142857  0.037703  1148.000000
+--------------------
+/usr/local/lib/python3.7/dist-packages/sklearn/metrics/_classification.py:1272: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+
+
+learning rate: 2.8571500000000002e-05, epochs: 4, batch size: 32
+loss_valid: 1.9536190032958984 softmax(prediction): tensor([[-1.8761, -2.0386, -1.9849,  ..., -2.1817, -1.8344, -1.8264],
+        [-1.8760, -2.0385, -1.9849,  ..., -2.1818, -1.8344, -1.8265],
+        [-1.8760, -2.0385, -1.9849,  ..., -2.1819, -1.8343, -1.8265],
+        ...,
+        [-1.8758, -2.0385, -1.9849,  ..., -2.1820, -1.8342, -1.8266],
+        [-1.8761, -2.0385, -1.9849,  ..., -2.1818, -1.8344, -1.8265],
+        [-1.8762, -2.0386, -1.9849,  ..., -2.1817, -1.8345, -1.8264]])
+              precision    recall  f1-score      support
+joy            0.000000  0.000000  0.000000   151.000000
+fear           0.000000  0.000000  0.000000   171.000000
+shame          0.000000  0.000000  0.000000   167.000000
+disgust        0.000000  0.000000  0.000000   159.000000
+guilt          0.000000  0.000000  0.000000   165.000000
+anger          0.000000  0.000000  0.000000   160.000000
+sadness        0.152439  1.000000  0.264550   175.000000
+accuracy       0.152439  0.152439  0.152439     0.152439
+macro avg      0.021777  0.142857  0.037793  1148.000000
+weighted avg   0.023238  0.152439  0.040328  1148.000000
+--------------------
+/usr/local/lib/python3.7/dist-packages/sklearn/metrics/_classification.py:1272: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+
+
+learning rate: 2.8571500000000002e-05, epochs: 4, batch size: 64
+loss_valid: 1.9586530923843384 softmax(prediction): tensor([[-1.8436, -2.2885, -1.9463,  ..., -1.9818, -1.8694, -1.8853],
+        [-1.8437, -2.2885, -1.9463,  ..., -1.9819, -1.8693, -1.8853],
+        [-1.8438, -2.2885, -1.9464,  ..., -1.9819, -1.8691, -1.8852],
+        ...,
+        [-1.8440, -2.2885, -1.9465,  ..., -1.9821, -1.8689, -1.8852],
+        [-1.8437, -2.2885, -1.9463,  ..., -1.9818, -1.8693, -1.8853],
+        [-1.8435, -2.2885, -1.9462,  ..., -1.9817, -1.8695, -1.8853]])
+              precision    recall  f1-score      support
+joy            0.131533  1.000000  0.232487   151.000000
+fear           0.000000  0.000000  0.000000   171.000000
+shame          0.000000  0.000000  0.000000   167.000000
+disgust        0.000000  0.000000  0.000000   159.000000
+guilt          0.000000  0.000000  0.000000   165.000000
+anger          0.000000  0.000000  0.000000   160.000000
+sadness        0.000000  0.000000  0.000000   175.000000
+accuracy       0.131533  0.131533  0.131533     0.131533
+macro avg      0.018790  0.142857  0.033212  1148.000000
+weighted avg   0.017301  0.131533  0.030580  1148.000000
+--------------------
+/usr/local/lib/python3.7/dist-packages/sklearn/metrics/_classification.py:1272: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+
+
+learning rate: 1.4285799999999991e-05, epochs: 4, batch size: 16
+loss_valid: 2.0208005905151367 softmax(prediction): tensor([[-2.3034, -1.7338, -1.6622,  ..., -1.8476, -3.0557, -1.8614],
+        [-2.3035, -1.7338, -1.6622,  ..., -1.8475, -3.0558, -1.8614],
+        [-2.3036, -1.7339, -1.6622,  ..., -1.8473, -3.0559, -1.8614],
+        ...,
+        [-2.3038, -1.7339, -1.6622,  ..., -1.8471, -3.0560, -1.8615],
+        [-2.3035, -1.7338, -1.6622,  ..., -1.8475, -3.0558, -1.8614],
+        [-2.3033, -1.7338, -1.6622,  ..., -1.8477, -3.0556, -1.8613]])
+              precision    recall  f1-score     support
+joy            0.000000  0.000000  0.000000   151.00000
+fear           0.000000  0.000000  0.000000   171.00000
+shame          0.145470  1.000000  0.253992   167.00000
+disgust        0.000000  0.000000  0.000000   159.00000
+guilt          0.000000  0.000000  0.000000   165.00000
+anger          0.000000  0.000000  0.000000   160.00000
+sadness        0.000000  0.000000  0.000000   175.00000
+accuracy       0.145470  0.145470  0.145470     0.14547
+macro avg      0.020781  0.142857  0.036285  1148.00000
+weighted avg   0.021162  0.145470  0.036948  1148.00000
+--------------------
+/usr/local/lib/python3.7/dist-packages/sklearn/metrics/_classification.py:1272: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+
+
+learning rate: 1.4285799999999991e-05, epochs: 4, batch size: 32
+loss_valid: 2.084954261779785 softmax(prediction): tensor([[-3.5562, -2.0881, -1.3347,  ..., -2.1876, -1.7554, -1.7928],
+        [-3.5561, -2.0881, -1.3346,  ..., -2.1877, -1.7555, -1.7929],
+        [-3.5560, -2.0881, -1.3345,  ..., -2.1878, -1.7556, -1.7930],
+        ...,
+        [-3.5557, -2.0882, -1.3343,  ..., -2.1879, -1.7558, -1.7931],
+        [-3.5561, -2.0881, -1.3346,  ..., -2.1877, -1.7555, -1.7929],
+        [-3.5563, -2.0880, -1.3348,  ..., -2.1876, -1.7554, -1.7928]])
+              precision    recall  f1-score     support
+joy            0.000000  0.000000  0.000000   151.00000
+fear           0.000000  0.000000  0.000000   171.00000
+shame          0.145470  1.000000  0.253992   167.00000
+disgust        0.000000  0.000000  0.000000   159.00000
+guilt          0.000000  0.000000  0.000000   165.00000
+anger          0.000000  0.000000  0.000000   160.00000
+sadness        0.000000  0.000000  0.000000   175.00000
+accuracy       0.145470  0.145470  0.145470     0.14547
+macro avg      0.020781  0.142857  0.036285  1148.00000
+weighted avg   0.021162  0.145470  0.036948  1148.00000
+--------------------
+/usr/local/lib/python3.7/dist-packages/sklearn/metrics/_classification.py:1272: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+
+
+learning rate: 1.4285799999999991e-05, epochs: 4, batch size: 64
+loss_valid: 1.963998794555664 softmax(prediction): tensor([[-1.6966, -2.1684, -1.8013,  ..., -2.1055, -1.9088, -2.0802],
+        [-1.6967, -2.1684, -1.8014,  ..., -2.1055, -1.9089, -2.0802],
+        [-1.6967, -2.1683, -1.8014,  ..., -2.1055, -1.9091, -2.0802],
+        ...,
+        [-1.6969, -2.1682, -1.8015,  ..., -2.1054, -1.9093, -2.0802],
+        [-1.6966, -2.1684, -1.8014,  ..., -2.1055, -1.9089, -2.0802],
+        [-1.6965, -2.1685, -1.8013,  ..., -2.1055, -1.9087, -2.0803]])
+              precision    recall  f1-score      support
+joy            0.131533  1.000000  0.232487   151.000000
+fear           0.000000  0.000000  0.000000   171.000000
+shame          0.000000  0.000000  0.000000   167.000000
+disgust        0.000000  0.000000  0.000000   159.000000
+guilt          0.000000  0.000000  0.000000   165.000000
+anger          0.000000  0.000000  0.000000   160.000000
+sadness        0.000000  0.000000  0.000000   175.000000
+accuracy       0.131533  0.131533  0.131533     0.131533
+macro avg      0.018790  0.142857  0.033212  1148.000000
+weighted avg   0.017301  0.131533  0.030580  1148.000000
+--------------------
+/usr/local/lib/python3.7/dist-packages/sklearn/metrics/_classification.py:1272: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+
+
+learning rate: 1e-10, epochs: 4, batch size: 16
+loss_valid: 3.9949164390563965 softmax(prediction): tensor([[-2.9420, -5.7218, -6.0064,  ..., -0.3198, -8.4531, -1.9724],
+        [-2.9422, -5.7218, -6.0063,  ..., -0.3198, -8.4531, -1.9722],
+        [-2.9424, -5.7217, -6.0063,  ..., -0.3198, -8.4531, -1.9721],
+        ...,
+        [-2.9428, -5.7217, -6.0061,  ..., -0.3199, -8.4531, -1.9719],
+        [-2.9422, -5.7218, -6.0063,  ..., -0.3198, -8.4531, -1.9723],
+        [-2.9419, -5.7218, -6.0064,  ..., -0.3198, -8.4531, -1.9725]])
+              precision    recall  f1-score      support
+joy            0.000000  0.000000  0.000000   151.000000
+fear           0.000000  0.000000  0.000000   171.000000
+shame          0.000000  0.000000  0.000000   167.000000
+disgust        0.000000  0.000000  0.000000   159.000000
+guilt          0.143728  1.000000  0.251333   165.000000
+anger          0.000000  0.000000  0.000000   160.000000
+sadness        0.000000  0.000000  0.000000   175.000000
+accuracy       0.143728  0.143728  0.143728     0.143728
+macro avg      0.020533  0.142857  0.035905  1148.000000
+weighted avg   0.020658  0.143728  0.036124  1148.000000
+--------------------
+/usr/local/lib/python3.7/dist-packages/sklearn/metrics/_classification.py:1272: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+
+
+learning rate: 1e-10, epochs: 4, batch size: 32
+loss_valid: 4.218789577484131 softmax(prediction): tensor([[-3.0751, -7.6827, -5.4709,  ..., -5.9062, -3.3665, -3.5345],
+        [-3.0749, -7.6825, -5.4707,  ..., -5.9062, -3.3664, -3.5345],
+        [-3.0748, -7.6824, -5.4706,  ..., -5.9062, -3.3664, -3.5345],
+        ...,
+        [-3.0744, -7.6822, -5.4704,  ..., -5.9062, -3.3663, -3.5346],
+        [-3.0750, -7.6825, -5.4708,  ..., -5.9062, -3.3664, -3.5345],
+        [-3.0753, -7.6828, -5.4709,  ..., -5.9062, -3.3665, -3.5345]])
+              precision    recall  f1-score      support
+joy            0.000000  0.000000  0.000000   151.000000
+fear           0.000000  0.000000  0.000000   171.000000
+shame          0.000000  0.000000  0.000000   167.000000
+disgust        0.138502  1.000000  0.243305   159.000000
+guilt          0.000000  0.000000  0.000000   165.000000
+anger          0.000000  0.000000  0.000000   160.000000
+sadness        0.000000  0.000000  0.000000   175.000000
+accuracy       0.138502  0.138502  0.138502     0.138502
+macro avg      0.019786  0.142857  0.034758  1148.000000
+weighted avg   0.019183  0.138502  0.033698  1148.000000
+--------------------
+/usr/local/lib/python3.7/dist-packages/sklearn/metrics/_classification.py:1272: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+
+
+learning rate: 1e-10, epochs: 4, batch size: 64
+loss_valid: 4.68489933013916 softmax(prediction): tensor([[ -6.2936,  -0.5063,  -3.1636,  ...,  -4.9494, -10.2666,  -1.0630],
+        [ -6.2937,  -0.5063,  -3.1639,  ...,  -4.9496, -10.2668,  -1.0631],
+        [ -6.2938,  -0.5062,  -3.1641,  ...,  -4.9497, -10.2670,  -1.0632],
+        ...,
+        [ -6.2940,  -0.5061,  -3.1645,  ...,  -4.9499, -10.2675,  -1.0633],
+        [ -6.2937,  -0.5063,  -3.1638,  ...,  -4.9495, -10.2668,  -1.0631],
+        [ -6.2936,  -0.5064,  -3.1635,  ...,  -4.9494, -10.2664,  -1.0629]])
+              precision    recall  f1-score      support
+joy            0.000000  0.000000  0.000000   151.000000
+fear           0.148955  1.000000  0.259287   171.000000
+shame          0.000000  0.000000  0.000000   167.000000
+disgust        0.000000  0.000000  0.000000   159.000000
+guilt          0.000000  0.000000  0.000000   165.000000
+anger          0.000000  0.000000  0.000000   160.000000
+sadness        0.000000  0.000000  0.000000   175.000000
+accuracy       0.148955  0.148955  0.148955     0.148955
+macro avg      0.021279  0.142857  0.037041  1148.000000
+weighted avg   0.022188  0.148955  0.038622  1148.000000
+--------------------
+/usr/local/lib/python3.7/dist-packages/sklearn/metrics/_classification.py:1272: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+
+
+learning rate: 0.0001, epochs: 5, batch size: 16
+loss_valid: 1.947304368019104 softmax(prediction): tensor([[-1.9439, -1.9811, -2.0340,  ..., -1.9567, -1.9157, -1.9013],
+        [-1.9441, -1.9809, -2.0340,  ..., -1.9568, -1.9156, -1.9013],
+        [-1.9442, -1.9808, -2.0340,  ..., -1.9569, -1.9155, -1.9012],
+        ...,
+        [-1.9445, -1.9806, -2.0340,  ..., -1.9570, -1.9154, -1.9011],
+        [-1.9440, -1.9810, -2.0340,  ..., -1.9568, -1.9156, -1.9013],
+        [-1.9438, -1.9812, -2.0340,  ..., -1.9567, -1.9157, -1.9014]])
+              precision    recall  f1-score      support
+joy            0.000000  0.000000  0.000000   151.000000
+fear           0.000000  0.000000  0.000000   171.000000
+shame          0.000000  0.000000  0.000000   167.000000
+disgust        0.139229  1.000000  0.244427   159.000000
+guilt          0.000000  0.000000  0.000000   165.000000
+anger          0.000000  0.000000  0.000000   160.000000
+sadness        0.166667  0.005714  0.011050   175.000000
+accuracy       0.139373  0.139373  0.139373     0.139373
+macro avg      0.043699  0.143673  0.036497  1148.000000
+weighted avg   0.044690  0.139373  0.035538  1148.000000
+--------------------
+/usr/local/lib/python3.7/dist-packages/sklearn/metrics/_classification.py:1272: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+
+
+learning rate: 0.0001, epochs: 5, batch size: 32
+loss_valid: 1.947157621383667 softmax(prediction): tensor([[-1.9427, -1.9809, -2.0267,  ..., -1.9544, -1.9177, -1.9051],
+        [-1.9426, -1.9808, -2.0266,  ..., -1.9544, -1.9177, -1.9052],
+        [-1.9425, -1.9808, -2.0266,  ..., -1.9544, -1.9177, -1.9053],
+        ...,
+        [-1.9423, -1.9808, -2.0265,  ..., -1.9545, -1.9178, -1.9054],
+        [-1.9426, -1.9808, -2.0266,  ..., -1.9544, -1.9177, -1.9052],
+        [-1.9427, -1.9809, -2.0267,  ..., -1.9543, -1.9177, -1.9051]])
+              precision    recall  f1-score      support
+joy            0.000000  0.000000  0.000000   151.000000
+fear           0.000000  0.000000  0.000000   171.000000
+shame          0.000000  0.000000  0.000000   167.000000
+disgust        0.139108  1.000000  0.244240   159.000000
+guilt          0.000000  0.000000  0.000000   165.000000
+anger          0.000000  0.000000  0.000000   160.000000
+sadness        0.400000  0.011429  0.022222   175.000000
+accuracy       0.140244  0.140244  0.140244     0.140244
+macro avg      0.077015  0.144490  0.038066  1148.000000
+weighted avg   0.080242  0.140244  0.037215  1148.000000
+--------------------
+/usr/local/lib/python3.7/dist-packages/sklearn/metrics/_classification.py:1272: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+
+
+learning rate: 0.0001, epochs: 5, batch size: 64
+loss_valid: 1.9476484060287476 softmax(prediction): tensor([[-1.9428, -1.9900, -2.0395,  ..., -1.9588, -1.9118, -1.8988],
+        [-1.9429, -1.9901, -2.0396,  ..., -1.9585, -1.9118, -1.8987],
+        [-1.9430, -1.9902, -2.0396,  ..., -1.9584, -1.9118, -1.8986],
+        ...,
+        [-1.9432, -1.9904, -2.0396,  ..., -1.9580, -1.9117, -1.8985],
+        [-1.9429, -1.9901, -2.0396,  ..., -1.9586, -1.9118, -1.8987],
+        [-1.9427, -1.9899, -2.0395,  ..., -1.9589, -1.9118, -1.8988]])
+              precision    recall  f1-score      support
+joy            0.000000  0.000000  0.000000   151.000000
+fear           0.000000  0.000000  0.000000   171.000000
+shame          0.000000  0.000000  0.000000   167.000000
+disgust        0.138502  1.000000  0.243305   159.000000
+guilt          0.000000  0.000000  0.000000   165.000000
+anger          0.000000  0.000000  0.000000   160.000000
+sadness        0.000000  0.000000  0.000000   175.000000
+accuracy       0.138502  0.138502  0.138502     0.138502
+macro avg      0.019786  0.142857  0.034758  1148.000000
+weighted avg   0.019183  0.138502  0.033698  1148.000000
+--------------------
+/usr/local/lib/python3.7/dist-packages/sklearn/metrics/_classification.py:1272: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+
+
+learning rate: 8.571430000000001e-05, epochs: 5, batch size: 16
+loss_valid: 1.9466793537139893 softmax(prediction): tensor([[-1.9356, -1.9709, -2.0043,  ..., -1.9477, -1.9261, -1.9194],
+        [-1.9355, -1.9710, -2.0041,  ..., -1.9479, -1.9262, -1.9194],
+        [-1.9354, -1.9710, -2.0039,  ..., -1.9481, -1.9262, -1.9194],
+        ...,
+        [-1.9352, -1.9712, -2.0036,  ..., -1.9484, -1.9263, -1.9194],
+        [-1.9355, -1.9710, -2.0041,  ..., -1.9479, -1.9262, -1.9194],
+        [-1.9356, -1.9708, -2.0044,  ..., -1.9476, -1.9261, -1.9195]])
+              precision    recall  f1-score      support
+joy            0.000000  0.000000  0.000000   151.000000
+fear           0.000000  0.000000  0.000000   171.000000
+shame          0.000000  0.000000  0.000000   167.000000
+disgust        0.055556  0.006289  0.011299   159.000000
+guilt          0.000000  0.000000  0.000000   165.000000
+anger          0.000000  0.000000  0.000000   160.000000
+sadness        0.153641  0.988571  0.265949   175.000000
+accuracy       0.151568  0.151568  0.151568     0.151568
+macro avg      0.029885  0.142123  0.039607  1148.000000
+weighted avg   0.031115  0.151568  0.042106  1148.000000
+--------------------
+/usr/local/lib/python3.7/dist-packages/sklearn/metrics/_classification.py:1272: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+
+
+learning rate: 8.571430000000001e-05, epochs: 5, batch size: 32
+loss_valid: 1.9469572305679321 softmax(prediction): tensor([[-1.9388, -1.9777, -2.0188,  ..., -1.9514, -1.9217, -1.9078],
+        [-1.9387, -1.9776, -2.0189,  ..., -1.9517, -1.9216, -1.9079],
+        [-1.9385, -1.9775, -2.0190,  ..., -1.9520, -1.9216, -1.9079],
+        ...,
+        [-1.9383, -1.9773, -2.0192,  ..., -1.9524, -1.9215, -1.9080],
+        [-1.9387, -1.9776, -2.0189,  ..., -1.9517, -1.9216, -1.9078],
+        [-1.9389, -1.9778, -2.0187,  ..., -1.9513, -1.9217, -1.9078]])
+              precision    recall  f1-score      support
+joy            0.000000  0.000000  0.000000   151.000000
+fear           0.000000  0.000000  0.000000   171.000000
+shame          0.000000  0.000000  0.000000   167.000000
+disgust        0.076923  0.006289  0.011628   159.000000
+guilt          0.000000  0.000000  0.000000   165.000000
+anger          0.000000  0.000000  0.000000   160.000000
+sadness        0.152423  0.988571  0.264122   175.000000
+accuracy       0.151568  0.151568  0.151568     0.151568
+macro avg      0.032764  0.142123  0.039393  1148.000000
+weighted avg   0.033889  0.151568  0.041873  1148.000000
+--------------------
+/usr/local/lib/python3.7/dist-packages/sklearn/metrics/_classification.py:1272: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+
+
+learning rate: 8.571430000000001e-05, epochs: 5, batch size: 64
+loss_valid: 1.9472360610961914 softmax(prediction): tensor([[-1.9452, -1.9838, -2.0308,  ..., -1.9541, -1.9155, -1.9015],
+        [-1.9451, -1.9837, -2.0308,  ..., -1.9542, -1.9156, -1.9015],
+        [-1.9449, -1.9837, -2.0308,  ..., -1.9542, -1.9156, -1.9016],
+        ...,
+        [-1.9446, -1.9836, -2.0308,  ..., -1.9543, -1.9156, -1.9016],
+        [-1.9451, -1.9837, -2.0308,  ..., -1.9542, -1.9156, -1.9015],
+        [-1.9453, -1.9838, -2.0307,  ..., -1.9541, -1.9155, -1.9015]])
+/usr/local/lib/python3.7/dist-packages/sklearn/metrics/_classification.py:1272: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+              precision    recall  f1-score      support
+joy            0.000000  0.000000  0.000000   151.000000
+fear           0.000000  0.000000  0.000000   171.000000
+shame          0.000000  0.000000  0.000000   167.000000
+disgust        0.139823  0.993711  0.245151   159.000000
+guilt          0.000000  0.000000  0.000000   165.000000
+anger          0.000000  0.000000  0.000000   160.000000
+sadness        0.166667  0.017143  0.031088   175.000000
+accuracy       0.140244  0.140244  0.140244     0.140244
+macro avg      0.043784  0.144408  0.039463  1148.000000
+weighted avg   0.044772  0.140244  0.038693  1148.000000
+--------------------
+
+
+learning rate: 7.14286e-05, epochs: 5, batch size: 16
+loss_valid: 1.9466278553009033 softmax(prediction): tensor([[-1.9319, -1.9716, -1.9988,  ..., -1.9483, -1.9275, -1.9210],
+        [-1.9319, -1.9715, -1.9987,  ..., -1.9484, -1.9276, -1.9211],
+        [-1.9319, -1.9714, -1.9987,  ..., -1.9485, -1.9276, -1.9211],
+        ...,
+        [-1.9319, -1.9712, -1.9985,  ..., -1.9486, -1.9277, -1.9211],
+        [-1.9319, -1.9715, -1.9987,  ..., -1.9483, -1.9276, -1.9211],
+        [-1.9318, -1.9716, -1.9988,  ..., -1.9482, -1.9275, -1.9210]])
+              precision    recall  f1-score      support
+joy            0.000000  0.000000  0.000000   151.000000
+fear           0.000000  0.000000  0.000000   171.000000
+shame          0.000000  0.000000  0.000000   167.000000
+disgust        0.142857  0.006289  0.012048   159.000000
+guilt          0.000000  0.000000  0.000000   165.000000
+anger          0.000000  0.000000  0.000000   160.000000
+sadness        0.151888  0.988571  0.263318   175.000000
+accuracy       0.151568  0.151568  0.151568     0.151568
+macro avg      0.042106  0.142123  0.039338  1148.000000
+weighted avg   0.042940  0.151568  0.041809  1148.000000
+--------------------
+/usr/local/lib/python3.7/dist-packages/sklearn/metrics/_classification.py:1272: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+
+
+learning rate: 7.14286e-05, epochs: 5, batch size: 32
+loss_valid: 1.9465259313583374 softmax(prediction): tensor([[-1.9350, -1.9674, -1.9940,  ..., -1.9494, -1.9298, -1.9226],
+        [-1.9351, -1.9676, -1.9941,  ..., -1.9494, -1.9297, -1.9226],
+        [-1.9352, -1.9677, -1.9941,  ..., -1.9494, -1.9296, -1.9225],
+        ...,
+        [-1.9354, -1.9679, -1.9942,  ..., -1.9494, -1.9294, -1.9224],
+        [-1.9351, -1.9675, -1.9941,  ..., -1.9494, -1.9297, -1.9226],
+        [-1.9349, -1.9673, -1.9940,  ..., -1.9494, -1.9299, -1.9227]])
+              precision    recall  f1-score      support
+joy            0.000000  0.000000  0.000000   151.000000
+fear           0.000000  0.000000  0.000000   171.000000
+shame          0.000000  0.000000  0.000000   167.000000
+disgust        0.052632  0.006289  0.011236   159.000000
+guilt          0.000000  0.000000  0.000000   165.000000
+anger          0.000000  0.000000  0.000000   160.000000
+sadness        0.151461  0.977143  0.262270   175.000000
+accuracy       0.149826  0.149826  0.149826     0.149826
+macro avg      0.029156  0.140490  0.039072  1148.000000
+weighted avg   0.030378  0.149826  0.041536  1148.000000
+--------------------
+/usr/local/lib/python3.7/dist-packages/sklearn/metrics/_classification.py:1272: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+
+
+learning rate: 7.14286e-05, epochs: 5, batch size: 64
+loss_valid: 1.9465584754943848 softmax(prediction): tensor([[-1.9331, -1.9692, -1.9935,  ..., -1.9463, -1.9312, -1.9237],
+        [-1.9332, -1.9691, -1.9936,  ..., -1.9465, -1.9312, -1.9237],
+        [-1.9333, -1.9690, -1.9936,  ..., -1.9466, -1.9313, -1.9236],
+        ...,
+        [-1.9335, -1.9688, -1.9937,  ..., -1.9469, -1.9314, -1.9236],
+        [-1.9332, -1.9691, -1.9935,  ..., -1.9464, -1.9312, -1.9237],
+        [-1.9331, -1.9693, -1.9935,  ..., -1.9462, -1.9311, -1.9238]])
+              precision    recall  f1-score      support
+joy            0.000000  0.000000  0.000000   151.000000
+fear           0.000000  0.000000  0.000000   171.000000
+shame          0.000000  0.000000  0.000000   167.000000
+disgust        0.050000  0.006289  0.011173   159.000000
+guilt          0.000000  0.000000  0.000000   165.000000
+anger          0.333333  0.006250  0.012270   160.000000
+sadness        0.152135  0.977143  0.263279   175.000000
+accuracy       0.150697  0.150697  0.150697     0.150697
+macro avg      0.076496  0.141383  0.040960  1148.000000
+weighted avg   0.076574  0.150697  0.043392  1148.000000
+--------------------
+/usr/local/lib/python3.7/dist-packages/sklearn/metrics/_classification.py:1272: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+
+
+learning rate: 5.71429e-05, epochs: 5, batch size: 16
+loss_valid: 1.9464353322982788 softmax(prediction): tensor([[-1.9338, -1.9667, -1.9882,  ..., -1.9458, -1.9345, -1.9242],
+        [-1.9338, -1.9666, -1.9883,  ..., -1.9459, -1.9346, -1.9240],
+        [-1.9338, -1.9665, -1.9885,  ..., -1.9460, -1.9347, -1.9239],
+        ...,
+        [-1.9338, -1.9663, -1.9887,  ..., -1.9461, -1.9349, -1.9237],
+        [-1.9338, -1.9666, -1.9883,  ..., -1.9459, -1.9346, -1.9241],
+        [-1.9338, -1.9668, -1.9881,  ..., -1.9458, -1.9344, -1.9242]])
+              precision    recall  f1-score      support
+joy            0.000000  0.000000  0.000000   151.000000
+fear           0.000000  0.000000  0.000000   171.000000
+shame          0.000000  0.000000  0.000000   167.000000
+disgust        0.000000  0.000000  0.000000   159.000000
+guilt          0.000000  0.000000  0.000000   165.000000
+anger          0.000000  0.000000  0.000000   160.000000
+sadness        0.152289  0.988571  0.263921   175.000000
+accuracy       0.150697  0.150697  0.150697     0.150697
+macro avg      0.021756  0.141224  0.037703  1148.000000
+weighted avg   0.023215  0.150697  0.040232  1148.000000
+--------------------
+/usr/local/lib/python3.7/dist-packages/sklearn/metrics/_classification.py:1272: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+
+
+learning rate: 5.71429e-05, epochs: 5, batch size: 32
+loss_valid: 1.946605920791626 softmax(prediction): tensor([[-1.9324, -1.9701, -1.9994,  ..., -1.9467, -1.9296, -1.9210],
+        [-1.9325, -1.9701, -1.9995,  ..., -1.9467, -1.9294, -1.9210],
+        [-1.9325, -1.9700, -1.9996,  ..., -1.9467, -1.9292, -1.9209],
+        ...,
+        [-1.9327, -1.9699, -1.9998,  ..., -1.9467, -1.9289, -1.9207],
+        [-1.9325, -1.9701, -1.9995,  ..., -1.9467, -1.9294, -1.9210],
+        [-1.9324, -1.9702, -1.9993,  ..., -1.9467, -1.9297, -1.9211]])
+              precision    recall  f1-score      support
+joy            0.500000  0.006623  0.013072   151.000000
+fear           0.000000  0.000000  0.000000   171.000000
+shame          0.000000  0.000000  0.000000   167.000000
+disgust        0.000000  0.000000  0.000000   159.000000
+guilt          0.000000  0.000000  0.000000   165.000000
+anger          0.000000  0.000000  0.000000   160.000000
+sadness        0.152498  0.994286  0.264438   175.000000
+accuracy       0.152439  0.152439  0.152439     0.152439
+macro avg      0.093214  0.142987  0.039644  1148.000000
+weighted avg   0.089013  0.152439  0.042030  1148.000000
+--------------------
+/usr/local/lib/python3.7/dist-packages/sklearn/metrics/_classification.py:1272: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+
+
+learning rate: 5.71429e-05, epochs: 5, batch size: 64
+loss_valid: 1.9467288255691528 softmax(prediction): tensor([[-1.9345, -1.9739, -2.0055,  ..., -1.9494, -1.9250, -1.9181],
+        [-1.9345, -1.9736, -2.0056,  ..., -1.9494, -1.9252, -1.9182],
+        [-1.9345, -1.9734, -2.0057,  ..., -1.9493, -1.9253, -1.9183],
+        ...,
+        [-1.9345, -1.9731, -2.0059,  ..., -1.9493, -1.9256, -1.9184],
+        [-1.9345, -1.9737, -2.0056,  ..., -1.9494, -1.9252, -1.9182],
+        [-1.9345, -1.9740, -2.0055,  ..., -1.9494, -1.9250, -1.9181]])
+              precision    recall  f1-score      support
+joy            0.000000  0.000000  0.000000   151.000000
+fear           0.000000  0.000000  0.000000   171.000000
+shame          0.000000  0.000000  0.000000   167.000000
+disgust        0.137673  0.811321  0.235401   159.000000
+guilt          0.000000  0.000000  0.000000   165.000000
+anger          0.000000  0.000000  0.000000   160.000000
+sadness        0.232227  0.280000  0.253886   175.000000
+accuracy       0.155052  0.155052  0.155052     0.155052
+macro avg      0.052843  0.155903  0.069898  1148.000000
+weighted avg   0.054469  0.155052  0.071306  1148.000000
+--------------------
+/usr/local/lib/python3.7/dist-packages/sklearn/metrics/_classification.py:1272: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+
+
+learning rate: 4.28572e-05, epochs: 5, batch size: 16
+loss_valid: 1.946395993232727 softmax(prediction): tensor([[-1.9268, -1.9695, -1.9808,  ..., -1.9361, -1.9454, -1.9278],
+        [-1.9268, -1.9695, -1.9809,  ..., -1.9360, -1.9454, -1.9276],
+        [-1.9268, -1.9695, -1.9809,  ..., -1.9359, -1.9454, -1.9274],
+        ...,
+        [-1.9269, -1.9695, -1.9811,  ..., -1.9358, -1.9454, -1.9270],
+        [-1.9268, -1.9695, -1.9809,  ..., -1.9360, -1.9454, -1.9276],
+        [-1.9268, -1.9695, -1.9807,  ..., -1.9361, -1.9454, -1.9280]])
+              precision    recall  f1-score      support
+joy            0.132231  0.953642  0.232258   151.000000
+fear           0.000000  0.000000  0.000000   171.000000
+shame          0.000000  0.000000  0.000000   167.000000
+disgust        0.000000  0.000000  0.000000   159.000000
+guilt          0.333333  0.006061  0.011905   165.000000
+anger          0.000000  0.000000  0.000000   160.000000
+sadness        0.185185  0.057143  0.087336   175.000000
+accuracy       0.135017  0.135017  0.135017     0.135017
+macro avg      0.092964  0.145264  0.047357  1148.000000
+weighted avg   0.093532  0.135017  0.045574  1148.000000
+--------------------
+/usr/local/lib/python3.7/dist-packages/sklearn/metrics/_classification.py:1272: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+
+
+learning rate: 4.28572e-05, epochs: 5, batch size: 32
+loss_valid: 1.946469783782959 softmax(prediction): tensor([[-1.9270, -1.9794, -1.9756,  ..., -1.9349, -1.9430, -1.9286],
+        [-1.9272, -1.9795, -1.9756,  ..., -1.9349, -1.9429, -1.9288],
+        [-1.9273, -1.9796, -1.9755,  ..., -1.9348, -1.9428, -1.9289],
+        ...,
+        [-1.9275, -1.9797, -1.9755,  ..., -1.9348, -1.9426, -1.9291],
+        [-1.9271, -1.9795, -1.9756,  ..., -1.9349, -1.9429, -1.9287],
+        [-1.9269, -1.9794, -1.9757,  ..., -1.9350, -1.9431, -1.9285]])
+              precision    recall  f1-score      support
+joy            0.131278  0.986755  0.231726   151.000000
+fear           0.000000  0.000000  0.000000   171.000000
+shame          0.000000  0.000000  0.000000   167.000000
+disgust        0.000000  0.000000  0.000000   159.000000
+guilt          0.000000  0.000000  0.000000   165.000000
+anger          0.000000  0.000000  0.000000   160.000000
+sadness        0.300000  0.017143  0.032432   175.000000
+accuracy       0.132404  0.132404  0.132404     0.132404
+macro avg      0.061611  0.143414  0.037737  1148.000000
+weighted avg   0.062999  0.132404  0.035424  1148.000000
+--------------------
+/usr/local/lib/python3.7/dist-packages/sklearn/metrics/_classification.py:1272: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+
+
+learning rate: 4.28572e-05, epochs: 5, batch size: 64
+loss_valid: 1.9464234113693237 softmax(prediction): tensor([[-1.9338, -1.9663, -1.9866,  ..., -1.9477, -1.9341, -1.9262],
+        [-1.9338, -1.9664, -1.9867,  ..., -1.9477, -1.9340, -1.9263],
+        [-1.9338, -1.9665, -1.9867,  ..., -1.9476, -1.9339, -1.9263],
+        ...,
+        [-1.9338, -1.9666, -1.9868,  ..., -1.9475, -1.9338, -1.9264],
+        [-1.9338, -1.9664, -1.9866,  ..., -1.9477, -1.9340, -1.9263],
+        [-1.9338, -1.9662, -1.9865,  ..., -1.9478, -1.9341, -1.9262]])
+              precision    recall  f1-score      support
+joy            0.000000  0.000000  0.000000   151.000000
+fear           0.000000  0.000000  0.000000   171.000000
+shame          0.000000  0.000000  0.000000   167.000000
+disgust        0.052632  0.006289  0.011236   159.000000
+guilt          0.000000  0.000000  0.000000   165.000000
+anger          0.000000  0.000000  0.000000   160.000000
+sadness        0.151461  0.977143  0.262270   175.000000
+accuracy       0.149826  0.149826  0.149826     0.149826
+macro avg      0.029156  0.140490  0.039072  1148.000000
+weighted avg   0.030378  0.149826  0.041536  1148.000000
+--------------------
+/usr/local/lib/python3.7/dist-packages/sklearn/metrics/_classification.py:1272: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+
+
+learning rate: 2.8571500000000002e-05, epochs: 5, batch size: 16
+loss_valid: 1.946692943572998 softmax(prediction): tensor([[-1.9243, -2.0063, -1.9618,  ..., -1.9470, -1.9324, -1.9113],
+        [-1.9243, -2.0063, -1.9618,  ..., -1.9470, -1.9324, -1.9114],
+        [-1.9243, -2.0063, -1.9617,  ..., -1.9470, -1.9324, -1.9114],
+        ...,
+        [-1.9243, -2.0063, -1.9617,  ..., -1.9470, -1.9324, -1.9114],
+        [-1.9243, -2.0063, -1.9618,  ..., -1.9470, -1.9324, -1.9114],
+        [-1.9243, -2.0064, -1.9618,  ..., -1.9470, -1.9323, -1.9113]])
+              precision    recall  f1-score      support
+joy            0.000000  0.000000  0.000000   151.000000
+fear           0.000000  0.000000  0.000000   171.000000
+shame          0.000000  0.000000  0.000000   167.000000
+disgust        0.000000  0.000000  0.000000   159.000000
+guilt          0.000000  0.000000  0.000000   165.000000
+anger          0.000000  0.000000  0.000000   160.000000
+sadness        0.152439  1.000000  0.264550   175.000000
+accuracy       0.152439  0.152439  0.152439     0.152439
+macro avg      0.021777  0.142857  0.037793  1148.000000
+weighted avg   0.023238  0.152439  0.040328  1148.000000
+--------------------
+/usr/local/lib/python3.7/dist-packages/sklearn/metrics/_classification.py:1272: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+
+
+learning rate: 2.8571500000000002e-05, epochs: 5, batch size: 32
+loss_valid: 1.9462717771530151 softmax(prediction): tensor([[-1.9281, -1.9653, -1.9691,  ..., -1.9422, -1.9508, -1.9290],
+        [-1.9280, -1.9653, -1.9688,  ..., -1.9422, -1.9510, -1.9291],
+        [-1.9279, -1.9654, -1.9686,  ..., -1.9421, -1.9511, -1.9292],
+        ...,
+        [-1.9278, -1.9654, -1.9682,  ..., -1.9420, -1.9514, -1.9295],
+        [-1.9280, -1.9653, -1.9689,  ..., -1.9422, -1.9509, -1.9291],
+        [-1.9281, -1.9653, -1.9692,  ..., -1.9422, -1.9507, -1.9289]])
+              precision    recall  f1-score      support
+joy            0.129630  0.973510  0.228794   151.000000
+fear           0.000000  0.000000  0.000000   171.000000
+shame          0.000000  0.000000  0.000000   167.000000
+disgust        0.000000  0.000000  0.000000   159.000000
+guilt          0.000000  0.000000  0.000000   165.000000
+anger          0.000000  0.000000  0.000000   160.000000
+sadness        0.142857  0.011429  0.021164   175.000000
+accuracy       0.129791  0.129791  0.129791     0.129791
+macro avg      0.038927  0.140706  0.035708  1148.000000
+weighted avg   0.038828  0.129791  0.033320  1148.000000
+--------------------
+/usr/local/lib/python3.7/dist-packages/sklearn/metrics/_classification.py:1272: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+
+
+learning rate: 2.8571500000000002e-05, epochs: 5, batch size: 64
+loss_valid: 1.951076626777649 softmax(prediction): tensor([[-1.9078, -1.8818, -1.8950,  ..., -1.9419, -1.8615, -2.1159],
+        [-1.9078, -1.8819, -1.8950,  ..., -1.9421, -1.8615, -2.1159],
+        [-1.9078, -1.8819, -1.8949,  ..., -1.9422, -1.8614, -2.1159],
+        ...,
+        [-1.9078, -1.8820, -1.8948,  ..., -1.9424, -1.8614, -2.1159],
+        [-1.9078, -1.8819, -1.8950,  ..., -1.9420, -1.8615, -2.1159],
+        [-1.9078, -1.8818, -1.8951,  ..., -1.9418, -1.8616, -2.1159]])
+              precision    recall  f1-score      support
+joy            0.000000  0.000000  0.000000   151.000000
+fear           0.000000  0.000000  0.000000   171.000000
+shame          0.000000  0.000000  0.000000   167.000000
+disgust        0.000000  0.000000  0.000000   159.000000
+guilt          0.000000  0.000000  0.000000   165.000000
+anger          0.139373  1.000000  0.244648   160.000000
+sadness        0.000000  0.000000  0.000000   175.000000
+accuracy       0.139373  0.139373  0.139373     0.139373
+macro avg      0.019910  0.142857  0.034950  1148.000000
+weighted avg   0.019425  0.139373  0.034097  1148.000000
+--------------------
+/usr/local/lib/python3.7/dist-packages/sklearn/metrics/_classification.py:1272: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+
+
+learning rate: 1.4285799999999991e-05, epochs: 5, batch size: 16
+loss_valid: 1.964500069618225 softmax(prediction): tensor([[-1.9063, -1.9602, -1.9186,  ..., -1.9106, -1.8252, -2.3623],
+        [-1.9062, -1.9603, -1.9185,  ..., -1.9106, -1.8253, -2.3626],
+        [-1.9062, -1.9603, -1.9185,  ..., -1.9105, -1.8254, -2.3628],
+        ...,
+        [-1.9061, -1.9604, -1.9183,  ..., -1.9104, -1.8256, -2.3633],
+        [-1.9063, -1.9603, -1.9186,  ..., -1.9106, -1.8253, -2.3625],
+        [-1.9063, -1.9602, -1.9187,  ..., -1.9107, -1.8252, -2.3622]])
+              precision    recall  f1-score      support
+joy            0.000000  0.000000  0.000000   151.000000
+fear           0.000000  0.000000  0.000000   171.000000
+shame          0.000000  0.000000  0.000000   167.000000
+disgust        0.000000  0.000000  0.000000   159.000000
+guilt          0.000000  0.000000  0.000000   165.000000
+anger          0.139719  0.993750  0.244992   160.000000
+sadness        0.000000  0.000000  0.000000   175.000000
+accuracy       0.138502  0.138502  0.138502     0.138502
+macro avg      0.019960  0.141964  0.034999  1148.000000
+weighted avg   0.019473  0.138502  0.034145  1148.000000
+--------------------
+/usr/local/lib/python3.7/dist-packages/sklearn/metrics/_classification.py:1272: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+
+
+learning rate: 1.4285799999999991e-05, epochs: 5, batch size: 32
+loss_valid: 1.974563479423523 softmax(prediction): tensor([[-2.1868, -1.7218, -2.0275,  ..., -1.8269, -2.5369, -1.8470],
+        [-2.1868, -1.7217, -2.0275,  ..., -1.8269, -2.5367, -1.8470],
+        [-2.1867, -1.7217, -2.0275,  ..., -1.8270, -2.5366, -1.8470],
+        ...,
+        [-2.1866, -1.7217, -2.0276,  ..., -1.8271, -2.5364, -1.8470],
+        [-2.1868, -1.7217, -2.0275,  ..., -1.8269, -2.5368, -1.8470],
+        [-2.1869, -1.7218, -2.0275,  ..., -1.8268, -2.5370, -1.8470]])
+              precision    recall  f1-score      support
+joy            0.000000  0.000000  0.000000   151.000000
+fear           0.250000  0.005848  0.011429   171.000000
+shame          0.000000  0.000000  0.000000   167.000000
+disgust        0.138986  1.000000  0.244052   159.000000
+guilt          0.000000  0.000000  0.000000   165.000000
+anger          0.000000  0.000000  0.000000   160.000000
+sadness        0.000000  0.000000  0.000000   175.000000
+accuracy       0.139373  0.139373  0.139373     0.139373
+macro avg      0.055569  0.143693  0.036497  1148.000000
+weighted avg   0.056488  0.139373  0.035504  1148.000000
+--------------------
+/usr/local/lib/python3.7/dist-packages/sklearn/metrics/_classification.py:1272: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+
+
+learning rate: 1.4285799999999991e-05, epochs: 5, batch size: 64
+loss_valid: 2.011667013168335 softmax(prediction): tensor([[-1.7927, -2.9380, -1.7433,  ..., -1.7965, -1.9981, -1.8840],
+        [-1.7928, -2.9379, -1.7433,  ..., -1.7965, -1.9981, -1.8840],
+        [-1.7928, -2.9378, -1.7434,  ..., -1.7965, -1.9980, -1.8840],
+        ...,
+        [-1.7930, -2.9376, -1.7434,  ..., -1.7966, -1.9979, -1.8841],
+        [-1.7927, -2.9379, -1.7433,  ..., -1.7965, -1.9981, -1.8840],
+        [-1.7926, -2.9380, -1.7433,  ..., -1.7964, -1.9981, -1.8839]])
+              precision    recall  f1-score     support
+joy            0.000000  0.000000  0.000000   151.00000
+fear           0.000000  0.000000  0.000000   171.00000
+shame          0.145470  1.000000  0.253992   167.00000
+disgust        0.000000  0.000000  0.000000   159.00000
+guilt          0.000000  0.000000  0.000000   165.00000
+anger          0.000000  0.000000  0.000000   160.00000
+sadness        0.000000  0.000000  0.000000   175.00000
+accuracy       0.145470  0.145470  0.145470     0.14547
+macro avg      0.020781  0.142857  0.036285  1148.00000
+weighted avg   0.021162  0.145470  0.036948  1148.00000
+--------------------
+/usr/local/lib/python3.7/dist-packages/sklearn/metrics/_classification.py:1272: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+
+
+learning rate: 1e-10, epochs: 5, batch size: 16
+loss_valid: 4.758408069610596 softmax(prediction): tensor([[-0.2102, -4.4017, -1.7678,  ..., -6.9392, -7.2820, -6.7975],
+        [-0.2102, -4.4015, -1.7677,  ..., -6.9392, -7.2818, -6.7974],
+        [-0.2103, -4.4014, -1.7676,  ..., -6.9393, -7.2816, -6.7973],
+        ...,
+        [-0.2103, -4.4012, -1.7674,  ..., -6.9393, -7.2813, -6.7971],
+        [-0.2102, -4.4015, -1.7677,  ..., -6.9392, -7.2818, -6.7974],
+        [-0.2102, -4.4018, -1.7679,  ..., -6.9392, -7.2821, -6.7976]])
+              precision    recall  f1-score      support
+joy            0.131533  1.000000  0.232487   151.000000
+fear           0.000000  0.000000  0.000000   171.000000
+shame          0.000000  0.000000  0.000000   167.000000
+disgust        0.000000  0.000000  0.000000   159.000000
+guilt          0.000000  0.000000  0.000000   165.000000
+anger          0.000000  0.000000  0.000000   160.000000
+sadness        0.000000  0.000000  0.000000   175.000000
+accuracy       0.131533  0.131533  0.131533     0.131533
+macro avg      0.018790  0.142857  0.033212  1148.000000
+weighted avg   0.017301  0.131533  0.030580  1148.000000
+--------------------
+/usr/local/lib/python3.7/dist-packages/sklearn/metrics/_classification.py:1272: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+
+
+learning rate: 1e-10, epochs: 5, batch size: 32
+loss_valid: 4.533086776733398 softmax(prediction): tensor([[-0.1069, -7.5572, -8.5643,  ..., -3.2694, -4.2980, -3.6859],
+        [-0.1069, -7.5571, -8.5643,  ..., -3.2692, -4.2980, -3.6860],
+        [-0.1069, -7.5571, -8.5644,  ..., -3.2691, -4.2980, -3.6861],
+        ...,
+        [-0.1069, -7.5571, -8.5645,  ..., -3.2689, -4.2980, -3.6863],
+        [-0.1069, -7.5571, -8.5643,  ..., -3.2692, -4.2980, -3.6860],
+        [-0.1069, -7.5572, -8.5642,  ..., -3.2694, -4.2980, -3.6858]])
+              precision    recall  f1-score      support
+joy            0.131533  1.000000  0.232487   151.000000
+fear           0.000000  0.000000  0.000000   171.000000
+shame          0.000000  0.000000  0.000000   167.000000
+disgust        0.000000  0.000000  0.000000   159.000000
+guilt          0.000000  0.000000  0.000000   165.000000
+anger          0.000000  0.000000  0.000000   160.000000
+sadness        0.000000  0.000000  0.000000   175.000000
+accuracy       0.131533  0.131533  0.131533     0.131533
+macro avg      0.018790  0.142857  0.033212  1148.000000
+weighted avg   0.017301  0.131533  0.030580  1148.000000
+--------------------
+/usr/local/lib/python3.7/dist-packages/sklearn/metrics/_classification.py:1272: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+
+
+learning rate: 1e-10, epochs: 5, batch size: 64
+loss_valid: 4.447947025299072 softmax(prediction): tensor([[-0.1369, -6.4340, -5.3503,  ..., -4.0202, -2.3110, -5.7725],
+        [-0.1369, -6.4341, -5.3505,  ..., -4.0202, -2.3111, -5.7724],
+        [-0.1369, -6.4342, -5.3506,  ..., -4.0201, -2.3112, -5.7723],
+        ...,
+        [-0.1369, -6.4343, -5.3509,  ..., -4.0201, -2.3114, -5.7722],
+        [-0.1369, -6.4341, -5.3504,  ..., -4.0202, -2.3111, -5.7724],
+        [-0.1369, -6.4340, -5.3501,  ..., -4.0202, -2.3109, -5.7725]])
+              precision    recall  f1-score      support
+joy            0.131533  1.000000  0.232487   151.000000
+fear           0.000000  0.000000  0.000000   171.000000
+shame          0.000000  0.000000  0.000000   167.000000
+disgust        0.000000  0.000000  0.000000   159.000000
+guilt          0.000000  0.000000  0.000000   165.000000
+anger          0.000000  0.000000  0.000000   160.000000
+sadness        0.000000  0.000000  0.000000   175.000000
+accuracy       0.131533  0.131533  0.131533     0.131533
+macro avg      0.018790  0.142857  0.033212  1148.000000
+weighted avg   0.017301  0.131533  0.030580  1148.000000
+--------------------
+/usr/local/lib/python3.7/dist-packages/sklearn/metrics/_classification.py:1272: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
