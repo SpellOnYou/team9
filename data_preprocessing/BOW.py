@@ -62,7 +62,7 @@ class PadMaxLength:
 
 class BagOfWords:
 
-    def __init__(self, all_padded_sentences, list_of_sentences):
+    def __init__(self, list_of_sentences):
 
         # define punctuation and upper case alphabet
         self.punctuations = '''!()-[]{};:'"\,<>./?@#$%^&*_~'''
@@ -78,17 +78,19 @@ class BagOfWords:
                           'up', 'down', 'in', 'out', 'on', 'off', 'over', 'under', 'again', 'further', 'then', 'once',
                           'here', 'there', 'when', 'where', 'why', 'how', 'all', 'any', 'both', 'each', 'few', 'more',
                           'most', 'other', 'some', 'such', 'no', 'nor', 'not', 'only', 'own', 'same', 'so', 'than',
-                          'too', 'very', 's', 't', 'can', 'will', 'just', 'don', "don't", 'should', "should've", 'now', 'd',
+                          'too', 'very', 's', 't', 'can', 'will', 'just', 'don', "don't", 'should', "should've", 'now',
+                          'd',
                           'll', 'm', 'o', 're', 've', 'y', 'ain', 'aren', "aren't", 'couldn', "couldn't", 'didn',
                           "didn't", 'doesn', "doesn't", 'hadn', "hadn't", 'hasn', "hasn't", 'haven', "haven't",
                           'isn', "isn't", 'ma', 'mightn', "mightn't", 'mustn', "mustn't", 'needn', "needn't",
                           'shan', "shan't", 'shouldn', "shouldn't", 'wasn', "wasn't", 'weren', "weren't", 'won',
                           "won't", 'wouldn', "wouldn't"]
-        self.vocab = self.generate_vocabulary(all_padded_sentences)  # Generate the vocabulary
+        self.vocab = self.generate_vocabulary(list_of_sentences)  # Generate the vocabulary
         # print(len(self.vocab))
         self.dict_idx = self.indexing(self.vocab)  # Generate the indexing
         self.word_count = self.count_dictionary(list_of_sentences)
         self.N_sentences = len(list_of_sentences)
+        self.idf_train = {}
 
     def lowercase_tokenize(self, padded_sentences):
         lowercase = ""
@@ -103,7 +105,6 @@ class BagOfWords:
                 lowercase = lowercase + char
         lowercase = lowercase.strip()
         tokenized = list(lowercase.split())
-        print(tokenized)
         return tokenized
 
     def remove_stopwords(self, tokenized_sentences):
@@ -145,9 +146,9 @@ class BagOfWords:
 
     # Term Frequency
     def termfreq(self, sentence, word):
-        number_of_sentences = float(len(sentence))
+        sentence_length = float(len(sentence))
         occurrence = float(len([token for token in sentence if token == word]))
-        return occurrence / number_of_sentences
+        return occurrence / sentence_length
 
     def inverse_doc_freq(self, word):
         try:
@@ -156,64 +157,44 @@ class BagOfWords:
             word_occurrence = 1.0
         return np.log(self.N_sentences / word_occurrence)
 
-    def tf_idf(self, input_sentences):
+    def tf_idf(self, input_sentences, train=True):
         row = 0
-        tf_idf_vec = np.zeros((self.N_sentences, (len(self.vocab))))
+        tf_idf_vec = np.zeros(((len(input_sentences)), (len(self.vocab))))
 
         for sentence in input_sentences:
             tokenized_sentence = self.lowercase_tokenize(sentence)
             filtered_tokenized_sentence = self.remove_stopwords(tokenized_sentence)
             for word in filtered_tokenized_sentence:
-                tf = self.termfreq(sentence, word)
-                idf = self.inverse_doc_freq(word)
+                tf = self.termfreq(filtered_tokenized_sentence, word)
+                if train:
+                    idf = self.inverse_doc_freq(word)
+                    self.idf_train[word] = idf
+                    value = tf * idf
+                else:
+                    try:
+                        value = tf * self.idf_train[word]
+                    except KeyError:
+                        continue
 
-                value = tf * idf
                 tf_idf_vec[row][self.dict_idx[word]] = value
 
             row += 1
 
         return tf_idf_vec
-
-    # def bag_of_words(self, input_sentences):
-    #     bow_vector = np.zeros((len(input_sentences), len(self.vocab)))  # Nr of sentences x length of vocabulary
-    #     row = 0
-    #     for sentence in input_sentences:
-    #         tokenized_sentence = self.lowercase_tokenize(sentence)
-    #         for word in tokenized_sentence:
-    #             #print(word)
-    #             bow_vector[row][self.dict_idx[word]] += 1  # Add the occurrence
-    #         row += 1
-    #     return bow_vector
-
 #
-train_file = "../data/emotions/isear/isear-train-modified.csv"
-val_file = "../data/emotions/isear/isear-val-modified.csv"
-test_file = "../data/emotions/isear/isear-test-modified.csv"
+train_file = "/home/lara/PycharmProjects/pythonProject/Folder/CLab21/data/emotions/isear/isear-train-modified.csv"
+val_file = "/home/lara/PycharmProjects/pythonProject/Folder/CLab21/data/emotions/isear/isear-val-modified.csv"
+test_file = "/home/lara/PycharmProjects/pythonProject/Folder/CLab21/data/emotions/isear/isear-test-modified.csv"
 
 pml_train = PadMaxLength(train_file)
 pml_val = PadMaxLength(val_file)
 pml_test = PadMaxLength(test_file)
 
-max_sent, min_sent = pml_train.min_max_sentences()
+bow_train = BagOfWords(pml_train.text)  # Sentences to create the vocabulary
 
-sentences_padded_train = pml_train.right_pad_sentences(max_sent)
-# print("Len first sentence of train File", len(sentences_padded_train[0].split()))
-
-sentences_padded_val = pml_val.right_pad_sentences(max_sent)
-# print("Len first sentence of val File", len(sentences_padded_val[0].split()))
-
-sentences_padded_test = pml_test.right_pad_sentences(max_sent)
-# print("Len first sentence of test File", len(sentences_padded_test[0].split()))
-
-vocab_list = pml_train.merge_with(sentences_padded_val, sentences_padded_test)  # Vocab over all files
-
-bow_train = BagOfWords(vocab_list, sentences_padded_train)  # Sentences to create the vocabulary
-bow_val = BagOfWords(vocab_list, sentences_padded_val)
-bow_test = BagOfWords(vocab_list, sentences_padded_test)
-
-tf_idf_train = bow_train.tf_idf(sentences_padded_train)
-tf_idf_val = bow_val.tf_idf(sentences_padded_val)
-tf_idf_test = bow_test.tf_idf(sentences_padded_test)
+tf_idf_train = bow_train.tf_idf(pml_train.text)
+tf_idf_val = bow_train.tf_idf(pml_val.text, train=False)
+tf_idf_test = bow_train.tf_idf(pml_test.text, train=False)
 
 print("tf_idf_train \n", tf_idf_train.shape)
 print(tf_idf_train)
