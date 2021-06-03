@@ -1,4 +1,8 @@
-class Model():
+from relu import Relu
+from loss import CrossEntropy
+from linear import Linear
+
+class Model:
     def __init__(self, n_layers, *args):
         self.loss = CrossEntropy()
         self.args = args

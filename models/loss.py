@@ -1,4 +1,4 @@
-class CrossEntropy():
+class CrossEntropy:
     def __call__(self, pred, y):
         
         self.yhat, self.y = pred, y
