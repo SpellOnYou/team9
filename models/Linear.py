@@ -1,3 +1,6 @@
+# -*- coding: utf-8 -*-
+# Author: Jiwon Kim
+
 class Linear():
     r"""Make linear(which does matrix multiplication) model with given parameters.
 
@@ -50,6 +53,7 @@ class Linear():
         ------------
         As for now, we used python's matrix multiplication operator @(at).
         However, we recommend you to use broadcasting or einsum for faster and more memory-efficient calculation.
+        For more information, refer to following document: https://numpy.org/doc/stable/reference/generated/numpy.einsum.html
 
         """
         self.inp.g = self.out.g @ self.w.t()
