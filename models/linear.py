@@ -1,9 +1,8 @@
 # -*- coding: utf-8 -*-
 # Author: Jiwon Kim
 
-class Linear():
-    """Make linear(which does matrix multiplication) model with given parameters.
-
+class Linear:
+    r"""Make linear(which does matrix multiplication) model with given parameters.
     Parameters
     ----------
     w : {torch.tensor}, default = None

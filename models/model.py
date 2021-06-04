@@ -1,7 +1,14 @@
-# -*- coding: utf-8 -*-
-# Author: Jiwon Kim
 
-class Model():
+# -*- coding: utf-8 -*-
+# Author: Jiwon Kim, Lara Grimminger
+
+
+from relu import Relu
+from loss import CrossEntropy
+from linear import Linear
+
+class Model:
+
     def __init__(self, n_layers, *args):
         self.loss = CrossEntropy()
         self.args = args
