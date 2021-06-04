@@ -2,7 +2,7 @@
 # Author: Jiwon Kim
 
 class Linear():
-    r"""Make linear(which does matrix multiplication) model with given parameters.
+    """Make linear(which does matrix multiplication) model with given parameters.
 
     Parameters
     ----------
@@ -16,12 +16,15 @@ class Linear():
 
     Attributes
     ----------
-    g : tensor
-        gradient for each parameter.
+
+    w.g : gradient for weight parameter.
+    b.g : gradient for bias parameter
+        
 
     Note
     ----------
-    g(gradient) attribute for each paramter is not from PyTorch's automatic differentiation engine.
+    g(gradient) attribute for each paramter doesn't use PyTorch's automatic differentiation engine.
+    So you can't access that attribute before backpropagation.
 
     Examples
     ----------

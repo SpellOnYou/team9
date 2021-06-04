@@ -1,4 +1,19 @@
+# -*- coding: utf-8 -*-
+# Author: Jiwon Kim
+
 class CrossEntropy():
+    """Make cross-entropy loss function used for nominal variables.
+
+    Parameters
+    ----------
+    pred : {torch.tensor}, default = None
+        Gets predicion and calculate cross-entropy when instance is called.
+
+    y : {torch.tensor}, default = None
+        Gets y(target value) and calculate cross-entropy when instance is called.
+
+
+    """
     def __call__(self, pred, y):
         
         self.yhat, self.y = pred, y
@@ -19,3 +34,14 @@ class CrossEntropy():
         softmax = 1/ (1+(-self.yhat).exp())
         # set_trace()
         self.yhat.g = (softmax - self.y)
+
+class Mse():
+    """
+    """
+    def __call__(self, pred, y):
+        self.yhat, self.y = pred, y
+        self.out = (pred-y).pow(2).mean()
+
+    def backward(self):
+        self.yhat.g = 2. * (self.yhat - self.y) / self.y.shape[0]
+

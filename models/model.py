@@ -1,3 +1,6 @@
+# -*- coding: utf-8 -*-
+# Author: Jiwon Kim
+
 class Model():
     def __init__(self, n_layers, *args):
         self.loss = CrossEntropy()
