@@ -12,12 +12,21 @@ from models.linear import Linear
 from models.relu import Relu
 from models.fscore import Fscore
 
+# import text preprocessing module
+from data_preprocessing.one_hot_encoding import OneHotEncoding
+
+
 
 class MLP:
     """Make fully-connected multilayer perceptron.
+
+
     """	
     def __init__(self, **kwargs):
     	self.kwargs = {k:v for k, v in kwargs.items()}
+
+    	self.is_trace = self.kwargs['trace'] if 'trace' in self.kwargs else False
+
   		# assign n_layer when user input exists
     	self.n_layers = self.kwargs['n_layers'] if 'n_layers' in self.kwargs else 2
 
@@ -27,6 +36,7 @@ class MLP:
 
     	print("Loading dataset....")
     	self._get_data()
+
 
     	self._get_model()
 
