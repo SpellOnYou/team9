@@ -135,7 +135,8 @@ class MLP:
 		p, r, f = measure()
 
 		#restrict floating point to 3
-		precision = [f"{value:.3f}" for value in p]
+		precision = [str(value)[:5] for value in p]
+		
 		recall = [f"{value:.3f}" for value in r]
 		fscore = [f"{value:.3f}" for value in f]
 
