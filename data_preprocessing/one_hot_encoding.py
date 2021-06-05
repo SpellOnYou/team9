@@ -59,24 +59,3 @@ class OneHotEncoding:
         return self.labels_dict
 
 
-train_file = "/home/lara/PycharmProjects/pythonProject/CLab21/data/emotions/isear/isear-train-modified.csv"
-val_file = "/home/lara/PycharmProjects/pythonProject/CLab21/data/emotions/isear/isear-val-modified.csv"
-test_file = "/home/lara/PycharmProjects/pythonProject/CLab21/data/emotions/isear/isear-test-modified.csv"
-
-ohe_train = OneHotEncoding(train_file)
-ohe_val = OneHotEncoding(val_file)
-ohe_test = OneHotEncoding(test_file)
-
-y_train = ohe_train.one_hot_encoding()
-print("Y_train:\n", y_train)
-print(y_train.shape)
-reference_dict = ohe_train.get_encoded_dict()
-
-y_val = ohe_val.one_hot_encoding(reference_dict)
-print("Y_val:\n", y_val)
-print(y_val.shape)
-
-y_test = ohe_test.one_hot_encoding(reference_dict)
-print("Y_test:\n", y_test)
-print(y_test.shape)
-
