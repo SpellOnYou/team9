@@ -2,7 +2,7 @@
 # Author: Jiwon Kim
 
 class Linear:
-    r"""Make linear(which does matrix multiplication) model with given parameters.
+    """Make linear(which does matrix multiplication) model with given parameters.
     Parameters
     ----------
     w : {torch.tensor}, default = None
@@ -35,7 +35,7 @@ class Linear:
     model_output.backward()
     weight_grad = model_output.w.g
     """
-    def __init__(self, w, b, is_bias = True):
+    def __init__(self, w = None, b = None, is_bias = True):
         self.w, self.b = w, b
 
     def forward(self, x):

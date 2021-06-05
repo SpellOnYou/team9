@@ -181,26 +181,3 @@ class BagOfWords:
             row += 1
 
         return tf_idf_vec
-#
-train_file = "/home/lara/PycharmProjects/pythonProject/Folder/CLab21/data/emotions/isear/isear-train-modified.csv"
-val_file = "/home/lara/PycharmProjects/pythonProject/Folder/CLab21/data/emotions/isear/isear-val-modified.csv"
-test_file = "/home/lara/PycharmProjects/pythonProject/Folder/CLab21/data/emotions/isear/isear-test-modified.csv"
-
-pml_train = PadMaxLength(train_file)
-pml_val = PadMaxLength(val_file)
-pml_test = PadMaxLength(test_file)
-
-bow_train = BagOfWords(pml_train.text)  # Sentences to create the vocabulary
-
-tf_idf_train = bow_train.tf_idf(pml_train.text)
-tf_idf_val = bow_train.tf_idf(pml_val.text, train=False)
-tf_idf_test = bow_train.tf_idf(pml_test.text, train=False)
-
-print("tf_idf_train \n", tf_idf_train.shape)
-print(tf_idf_train)
-print("\n")
-print("tf_idf_val \n", tf_idf_val.shape)
-print(tf_idf_val)
-print("\n")
-print("tf_idf_test \n", tf_idf_test.shape)
-print(tf_idf_test)

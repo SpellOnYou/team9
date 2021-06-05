@@ -1,11 +1,5 @@
-
 # -*- coding: utf-8 -*-
 # Author: Jiwon Kim, Lara Grimminger
-
-
-from relu import Relu
-from loss import CrossEntropy
-from linear import Linear
 
 class Model:
 
@@ -13,6 +7,9 @@ class Model:
         self.loss = CrossEntropy()
         self.args = args
         self.layers = []
+
+        assert n_layers == (len(args)-1)/2, "The number of arguments and layer should be matched!"
+
         for i in range(0, n_layers-1):
             self.layers += [Linear(args[i*2], args[(i*2)+1]), Relu()]
         self.layers += [Linear(args[-2], args[-1])]
