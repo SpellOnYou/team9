@@ -17,7 +17,7 @@ class Fscore():
         for i in range(self.c):
             numer = self.inp == self.trg
             denom = self.inp ==i
-            if not sum(denom)==0: self.tot_pre += [sum(numer) / sum(denom)]
+            if not sum(denom)==0: self.tot_pre += [(sum(numer) / sum(denom)).tolist()]
             else: self.tot_pre += [0.]
 
     def recall(self):
@@ -25,5 +25,5 @@ class Fscore():
         for i in range(self.c):
             numer = self.inp == self.trg
             denom = self.trg ==i
-            if not sum(denom)==0: self.tot_rec += [sum(numer) / sum(denom)]
+            if not sum(denom)==0: self.tot_rec += [(sum(numer) / sum(denom)).tolist()]
             else: self.tot_rec += [0.]

@@ -3,84 +3,208 @@
 
 # load standard library
 from pathlib import Path
-from torch import tensor, randn, zeros
+from torch import tensor, randn, zeros, no_grad
+import numpy as np
 import sys
+import math
+
 
 #import modules need for MLP
-from models.loss import CrossEntropy
-from models.linear import Linear
-from models.relu import Relu
-from models.fscore import Fscore
+from models.model import Model
+from metrics.fscore import Fscore
 
 # import text preprocessing module
 from data_preprocessing.one_hot_encoding import OneHotEncoding
+from data_preprocessing.input_tf_idf import PadMaxLength, BagOfWords
 
 
 
 class MLP:
-    """Make fully-connected multilayer perceptron.
+	"""Make fully-connected multilayer perceptron.
+	Parameters
+	----------
+	n_layers : {int}, default = 2
+		Number of layers in neural networks. Dimension of each parameter is pre-defined.
 
+	trace : {bool}, default = False
+		Print out current status while proceeding training model, if True.
 
-    """	
-    def __init__(self, **kwargs):
-    	self.kwargs = {k:v for k, v in kwargs.items()}
+	"""	
+	def __init__(self, **kwargs):
+		self.kwargs = {k:v for k, v in kwargs.items()}
 
-    	self.is_trace = self.kwargs['trace'] if 'trace' in self.kwargs else False
+		self.is_trace = self.kwargs['trace'] if 'trace' in self.kwargs else False
 
   		# assign n_layer when user input exists
-    	self.n_layers = self.kwargs['n_layers'] if 'n_layers' in self.kwargs else 2
+		self.n_layers = self.kwargs['n_layers'] if 'n_layers' in self.kwargs else 2
 
-    def __call__(self):
+	def __call__(self):
 
-    	self._get_path()
+		self._get_path()
 
-    	print("Loading dataset....")
-    	self._get_data()
+		if self.is_trace: print("Loading dataset....")
+		self._get_data(3000)
 
+		if self.is_trace: print("Initializing parameters....")
+		self._get_parameter()
 
-    	self._get_model()
+		self.model = Model(self.n_layers, *self.params)
 
-    	self.run()
+		self.train(epochs=1, bs=32, lr=0.001)
 
-    def	run(self):
-    	pass
+		self.evaluate()
 	
-	def._get_model(self):
-		pass
+	def _get_parameter(self):
+		"""Make parameter list to be yielded to model
 
-    def _get_path(self):
+		Note
+		----------
+		Here we initalized our parameter with random variable.
+		However, since our model uses vanila achitecture which is verneralble to weight exploding/vanishing, used a small trick known for kaiming initialization.
+		For more information, please see https://arxiv.org/pdf/1502.01852.pdf section 2.2		
+		"""
 
-    	if 'root_data' in self.kwargs:
-    		self._get_user_path(self.kwargs['root_path'])
+		#TODO: Also we can use __setattr__ to enable model to approach parameters of layer.
+
+		n_features = self.x_train.shape[1]
+		n_class = self.y_train.shape[1]
+
+		self.params = []
+		self.layer2param = {2: [n_features, 100, n_class], 4:[n_features, 145, 32, 15, n_class]}
+		
+		assert max(self.layer2param.keys()) > self.n_layers, "Your input layer size exceeds our budget."
+
+		# define parameter given layers
+
+		for layer_i in range(self.n_layers):
+			# get input, output feature length
+			in_f = self.layer2param[self.n_layers][layer_i]
+			out_f = self.layer2param[self.n_layers][layer_i+1]
+
+			self.params += [randn(in_f, out_f) / math.sqrt(out_f), randn(out_f)]
+
+	def train(self, epochs, bs, lr):
+		self.epochs, self.bs, self.lr = epochs, bs, lr
+		"""
+		Args:
+		"""
+
+		for e in range(epochs):
+
+			for bs_i in range((self.x_train.shape[0]-1)//bs + 1):
+
+
+				str_idx, end_idx = bs_i*bs, (bs_i+1)*bs
+
+				x_batch, y_batch = self.x_train[str_idx:end_idx], self.y_train[str_idx:end_idx]
+
+				prediction = self.model.forward(x_batch)
+
+				loss = self.model.loss(prediction, y_batch)
+
+				self.model.backward()
+
+				with no_grad():
+					for l_i, layer in enumerate(self.model.layers):
+						if hasattr(layer, 'w'): #if they have parameter attribute
+
+							layer.w -= layer.w.g * lr
+							layer.b -= layer.b.g * lr
+							layer.w.g.zero_() #initialize them to zero
+							layer.b.g.zero_()
+
+							# This statistics will be helpful when we track the parameter status
+							if self.is_trace:
+								tot_w_mean = layer.w.mean()
+								tot_w_std = layer.w.std()
+
+				if self.is_trace and (bs_i % 10 == 0 and bs_i):
+					print(f"batch size:{self.bs}, {bs_i}th batch training is done.")
+					print(f"mean weight of batches: {tot_w_mean/10}, std weight of batches: {tot_w_std/10}")
+					tot_w_mean, tot_w_std = 0, 0
+
+	def evaluate(self):
+		# get output of valid data from our trained model
+		pred_valid = self.model.forward(self.x_valid)
+		
+		loss_valid = self.model.loss(pred_valid, self.y_valid)
+
+		# get results of softmax(x) to calculate fsocre
+		softmax_pred = self.model.loss.log_softmax(pred_valid)
+		measure = Fscore(softmax_pred, self.y_valid)
+		p, r, f = measure()
+
+		#restrict floating point to 3
+		precision = [f"{value:.3f}" for value in p]
+		recall = [f"{value:.3f}" for value in r]
+		fscore = [f"{value:.3f}" for value in f]
+
+		labels = list(self.label2idx.keys())
+
+		print('\t\t'+'\t'.join(labels),
+			'precision:\t'+ '\t'.join(precision), 'recall:   \t'+'\t'.join(recall) ,
+			'fscore(a=.5):\t'+ '\t'.join(fscore), sep='\n')
+
+	def _get_path(self):
+		"""Get data path, as we wrote down in self._get_user_path, this isn't currently user-interactive.
+		"""
+
+		if 'root_data' in self.kwargs:
+			self._get_user_path(self.kwargs['root_path'])
 
 		else:
-			self.root_data = Path('datasets/emotions/isear')
-    		self.train_path = self.data_path / 'isear-train-modified.csv'
-    		self.valid_path = self.data_path / 'isear-valid-modified.csv'
-    		self.test_path = self.data_path / 'isear-test-modified.csv'
+			self.data_path = Path('datasets/emotions/isear')
+			self.train_path = self.data_path / 'isear-train-modified.csv'
+			self.valid_path = self.data_path / 'isear-val-modified.csv'
+			self.test_path = self.data_path / 'isear-test-modified.csv'
 
-	def _get_data(self):
-		pml_train = PadMaxLength(train_path)
-		pml_val = PadMaxLength(val_path)
-		pml_test = PadMaxLength(test_path)
+	def _get_data(self, max_len):
+		"""This function initialize dataset.
 
-		bow_train = BagOfWords(pml_train.text)  # Sentences to create the vocabulary
+		Note
+		-----------
+		Since we save gradient to input data as well as our parameters, make sure run this function as well as `_init_parameters` if you want to tune hyperparameter.
 
-		tf_idf_train = bow_train.tf_idf(pml_train.text)
-		tf_idf_val = bow_train.tf_idf(pml_val.text, train=False)
-		tf_idf_test = bow_train.tf_idf(pml_test.text, train=False)		
+		"""
 
-   
-    def _get_user_path(self, path):
-    	user_path = Path(path)
-    	assert user_path.is_dir(), "root of data should be folder"
+		# get x data
+		pml_train = PadMaxLength(self.train_path)
+		pml_val = PadMaxLength(self.valid_path)
+		pml_test = PadMaxLength(self.test_path)
 
-    	# Now we suppose use input is confiend to isear dataset. Since our model isn't flexible for various input.
-    	# Not implemented yet but could be used (e.g. model test)
+		bow_train = BagOfWords(pml_train.text)
+		
+		tf_idf_train = bow_train.tf_idf(pml_train.text)[:, :max_len]
+		tf_idf_val = bow_train.tf_idf(pml_val.text, train=False)[:, :max_len]
+		tf_idf_test = bow_train.tf_idf(pml_test.text, train=False)[:, :max_len]
+
+		# type conversion from numpy float64 to pytorch float32
+		x_train, x_valid, x_test = map(np.float32, (tf_idf_train, tf_idf_val, tf_idf_test))
+		self.x_train, self.x_valid, self.x_test = map(tensor, (x_train, x_valid, x_test))
+		
+		# get y data
+		ohe_train = OneHotEncoding(self.train_path)
+		ohe_val = OneHotEncoding(self.valid_path)
+		ohe_test = OneHotEncoding(self.test_path)
+		
+		reference_dict = ohe_train.get_encoded_dict()
+		self.y_train, self.y_valid, self.y_test = map(tensor, (ohe_train.one_hot_encoding(), ohe_val.one_hot_encoding(reference_dict), ohe_test.one_hot_encoding(reference_dict)))
+
+		#save label to index & index to label for later use in evaulation
+
+		self.label2idx = {label : ohe.index(1) for label, ohe in reference_dict.items()}
+		self.idx2label = {idx:label for label, idx in self.label2idx.items()}
+
+	def _get_user_path(self, path):
+		user_path = Path(path)
+		assert user_path.is_dir(), "root of data should be folder"
+
+		# Now we suppose use input is confiend to isear dataset. Since our model isn't flexible for various input.
+		# Not implemented yet but could be used (e.g. model test)
 
 if __name__ == "__main__":
+
 	# get keyward parameters (if exists)
 	mlp = MLP(**dict(arg.split('=') for arg in sys.argv[1:]))
-	
-	print(mlp.n_layers)
 
+	mlp()
