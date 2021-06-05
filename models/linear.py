@@ -37,12 +37,13 @@ class Linear:
     """
     def __init__(self, w = None, b = None, is_bias = True):
         self.w, self.b = w, b
+        self.is_bias = is_bias
 
     def forward(self, x):
         """Calculate linear multiplication and return the result
         """
         self.inp = x
-        if is_bias:
+        if self.is_bias:
             self.out = self.inp@self.w + self.b
         else:
             self.out = self.inp@self.w
