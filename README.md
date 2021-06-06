@@ -43,9 +43,11 @@ We used Precision, Recall and F1 score.
 
 To use experiment with your MLP, we recommend you to clone this repository to your local and test in your command line interface(CLI) as following:
 
-```git clone https://github.com/SpellOnYou/CLab21.git <your_repo_name>
+```
+git clone https://github.com/SpellOnYou/CLab21.git <your_repo_name>
 cd <your_repo_name>
-python multilayer_perceptron.py```
+python multilayer_perceptron.py
+```
 
 or if you want to track(default:False) the learning status or tune the number of layer size(default:2), simply change the command to
 
@@ -70,6 +72,7 @@ Epochs: `1`, `3`, `5`, `7`, `9`, `11`, `13`
 
 ## Requirements
 
-numpy version >= 1.19
-python version >= 3.6
-pytorch version >= 1.0
+numpy version >= 1.19  
+python version >= 3.6  
+pytorch version >= 1.0  
+  
