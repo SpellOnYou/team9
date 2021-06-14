@@ -49,7 +49,7 @@ class MLP:
 
         self.model = Model(self.n_layers, *self.params)
 
-        self.train(epochs=5, bs=16, lr=0.025) 
+        self.train(epochs=5, bs=16, lr=0.025)
 
         self.evaluate()
 
@@ -124,13 +124,22 @@ class MLP:
 
     def evaluate(self):
         # get output of valid data from our trained model
-        pred_valid = self.model.forward(self.x_valid)
+        #pred_valid = self.model.forward(self.x_valid)
 
-        loss_valid = self.model.loss(pred_valid, self.y_valid)
+        pred_test = self.model.forward(self.x_test)
+
+        #loss_valid = self.model.loss(pred_valid, self.y_valid)
+
+        loss_test = self.model.loss(pred_test, self.y_test)
 
         # get results of softmax(x) to calculate fscore
-        softmax_pred = self.model.loss.log_softmax(pred_valid)
-        measure = Fscore(softmax_pred, self.y_valid)
+        #softmax_pred = self.model.loss.log_softmax(pred_valid)
+
+        softmax_pred_test = self.model.loss.log_softmax(pred_test)
+
+        #measure = Fscore(softmax_pred, self.y_valid)
+
+        measure = Fscore(softmax_pred_test, self.y_test)
         p, r, f = measure()
 
         # restrict floating point to 3
