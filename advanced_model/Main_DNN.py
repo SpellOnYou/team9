@@ -59,6 +59,9 @@ class Main_DNN:
             self.valid_path = self.data_path / 'isear-val-modified.csv'
             self.test_path = self.data_path / 'isear-test-modified.csv'
 
+            #path for saving results
+            self.eval_path = Path('advanced_model/eval_results')
+            assert self.eval_path.is_exist(), "Path for saving results dones't exist"
     def _get_data(self, max_len):
         """This function initializes dataset.
 
