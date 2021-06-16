@@ -9,8 +9,8 @@ import numpy as np
 from DNN import DNN_Model
 
 # import text preprocessing modules
-from data_preprocessing.one_hot_encoding import OneHotEncoding
-from data_preprocessing.input_tf_idf import GenerateSentences, TfIdf
+from ..data_preprocessing.one_hot_encoding import OneHotEncoding
+from ..data_preprocessing.input_tf_idf import GenerateSentences, TfIdf
 import tensorflow as tf
 from tensorflow.keras.optimizers import Adam, SGD
 
