@@ -36,13 +36,9 @@ class Main_DNN:
         if self.is_trace: print("Loading dataset....")
         self._get_data(3000)
 
-        # if self.is_trace: print("Initializing parameters....")
-        # self._get_parameter()
-
         self.dnn = DNN_Model(bs=bs_var, lr=lr_var, opt=opt_var)
 
         self.train()
-
         # self.evaluate()
 
     def _get_path(self):
@@ -58,9 +54,8 @@ class Main_DNN:
             self.valid_path = self.data_path / 'isear-val-modified.csv'
             self.test_path = self.data_path / 'isear-test-modified.csv'
 
-            #path for saving results
-            self.eval_path = Path('eval_results')/'4layer'
-            self.eval_path.mkdir(parents=1, exist_ok=1)
+            #TODO: make interactive path input from user (evaludation results)
+
     def _get_data(self, max_len):
         """This function initializes dataset.
 
@@ -123,11 +118,6 @@ class Main_DNN:
         # print(cr)
 
 if __name__ == "__main__":
-    print(os.getcwd())
-
-
-    
-    print(sys.path)
     # get keyward parameters (if exists)
     dnn_model = Main_DNN()
 

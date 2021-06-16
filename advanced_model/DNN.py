@@ -6,6 +6,7 @@ import numpy as np
 from tensorflow.keras.callbacks import EarlyStopping
 from tensorflow.keras.optimizers import Adam, SGD
 import pandas as pd
+from pathlib import Path
 
 
 class DNN_Model():
@@ -67,7 +68,11 @@ class DNN_Model():
         results = classification_report(gold_labels, y_pred, target_names=target_names, output_dict=True, digits=2)
         df = pd.DataFrame(results).transpose()
         df = df.round(2)
-        fname = self.eval_path / f"results_{self.opt}_{str(self.bs)}_{str(self.lr)}.csv"
+
+        self.eval_path = Path('advanced_model/eval_results')/'4layer'
+        self.eval_path.mkdir(parents=1, exist_ok=1)
+        opt_name = 'Adam' if self.opt == Adam else 'SGD'
+        fname = self.eval_path / f"results_{opt_name}_{str(self.bs)}_{str(self.lr)}.csv"
         df.to_csv(fname)
         return results
 
