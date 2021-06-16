@@ -67,7 +67,10 @@ class DNN_Model():
         results = classification_report(gold_labels, y_pred, target_names=target_names, output_dict=True, digits=2)
         df = pd.DataFrame(results).transpose()
         df = df.round(2)
-        fname = self.eval_path / f"results_{self.opt}_{str(self.bs)}_{str(self.lr)}.csv"
-        df.to_csv(fname)
+        if self.opt is Adam:
+            df.to_csv("results_Adam_" + str(self.bs) + "_" + str(self.lr) + ".csv")
+        else:
+            df.to_csv("results_SGD_" + str(self.bs) + "_" + str(self.lr) + ".csv")
+
         return results
 
