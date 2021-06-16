@@ -13,9 +13,11 @@ class DNN_Model():
 
     def __init__(self, epochs=10, bs=16, lr=0.025, opt=Adam):
         self.inputs = tf.keras.layers.Input(shape=(3000,))
-        self.l1 = tf.keras.layers.Dense(145, activation="relu")(self.inputs)
-        self.l2 = tf.keras.layers.Dense(32, activation="relu")(self.l1)
-        self.l3 = tf.keras.layers.Dense(15, activation="relu")(self.l2)
+        self.l1 = tf.keras.layers.Dense(512, activation="relu")(self.inputs)
+        self.l2 = tf.keras.layers.Dense(256, activation="relu")(self.l1)
+        self.l3 = tf.keras.layers.Dense(128, activation="relu")(self.l2)
+        self.l4 = tf.keras.layers.Dense(32, activation="relu")(self.l3)
+        self.l5 = tf.keras.layers.Dense(15, activation="relu")(self.l4)
         self.outputs = tf.keras.layers.Dense(7, activation="softmax")(self.l3)
         self.epochs = epochs
         self.bs = bs
@@ -69,7 +71,7 @@ class DNN_Model():
         df = pd.DataFrame(results).transpose()
         df = df.round(2)
 
-        self.eval_path = Path('advanced_model/eval_results')/'4layer'
+        self.eval_path = Path('advanced_model/eval_results')/'6layer'
         self.eval_path.mkdir(parents=1, exist_ok=1)
         opt_name = 'Adam' if self.opt == Adam else 'SGD'
         fname = self.eval_path / f"results_{opt_name}_{str(self.bs)}_{str(self.lr)}.csv"
