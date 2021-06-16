@@ -118,7 +118,7 @@ class Main_DNN:
         model = self.dnn.define_model()
         trained_model = self.dnn.compile_fit_model(model, self.x_train, self.y_train, self.x_valid, self.y_valid)
         cr = self.dnn.evaluate(model, self.x_test, self.y_test)
-        print(cr)
+        # print(cr)
 
 
 if __name__ == "__main__":
