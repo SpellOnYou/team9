@@ -12,8 +12,8 @@ class DNN_Model():
 
     def __init__(self, epochs=10, bs=16, lr=0.025, opt=Adam):
         self.inputs = tf.keras.layers.Input(shape=(3000,))
-        self.intermediate_layer = tf.keras.layers.Dense(100, activation="relu")(self.inputs)
-        self.outputs = tf.keras.layers.Dense(7, activation="softmax")(self.intermediate_layer)
+        self.l1 = tf.keras.layers.Dense(100, activation="relu")(self.inputs)
+        self.outputs = tf.keras.layers.Dense(7, activation="softmax")(self.l1)
         self.epochs = epochs
         self.bs = bs
         self.lr = lr
