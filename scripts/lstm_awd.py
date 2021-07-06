@@ -83,7 +83,7 @@ class LstmAwd:
         yhat_list = []
 
         for text in test_features:
-            yhat_list.append(learn.predict(text)[1].item())
+            yhat_list.append(learn.predict(text[0])[1].item())
 
         get_idx = lambda x: ref_dict[x]
         ytrue_list = list(map(get_idx, test_df['label'].tolist()))
