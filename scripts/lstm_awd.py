@@ -17,13 +17,15 @@ class LstmAwd:
         get data with given path.
         Be careful since some labels (e.g. disgust) have mixed cases (upper, lower)
         """
-        with path.open() as f:
-            for line_i, line in enumerate(f):
-                if line_i == 0: continue
-                label, text, osp, tense = line.split(',', maxsplit=3)
-                # label, text = line.split(',', maxsplit=1)
-                yield label.lower(), text.strip('\n'), osp.strip('\n'), tense.strip('\n')
-                # yield label.lower(), text.strip('\n')
+        #with path.open() as f:
+            #for line_i, line in enumerate(f):
+                #if line_i == 0:
+                   # continue
+                #label, text, osp, tense = line.split(',', maxsplit=3)
+                #label, text = line.split(',', maxsplit=1)
+                #yield label.lower(), text.strip('\n'), osp.strip('\n'), tense.strip('\n')
+                #yield label.lower(), text.strip('\n')
+
 
 
     def get_df(self, train_path, valid_path, test_path):
@@ -31,10 +33,20 @@ class LstmAwd:
         this function gets train, valid, test path and return train, valid data to data frame format.
         """
 
-        train_data, valid_data, test_data = map(self.get_data, (train_path, valid_path, test_path))
-        train_df, valid_df, test_df = map(pd.DataFrame, (train_data, valid_data, test_data))
+        train_df, valid_df, test_df = map(pd.read_csv, (train_path, valid_path, test_path))
+
+        #train_data, valid_data, test_data = map(self.get_data, (train_path, valid_path, test_path))
+        #train_df, valid_df, test_df = map(pd.DataFrame, (train_data, valid_data, test_data))
+        train_df["osp"] = train_df["osp"].apply(str)
+        train_df["tense"] = train_df["tense"].apply(str)
+
+        test_df["osp"] = test_df["osp"].apply(str)
+        test_df["tense"] = test_df["tense"].apply(str)
+
         train_df['is_valid'], valid_df['is_valid'] = False, True
+        # print(list(train_df.columns))
         train_df = train_df.append(valid_df)
+        # print(train_df)
 
         return train_df, test_df
 
@@ -58,36 +70,44 @@ class LstmAwd:
             Finally, plot confusion matrix
         """
 
-        dls = TextDataLoaders.from_df(train_df, path='.', text_col=textCol, label_col=0, valid_col='is_valid')
+        dls = TextDataLoaders.from_df(train_df, text_col=textCol, label_col='label', valid_col='is_valid', bs=32)
         learn = text_classifier_learner(dls, AWD_LSTM, drop_mult=0.5, metrics=accuracy)
-        learn.fine_tune(4, 1e-2)
+        learn.fine_tune(1, 1e-2)
         lr_new = learn.lr_find().valley
-        learn.fine_tune(10, lr_new)
+        learn.fine_tune(1, lr_new)
 
         interp = ClassificationInterpretation.from_learner(learn)
         interp.most_confused(min_val=3)
         interp.plot_top_losses(10, figsize=(15, 15))
         interp.plot_confusion_matrix()
 
-        plt.savefig(file_name)
+        #plt.savefig(file_name)
 
         return learn
 
     def test(self, learn, test_path, columns):
 
         test_df = pd.read_csv(test_path)
-        test_features = test_df[columns]
-        test_features = test_features.values.tolist()
+        test_text_occ = test_df[columns]
 
-        ref_dict = {'anger': 1, 'disgust': 2, 'fear': 3, 'guilt': 4, 'joy': 5, 'sadness': 6, 'shame': 7}
+        #test_df.columns = ["label", "text"]
+
+        test_text_occ = test_text_occ.values.tolist()
+
+        #test_text_occ = test_text_occ.values
+
+        ref_dict = {'anger': 0, 'disgust': 1, 'fear': 2, 'guilt': 3, 'joy': 4, 'sadness': 5, 'shame': 6}
+        #test_text_occ = test_df["text"].tolist()
         yhat_list = []
 
-        for text in test_features:
+        for text in test_text_occ:
             yhat_list.append(learn.predict(text[0])[1].item())
+            #yhat_list.append(learn.predict(text)[1].item())
 
         get_idx = lambda x: ref_dict[x]
-        ytrue_list = list(map(get_idx, test_df['label'].tolist()))
 
+        ytrue_list = list(map(get_idx, test_df['label'].tolist()))
+        print(test_df['label'].tolist())
         print(classification_report(ytrue_list, yhat_list, target_names=ref_dict.keys()))
 
 '''

@@ -18,7 +18,9 @@ class MainLSTM:
         if self.is_trace:
             print("Loading dataset....")
         self.get_path()
-        self.lstm_model = LstmAwd()
+        self.lstm_model_text = LstmAwd()
+        self.lstm_model_occ = LstmAwd()
+        self.lstm_model_text_occ = LstmAwd()
         self.train_lstm()
 
     def get_path(self):
@@ -37,19 +39,19 @@ class MainLSTM:
 
     def train_lstm(self):
 
-        train_df, test_df = self.lstm_model.get_df(self.train_path, self.valid_path, self.test_path)
+        train_df, test_df = self.lstm_model_text.get_df(self.train_path, self.valid_path, self.test_path)
 
         # LSTM_AWD with feature text
-        model = self.lstm_model.train(train_df, 1, self.file_names[0])
-        self.lstm_model.test(model, self.test_path, ["text"])
+        model = self.lstm_model_text.train(train_df, "text", self.file_names[0])
+        self.lstm_model_text.test(model, self.test_path, ["text"])
 
-        # LSTM_AWD with feature OCC variables
-        model = self.lstm_model.train(train_df, [2, 3], self.file_names[1])
-        self.lstm_model.test(model, self.test_path, ["osp", "tense"])
-
-        # LSTM_AWD with features text and OCC variables
-        model = self.lstm_model.train(train_df, [1, 2, 3], self.file_names[2])
-        self.lstm_model.test(model, self.test_path, ["text", "osp", "tense"])
+        #LSTM_AWD with feature OCC variables
+        # model = self.lstm_model_occ.train(train_df, "osp", self.file_names[1])
+        # self.lstm_model.test(model, self.test_path, ["osp"])
+        #
+        # # LSTM_AWD with features text and OCC variables
+        model = self.lstm_model_text_occ.train(train_df, [1, 2, 3], self.file_names[2])
+        self.lstm_model_text_occ.test(model, self.test_path, ["text", "osp", "tense"])
 
 if __name__ == "__main__":
     lstm_model = MainLSTM()
