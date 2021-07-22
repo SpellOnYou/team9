@@ -1,3 +1,0 @@
-advanced_model
-data_preprocessing
-models

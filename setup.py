@@ -8,7 +8,7 @@ setuptools.setup(
     version="0.1.0",
     author="",
     author_email="",
-    description="Emotion Classification",
+    description="NLP Teamlab Group 9 Emotion Classification Library",
     long_description="README.rst",
     url="https://github.com/SpellOnYou/CLab21",
     packages=setuptools.find_packages(),
