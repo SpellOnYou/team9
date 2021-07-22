@@ -4,8 +4,7 @@ with open("README.rst", "r") as fh:
     long_description = fh.read()
 
 setuptools.setup(
-    name="SS2021-Teamlab-group9", 
-    version="0.1.0",
+    name="teamg9", 
     author="",
     author_email="",
     description="NLP Teamlab Group 9 Emotion Classification Library",
@@ -18,4 +17,7 @@ setuptools.setup(
         "Operating System :: OS Independent",
     ],
     python_requires='>=3.6',
+    entry_points = {
+        'console_scripts': ['teamg9=teamg9.main:main'],
+    }
 )
