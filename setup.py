@@ -18,6 +18,8 @@ setuptools.setup(
     ],
     python_requires='>=3.6',
     entry_points = {
-        'console_scripts': ['teamg9=teamg9.main:main'],
+        'console_scripts': [
+            'teamg9 = teamg9.main:main'],
+        'distutils.commands': []
     }
 )
