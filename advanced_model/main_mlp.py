@@ -54,7 +54,7 @@ def train_occ(x_train_, y_train_, x_test_, y_test_):
     Prints classification report
 
     '''
-    
+
     mlp_model = MlpModel()
     model = mlp_model.get_model(x_train_.shape[1])  # init model
     y_train_2d = convert_one_hot(y_train_)  # convert y label to 2-d
@@ -73,7 +73,7 @@ def get_input_combinations(text_ls, rule_or_text):
         [text, direction]
         [text, polarity]
 
-        [text, tense, direction] = input[0:3]
+        [text, tense, direction]
         [text, tense, polarity]
         [text, direction, polarity]
 
