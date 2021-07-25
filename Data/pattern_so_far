@@ -1,0 +1,68 @@
+##### Patterns so far #####
+
+NB Rule-based:
+
+the best results:
+
+[direction, tense, text]
+[direction, overall-polarity, tense, text]
+
+
+NB Data-based:
+
+all results more or less the same
+
+############################################################################
+
+MLP Rule-based:
+
+best results
+
+[direction, tense, text]
+[direction, overall-polarity, tense, text]
+
+MLP Data-based:
+
+all results more or less the same
+
+
+
+############################################################################
+LSTM Rule-based:
+
+really hard to say
+
+['tense', 'direction', 'over-polarity', 'text'] has some high scores but also really low scores
+
+LSTM Data-based:
+
+all results are more or less the same
+
+
+##### Worst predicted classes #####
+
+Input:
+
+####### Rule-based ######
+
+[direction, tense, text]
+
+NB: disgust, guilt
+LSTM: disgust, guilt, joy
+MLP: disgust, guilt
+
+[direction, overall-polarity, tense, text]
+
+NB: disgust, guilt
+LSTM: anger, shame, fear
+MLP: disgust, guilt
+
+###### Data-based ######
+
+[osp, tense, text]
+
+NB: anger, disgust, guilt, shame
+LSTM: anger, shame, sadness, guilt
+MLP: shame, guilt, anger
+
+

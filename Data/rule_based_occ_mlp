@@ -1,0 +1,126 @@
+('tense',)
+
+              precision    recall  f1-score   support
+
+         Joy       0.84      0.62      0.72       160
+        Fear       1.00      1.00      1.00       164
+       Shame       0.64      0.70      0.66       158
+     Disgust       0.62      0.51      0.56       169
+       Guilt       0.48      0.76      0.59       148
+       Anger       0.69      0.63      0.66       171
+     Sadness       0.99      0.88      0.93       149
+
+    accuracy                           0.73      1119
+   macro avg       0.75      0.73      0.73      1119
+weighted avg       0.75      0.73      0.73      1119
+
+
+
+('direction',)
+
+
+              precision    recall  f1-score   support
+
+         Joy       0.98      0.99      0.98       160
+        Fear       0.75      0.71      0.73       164
+       Shame       0.64      0.69      0.67       158
+     Disgust       0.54      0.62      0.58       169
+       Guilt       0.50      0.57      0.54       148
+       Anger       0.49      0.37      0.42       171
+     Sadness       0.74      0.70      0.72       149
+
+    accuracy                           0.66      1119
+   macro avg       0.66      0.67      0.66      1119
+weighted avg       0.66      0.66      0.66      1119
+
+
+
+('polarity',)
+
+
+              precision    recall  f1-score   support
+
+         Joy       1.00      0.99      1.00       160
+        Fear       0.48      0.59      0.53       164
+       Shame       0.36      0.41      0.38       158
+     Disgust       0.49      0.40      0.44       169
+       Guilt       0.37      0.49      0.42       148
+       Anger       0.31      0.22      0.26       171
+     Sadness       0.63      0.56      0.59       149
+
+    accuracy                           0.52      1119
+   macro avg       0.52      0.52      0.52      1119
+weighted avg       0.52      0.52      0.51      1119
+
+__________________________________________________________________________________________________
+('tense', 'direction')
+
+              precision    recall  f1-score   support
+
+         Joy       1.00      1.00      1.00       160
+        Fear       1.00      1.00      1.00       164
+       Shame       1.00      1.00      1.00       158
+     Disgust       0.78      0.71      0.75       169
+       Guilt       0.74      0.80      0.77       148
+       Anger       0.93      0.94      0.93       171
+     Sadness       1.00      1.00      1.00       149
+
+    accuracy                           0.92      1119
+   macro avg       0.92      0.92      0.92      1119
+weighted avg       0.92      0.92      0.92      1119
+ 
+
+
+('tense', 'polarity')
+
+
+              precision    recall  f1-score   support
+
+         Joy       1.00      1.00      1.00       160
+        Fear       1.00      1.00      1.00       164
+       Shame       0.56      0.72      0.63       158
+     Disgust       0.82      0.71      0.76       169
+       Guilt       0.74      0.84      0.79       148
+       Anger       0.63      0.47      0.54       171
+     Sadness       1.00      1.00      1.00       149
+
+    accuracy                           0.82      1119
+   macro avg       0.82      0.82      0.82      1119
+weighted avg       0.82      0.82      0.81      1119
+
+
+
+('direction', 'polarity')
+
+
+              precision    recall  f1-score   support
+
+         Joy       1.00      1.00      1.00       160
+        Fear       0.59      0.76      0.66       164
+       Shame       0.79      0.47      0.59       158
+     Disgust       0.66      0.54      0.59       169
+       Guilt       0.54      0.66      0.59       148
+       Anger       0.48      0.48      0.48       171
+     Sadness       0.62      0.68      0.65       149
+
+    accuracy                           0.65      1119
+   macro avg       0.67      0.65      0.65      1119
+weighted avg       0.67      0.65      0.65      1119
+
+__________________________________________________________________________________________________
+('tense', 'direction', 'polarity')
+
+
+              precision    recall  f1-score   support
+
+         Joy       1.00      1.00      1.00       160
+        Fear       1.00      1.00      1.00       164
+       Shame       1.00      1.00      1.00       158
+     Disgust       0.71      0.86      0.78       169
+       Guilt       0.82      0.66      0.73       148
+       Anger       0.97      0.94      0.96       171
+     Sadness       1.00      1.00      1.00       149
+
+    accuracy                           0.92      1119
+   macro avg       0.93      0.92      0.92      1119
+weighted avg       0.93      0.92      0.92      1119

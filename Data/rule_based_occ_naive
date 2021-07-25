@@ -1,0 +1,104 @@
+['direction', 'text']
+              precision    recall  f1-score   support
+
+       anger       0.49      0.53      0.51       160
+     disgust       0.51      0.72      0.60       121
+        fear       0.77      0.69      0.73       185
+       guilt       0.67      0.53      0.59       187
+         joy       0.89      0.79      0.84       182
+     sadness       0.72      0.67      0.70       161
+       shame       0.58      0.74      0.65       123
+
+    accuracy                           0.66      1119
+   macro avg       0.66      0.67      0.66      1119
+weighted avg       0.68      0.66      0.66      1119
+
+['over-polarity', 'text']
+              precision    recall  f1-score   support
+
+       anger       0.42      0.43      0.42       168
+     disgust       0.44      0.59      0.50       125
+        fear       0.70      0.63      0.66       182
+       guilt       0.52      0.40      0.45       193
+         joy       0.86      0.88      0.87       156
+     sadness       0.64      0.52      0.58       184
+       shame       0.37      0.53      0.44       111
+
+    accuracy                           0.56      1119
+   macro avg       0.56      0.57      0.56      1119
+weighted avg       0.58      0.56      0.57      1119
+
+['tense', 'text']
+              precision    recall  f1-score   support
+
+       anger       0.68      0.72      0.70       160
+     disgust       0.61      0.82      0.70       126
+        fear       0.94      0.89      0.91       174
+       guilt       0.85      0.57      0.68       220
+         joy       0.78      0.73      0.75       171
+     sadness       0.87      0.89      0.88       145
+       shame       0.60      0.77      0.68       123
+
+    accuracy                           0.76      1119
+   macro avg       0.76      0.77      0.76      1119
+weighted avg       0.78      0.76      0.76      1119
+
+['direction', 'over-polarity', 'text']
+              precision    recall  f1-score   support
+
+       anger       0.51      0.54      0.53       162
+     disgust       0.54      0.74      0.62       123
+        fear       0.77      0.69      0.73       183
+       guilt       0.69      0.54      0.60       190
+         joy       0.96      0.89      0.92       172
+     sadness       0.73      0.66      0.70       164
+       shame       0.58      0.73      0.64       125
+
+    accuracy                           0.68      1119
+   macro avg       0.68      0.69      0.68      1119
+weighted avg       0.70      0.68      0.68      1119
+
+['direction', 'tense', 'text']
+              precision    recall  f1-score   support
+
+       anger       0.83      0.96      0.89       148
+     disgust       0.62      0.83      0.71       126
+        fear       0.94      0.90      0.92       172
+       guilt       0.87      0.65      0.75       198
+         joy       0.93      0.80      0.86       186
+     sadness       0.97      0.91      0.94       160
+       shame       0.80      0.98      0.88       129
+
+    accuracy                           0.85      1119
+   macro avg       0.85      0.86      0.85      1119
+weighted avg       0.86      0.85      0.85      1119
+
+['over-polarity', 'tense', 'text']
+              precision    recall  f1-score   support
+
+       anger       0.68      0.73      0.70       159
+     disgust       0.66      0.84      0.74       132
+        fear       0.94      0.88      0.91       175
+       guilt       0.91      0.62      0.74       216
+         joy       0.93      0.90      0.91       165
+     sadness       0.90      0.89      0.90       150
+       shame       0.60      0.78      0.68       122
+
+    accuracy                           0.80      1119
+   macro avg       0.80      0.81      0.80      1119
+weighted avg       0.82      0.80      0.80      1119
+
+['direction', 'over-polarity', 'tense', 'text']
+              precision    recall  f1-score   support
+
+       anger       0.84      0.96      0.90       150    
+     disgust       0.67      0.85      0.75       134
+        fear       0.94      0.90      0.92       171
+       guilt       0.91      0.67      0.77       203
+         joy       0.99      0.92      0.95       171
+     sadness       0.97      0.91      0.94       160
+       shame       0.80      0.98      0.88       130
+
+    accuracy                           0.87      1119
+   macro avg       0.88      0.88      0.87      1119
+weighted avg       0.89      0.87      0.87      1119
