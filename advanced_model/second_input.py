@@ -1,7 +1,7 @@
 import pandas as pd
 from sklearn import preprocessing
 
-from keras.utils import to_categorical
+#from keras.utils import to_categorical
 
 class OCCVariables:
 

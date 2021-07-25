@@ -136,6 +136,7 @@ def convert_one_hot(arry):
     return mat
 
 
+
 model = get_model() #init model
 y_train_2d = convert_one_hot(y_train) #convert y label to 2-d
 fit_model(model, x_train, y_train_2d) #train

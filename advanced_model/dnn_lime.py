@@ -18,7 +18,6 @@ class LimeExplainer:
         self.l4 = tf.keras.layers.Dense(32, activation="relu")(self.l3)
         self.l5 = tf.keras.layers.Dense(15, activation="relu")(self.l4)
         self.outputs = tf.keras.layers.Dense(7, activation="softmax")(self.l3)
-
         self.epochs = epochs
         self.bs = bs
         self.lr = lr

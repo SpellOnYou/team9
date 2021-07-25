@@ -106,7 +106,7 @@ def get_input_combinations(text_ls, rule_or_text):
             tense = tmp[1]
             direction = tmp[2]
             polarity = tmp[3]
-#                text_ls.append(' \t '.join(input_data).strip('\n\"\"\"'))
+
             rule_comb_1.append(text+'\t'+tense)
             rule_comb_2.append(text+'\t'+direction)
             rule_comb_3.append(text+'\t'+polarity)
@@ -143,8 +143,6 @@ y_test_raw_text, x_test_raw_text = get_data(test_path_text)
 y_train_raw_rule, x_train_raw_rule = get_data(train_path_rule)
 y_test_raw_rule, x_test_raw_rule = get_data(test_path_rule)
 
-
-
 # Get combinations for rule-based occ
 rule_combinations_train = get_input_combinations(x_train_raw_rule, 'rule')
 rule_combinations_test = get_input_combinations(x_test_raw_rule, 'rule')
@@ -158,16 +156,16 @@ text_combinations_test = get_input_combinations(x_test_raw_text, 'text')
 # TODO: there might be config arg in fit_transform or TfidfVectorizer, find out
 
 vectorizer = TfidfVectorizer()
-x_train = vectorizer.fit_transform(rule_combinations_train[6]).toarray() # [6] =  [text, direction, polarity]
-x_test = vectorizer.transform(rule_combinations_test[6]).toarray()
+x_train = vectorizer.fit_transform(text_combinations_train[2]).toarray() # [6] =  [text, tense, direction, polarity]
+x_test = vectorizer.transform(text_combinations_test[2]).toarray()
 
 # This is for rule-based only
 # I have to do text-based tomorrow
 # make target/label look-up table && recast to np array of int
-label_to_idx = {label: idx for idx, label in enumerate(sorted(set(y_train_raw_rule)))}
+label_to_idx = {label: idx for idx, label in enumerate(sorted(set(y_train_raw_text)))}
 idx_to_label = {v: k for k, v in label_to_idx.items()}
-y_train = np.array(list(map(lambda x: label_to_idx[x], y_train_raw_rule)))
-y_test = np.array(list(map(lambda x: label_to_idx[x], y_test_raw_rule)))
+y_train = np.array(list(map(lambda x: label_to_idx[x], y_train_raw_text)))
+y_test = np.array(list(map(lambda x: label_to_idx[x], y_test_raw_text)))
 
 train_occ(x_train, y_train, x_test, y_test)
 
