@@ -1,16 +1,15 @@
 import setuptools
-
-with open("README.rst", "r") as fh:
-    long_description = fh.read()
+from io import open
 
 setuptools.setup(
-    name="teamg9", 
-    author="",
-    author_email="",
+    name="team9", 
+    author="Jiwon Kim and Lara Grimminger",
+    author_email="st176776@stud.uni-stuttgart.de",
     description="NLP Teamlab Group 9 Emotion Classification Library",
-    long_description="README.rst",
+    long_description=open("README.md", "r", encoding='utf-8').read(),
+    long_description_content_type="text/mardown",
     url="https://github.com/SpellOnYou/CLab21",
-    packages=setuptools.find_packages(),
+    packages=setuptools.find_packages(exclude=["tests"]),
     classifiers=[
         "Programming Language :: Python :: 3",
         "License :: OSI Approved :: GNU General Public License v3 or later (GPLv3+)",
@@ -19,7 +18,8 @@ setuptools.setup(
     python_requires='>=3.6',
     entry_points = {
         'console_scripts': [
-            'teamg9 = teamg9.main:main'],
-        'distutils.commands': []
+            'team9-emo-cls=team9.main:main',
+        ]
     }
 )
+
