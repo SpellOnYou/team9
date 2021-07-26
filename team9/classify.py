@@ -9,7 +9,6 @@ from .model import (
 # from .emb import *
 
 from .dataset import *
-
 __all__ = ["Classifier"]
 
 class Classifier():
@@ -22,5 +21,7 @@ class Classifier():
 
 		self.train_x, self.train_y = load_csv('example/train.csv')(occ_type = self.occ_type)
 	def get_embedding(self):
-		self.embed = importlib.import_module(f'.emb.{self.emb_type}', __package__)
-		print(self.embed)
+		import pudb; pudb.set_trace()
+		print(importlib.find_loader(self.emb_type, path=None))
+		self.embed = importlib.import_module(f'{self.emb_type}')
+		return self.embed
