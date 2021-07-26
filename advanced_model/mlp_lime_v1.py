@@ -91,17 +91,18 @@ class LimeExplainer:
     #     return prob
 
     def lime_predictor(self, text):
-        vectorizer = TfidfVectorizer()
-        text_vector = vectorizer.fit_transform(text)
+
+        text_vector = self.tfidf_train.tf_idf(text, train=False)#[:, :3000]
         prob = self.model.predict(text_vector, batch_size=16, verbose=1)
         return prob
 
-    def lime_exp(self, isear_test_x):
+
+    def lime_exp(self, isear_test_x, vocabulary):
         y_pred = []
         idx = 31
         target_names = ["Joy", "Fear", "Shame", "Disgust", "Guilt", "Anger", "Sadness"]
 
-        #self.tfidf_train = vocabulary
+        self.tfidf_train = vocabulary
         explainer = LimeTextExplainer(class_names=target_names)
 
         row = isear_test_x[idx]

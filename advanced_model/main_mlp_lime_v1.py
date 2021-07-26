@@ -8,13 +8,12 @@ import numpy as np
 
 # import modules needed for MLP
 from mlp_lime_v1 import LimeExplainer
-#from dnn_model import DnnModel
 from second_input import OCCVariables
-#from multiple_inputs_model import MultipleInputsModel
+
 
 # import text preprocessing modules
-from one_hot_encoding import OneHotEncoding
-from input_tf_idf import GenerateSentences, TfIdf
+from data_preprocessing.one_hot_encoding import OneHotEncoding
+from data_preprocessing.input_tf_idf import GenerateSentences, TfIdf
 import tensorflow as tf
 from tensorflow.keras.optimizers import Adam, SGD
 
@@ -215,7 +214,8 @@ class MainDNN:
     def train_lime(self, test_sentences, ohe_test):
         le = LimeExplainer(self.x_train.shape[1], bs=self.bs, lr=self.lr, opt=self.opt)
         le.fit_model(self.x_train, self.y_train)
-        le.lime_exp(test_sentences)
+        le.lime_exp(test_sentences, self.vocab)
+        #le.lime_exp(test_sentences)
 
 
 if __name__ == "__main__":

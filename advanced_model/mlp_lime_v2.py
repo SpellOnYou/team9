@@ -14,6 +14,7 @@ class MlpModelLime:
 
     def __init__(self):
         self.model = None
+        self.train_raw = None
 
     def get_layers(self, shape_of_input):
         input_layer = layers.Input(shape=shape_of_input, name="input")
@@ -50,19 +51,25 @@ class MlpModelLime:
 
     def lime_predictor(self, text):
         vectorizer = TfidfVectorizer()
-        text_vector = vectorizer.fit_transform(text)
+        vectorizer.fit_transform(self.train_raw)
+        text_vector = vectorizer.transform(text).toarray()
         prob = self.model.predict(text_vector, batch_size=16, verbose=1)
         return prob
 
-    def lime_exp(self, isear_test_x):
+    def lime_exp(self, isear_test_x, train_sen):
         y_pred = []
         idx = 31
+        self.train_raw = train_sen
         target_names = ["Anger", "Disgust", "Fear", "Guilt", "Joy", "Sadness", "Shame"]
 
         #self.tfidf_train = vocabulary
         explainer = LimeTextExplainer(class_names=target_names)
 
-        row = isear_test_x[idx]#.split('\t')
+        row = isear_test_x[idx]#.split('\t') # now it works for [text, tense, polarity,direction]
+
+        # for column text only:
+        # row = isear_test_x[idx].split('\t') and row[0]
+
         print("Row: %s" % row)
 
         exp = explainer.explain_instance(row, self.lime_predictor, num_features=7, top_labels=7)

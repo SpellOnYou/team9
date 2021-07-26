@@ -7,7 +7,8 @@ from tensorflow.keras.callbacks import EarlyStopping
 from tensorflow.keras.optimizers import Adam, SGD
 import pandas as pd
 from sklearn.metrics import confusion_matrix
-
+from keras.layers.merge import Concatenate
+#from keras.utils import plot_model
 
 
 class MultipleInputsModel:

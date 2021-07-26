@@ -2,7 +2,9 @@ from pathlib import Path
 from sklearn.feature_extraction.text import TfidfVectorizer
 import numpy as np
 from mlp import MlpModel
-from sklearn.metrics import classification_report
+from sklearn.metrics import classification_report, confusion_matrix, plot_confusion_matrix, ConfusionMatrixDisplay
+import matplotlib.pyplot as plt
+
 
 def get_path_text():
     path_d = Path('../datasets/emotions/isear/text-based')
@@ -30,6 +32,7 @@ def get_data(data_path):
                 label_ls.append(one_line[1])
                 try:
                     input_data = one_line[2].rsplit(',', maxsplit=3)
+                    #input_data = input_data[:1]  # only column text
                 except IndexError:
                     continue
                 text_ls.append(' \t '.join(input_data))
@@ -61,6 +64,11 @@ def train_occ(x_train_, y_train_, x_test_, y_test_):
     mlp_model.fit_model(model, x_train_, y_train_2d)  # train
     pred = model.predict(x=x_test_, batch_size=64, verbose=1).argmax(-1)  # predict and get maximum value's index
     print(classification_report(y_test_, pred, target_names=sorted(list(label_to_idx.keys()))))  # report results
+    cm = confusion_matrix(y_test_, pred)
+    print(cm)
+    disp = ConfusionMatrixDisplay(confusion_matrix=cm, display_labels=sorted(list(label_to_idx.keys())))
+    disp.plot(cmap=plt.cm.Blues)
+    plt.show()
 
 
 def get_input_combinations(text_ls, rule_or_text):
@@ -94,6 +102,7 @@ def get_input_combinations(text_ls, rule_or_text):
     rule_comb_5 = []
     rule_comb_6 = []
     rule_comb_7 = []
+    rule_comb_8 = []
 
     text_comb_1 = []
     text_comb_2 = []
@@ -107,13 +116,14 @@ def get_input_combinations(text_ls, rule_or_text):
             direction = tmp[2]
             polarity = tmp[3]
 
-            rule_comb_1.append(text+'\t'+tense)
-            rule_comb_2.append(text+'\t'+direction)
-            rule_comb_3.append(text+'\t'+polarity)
-            rule_comb_4.append(text+'\t'+tense+'\t'+direction)
-            rule_comb_5.append(text+'\t'+tense+'\t'+polarity)
-            rule_comb_6.append(text+'\t'+direction+'\t'+polarity)
-            rule_comb_7.append(text+'\t'+tense+'\t'+direction+'\t'+polarity)
+            rule_comb_1.append(text)
+            rule_comb_2.append(text+'\t'+tense)
+            rule_comb_3.append(text+'\t'+direction)
+            rule_comb_4.append(text+'\t'+polarity)
+            rule_comb_5.append(text+'\t'+tense+'\t'+direction)
+            rule_comb_6.append(text+'\t'+tense+'\t'+polarity)
+            rule_comb_7.append(text+'\t'+direction+'\t'+polarity)
+            rule_comb_8.append(text+'\t'+tense+'\t'+direction+'\t'+polarity)
 
         #elif len(tmp) == 3:
         elif rule_or_text == 'text':
@@ -121,12 +131,13 @@ def get_input_combinations(text_ls, rule_or_text):
             osp = tmp[1]
             tense = tmp[2]
 
-            text_comb_1.append(text+'\t'+osp)
+            text_comb_1.append(text)
+            #text_comb_1.append(text+'\t'+osp)
             text_comb_2.append(text+'\t'+tense)
             text_comb_3.append(text+'\t'+osp+'\t'+tense)
 
     if rule_or_text == 'rule':
-        return [rule_comb_1, rule_comb_2, rule_comb_3, rule_comb_4, rule_comb_5, rule_comb_6, rule_comb_7]
+        return [rule_comb_1, rule_comb_2, rule_comb_3, rule_comb_4, rule_comb_5, rule_comb_6, rule_comb_7, rule_comb_8]
     elif rule_or_text == 'text':
         return [text_comb_1, text_comb_2, text_comb_3]
 
@@ -156,16 +167,16 @@ text_combinations_test = get_input_combinations(x_test_raw_text, 'text')
 # TODO: there might be config arg in fit_transform or TfidfVectorizer, find out
 
 vectorizer = TfidfVectorizer()
-x_train = vectorizer.fit_transform(text_combinations_train[2]).toarray() # [6] =  [text, tense, direction, polarity]
-x_test = vectorizer.transform(text_combinations_test[2]).toarray()
+x_train = vectorizer.fit_transform(rule_combinations_train[0]).toarray() # [7] =  [text, tense, direction, polarity]
+x_test = vectorizer.transform(rule_combinations_test[0]).toarray()
 
 # This is for rule-based only
 # I have to do text-based tomorrow
 # make target/label look-up table && recast to np array of int
-label_to_idx = {label: idx for idx, label in enumerate(sorted(set(y_train_raw_text)))}
+label_to_idx = {label: idx for idx, label in enumerate(sorted(set(y_train_raw_rule)))}
 idx_to_label = {v: k for k, v in label_to_idx.items()}
-y_train = np.array(list(map(lambda x: label_to_idx[x], y_train_raw_text)))
-y_test = np.array(list(map(lambda x: label_to_idx[x], y_test_raw_text)))
+y_train = np.array(list(map(lambda x: label_to_idx[x], y_train_raw_rule)))
+y_test = np.array(list(map(lambda x: label_to_idx[x], y_test_raw_rule)))
 
 train_occ(x_train, y_train, x_test, y_test)
 

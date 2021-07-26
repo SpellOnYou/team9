@@ -37089,43 +37089,43 @@
 /***/ })
 /******/ ]);
 //# sourceMappingURL=bundle.js.map </script></head><body>
-        <div class="lime top_div" id="top_divV8A1A3CXKEE1G10"></div>
+        <div class="lime top_div" id="top_div78GO7TQU07T64JM"></div>
         
         <script>
-        var top_div = d3.select('#top_divV8A1A3CXKEE1G10').classed('lime top_div', true);
+        var top_div = d3.select('#top_div78GO7TQU07T64JM').classed('lime top_div', true);
         
             var pp_div = top_div.append('div')
                                 .classed('lime predict_proba', true);
             var pp_svg = pp_div.append('svg').style('width', '100%');
-            var pp = new lime.PredictProba(pp_svg, ["Joy", "Fear", "Shame", "Disgust", "Guilt", "Anger", "Sadness"], [0.0023856880143284798, 0.0034959453623741865, 0.9094250202178955, 0.04355785250663757, 0.007910852320492268, 0.03278182074427605, 0.00044285855256021023]);
+            var pp = new lime.PredictProba(pp_svg, ["Anger", "Disgust", "Fear", "Guilt", "Joy", "Sadness", "Shame"], [0.14796294271945953, 0.1379859447479248, 0.1412055641412735, 0.15367746353149414, 0.14347559213638306, 0.1305205523967743, 0.14517195522785187]);
             
         
         var exp_div;
-            var exp = new lime.Explanation(["Joy", "Fear", "Shame", "Disgust", "Guilt", "Anger", "Sadness"]);
+            var exp = new lime.Explanation(["Anger", "Disgust", "Fear", "Guilt", "Joy", "Sadness", "Shame"]);
         
                 exp_div = top_div.append('div').classed('lime explanation', true);
-                exp.show([["class", 0.24422046893870059], ["lecture", 0.166432362345966], ["loud", 0.09841321486186094], ["talking", 0.05007894698144043], ["boy", 0.013567725292981855], ["in", 0.006132951961014833]], 2, exp_div);
+                exp.show([["loud", -0.0028290323779669715], ["xxoth", 0.002402244749148124], ["xxfut", 0.0017023709563713128], ["xxpre", 0.001591451936805595], ["boy", -0.0011606135227189933], ["class", 0.0009226182064267698], ["talking", -0.0005305738260704191]], 3, exp_div);
                 
                 exp_div = top_div.append('div').classed('lime explanation', true);
-                exp.show([["class", -0.09698198756611982], ["lecture", -0.0777145392607524], ["loud", 0.06846537060138508], ["boy", -0.03325094782621699], ["talking", 0.03177207753213885], ["too", 0.002992189428124428]], 3, exp_div);
+                exp.show([["xxpre", -0.0017327124705135608], ["loud", 0.001520906799950945], ["boy", 0.0013064456820506666], ["xxpas", -0.0008498279798089981], ["class", 0.0006917882886079557], ["lecture", 0.0006236523732947634], ["xxfut", -0.00047001598360280994]], 0, exp_div);
                 
                 exp_div = top_div.append('div').classed('lime explanation', true);
-                exp.show([["talking", -0.11200408660614428], ["class", -0.08158842364799489], ["boy", 0.03392853052642451], ["loud", 0.01969567453679587], ["lecture", -0.00884181735545301], ["too", -0.0012863291543029648]], 5, exp_div);
+                exp.show([["loud", 0.0026300651150609933], ["class", 0.002343818978727392], ["xxpre", -0.0012585091365648463], ["xxpas", -0.0011684670116005225], ["talking", -0.0009871899795272144], ["xxfut", -0.0008938323117755828], ["xxoth", -0.0008267913610798662]], 6, exp_div);
                 
                 exp_div = top_div.append('div').classed('lime explanation', true);
-                exp.show([["loud", -0.03182378808822692], ["talking", -0.02183357650950779], ["boy", 0.016405251084085654], ["class", -0.010468438597632086], ["lecture", -0.006411661963017204], ["too", -0.001239537312890662]], 4, exp_div);
+                exp.show([["class", 0.0018417822510468044], ["xxoth", 0.001697986288277048], ["xxfut", 0.001474471855820307], ["loud", -0.001430989218222029], ["too", -0.001425160157810172], ["xxneg", -0.0014243180944843489], ["talking", -0.001268287813354432]], 4, exp_div);
                 
                 exp_div = top_div.append('div').classed('lime explanation', true);
-                exp.show([["loud", -0.04993437349141057], ["lecture", -0.011464034499924008], ["class", 0.004723912969336872], ["boy", -0.0026048520577091174], ["talking", -0.0012954016951381665], ["A", 0.0006141228243569478]], 1, exp_div);
+                exp.show([["loud", 0.002637044448715719], ["xxpre", -0.0020133435285683544], ["in", 0.0015911295396367185], ["too", -0.0011730449281948843], ["xxoth", -0.001089066319261071], ["xxpas", -0.0006664440209216032], ["talking", -0.0006653261415299416]], 2, exp_div);
                 
                 exp_div = top_div.append('div').classed('lime explanation', true);
-                exp.show([["loud", -0.0969552423639557], ["lecture", -0.06230613804141151], ["talking", 0.061338205783167496], ["class", -0.05299999346750903], ["boy", -0.024424692455951125], ["my", -0.004889786252126677]], 0, exp_div);
+                exp.show([["class", -0.003869118068546416], ["loud", -0.003511788388684815], ["xxpre", 0.0024236104889317988], ["xxpas", 0.0018889007999529938], ["talking", 0.0018125842682299152], ["too", 0.001500956354422524], ["in", -0.0012670494954738474]], 1, exp_div);
                 
                 exp_div = top_div.append('div').classed('lime explanation', true);
-                exp.show([["talking", -0.008143601171260163], ["loud", -0.00790444988216648], ["class", -0.007301607702465922], ["boy", -0.0037209724706939165], ["too", -0.0005256092409834838], ["in", -0.00040759568379509673]], 6, exp_div);
+                exp.show([["xxoth", -0.0025528014209373917], ["class", -0.002404602259372126], ["xxfut", -0.0020747912946758587], ["too", 0.001345333479459534], ["talking", 0.0013147317414170807], ["loud", 0.0012378279695247874], ["xxneg", 0.0010923421783638012]], 5, exp_div);
                 
         var raw_div = top_div.append('div');
-            exp.show_raw_text([["class", 12, 0.24422046893870059], ["lecture", 42, 0.166432362345966], ["loud", 30, 0.09841321486186094], ["talking", 18, 0.05007894698144043], ["boy", 2, 0.013567725292981855], ["in", 6, 0.006132951961014833], ["in", 35, 0.006132951961014833]], 2, "A boy in my class talking too loud in the lecture.", raw_div, true);
+            exp.show_raw_text([["loud", 30, -0.0028290323779669715], ["xxoth", 73, 0.002402244749148124], ["xxfut", 65, 0.0017023709563713128], ["xxpre", 53, 0.001591451936805595], ["boy", 2, -0.0011606135227189933], ["class", 12, 0.0009226182064267698], ["talking", 18, -0.0005305738260704191]], 3, "A boy in my class talking too loud in the lecture. \t xxpre xxpas xxfut \t xxoth \t xxneg", raw_div, true);
             
         </script>
         </body></html>

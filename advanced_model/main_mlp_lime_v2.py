@@ -3,7 +3,7 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 import numpy as np
 #from mlp_lime import MlpModelLime
 from mlp_lime_v2 import MlpModelLime
-#from data_preprocessing.input_tf_idf import GenerateSentences, TfIdf
+from data_preprocessing.input_tf_idf import GenerateSentences, TfIdf
 from sklearn.metrics import classification_report
 from lime.lime_text import LimeTextExplainer
 import tensorflow as tf
@@ -34,7 +34,7 @@ def get_data(data_path):
                 label_ls.append(one_line[1])
                 try:
                     input_data = one_line[2].rsplit(',', maxsplit=3)
-                    input_data = input_data[:1] # only column text
+                    #input_data = input_data[:1] # only column text
                 except IndexError:
                     continue
                 text_ls.append(' \t '.join(input_data))
@@ -50,7 +50,7 @@ def convert_one_hot(array):
     return mat
 
 
-def train_occ(x_train_, y_train_, x_test_, y_test_):
+def train_occ(x_train_, y_train_, x_test_, y_test_, train_sen):
     '''
 
     Initialises the model
@@ -68,76 +68,76 @@ def train_occ(x_train_, y_train_, x_test_, y_test_):
     mlp_model.fit_model(x_train_, y_train_2d)  # train
     #pred = model.predict(x=x_test_, batch_size=64, verbose=1).argmax(-1)  # predict and get maximum value's index
     #print(classification_report(y_test_, pred, target_names=sorted(list(label_to_idx.keys()))))  # report results
-    mlp_model.lime_exp(x_test_raw_text)
+    mlp_model.lime_exp(x_test_raw_rule, train_sen)
 
 #
-# def get_input_combinations(text_ls, rule_or_text):
-#
-#     '''
-#     This function returns all possible input combinations as a list.
-#     Input combinations rule-based file:
-#
-#         [text, tense]
-#         [text, direction]
-#         [text, polarity]
-#
-#         [text, tense, direction]
-#         [text, tense, polarity]
-#         [text, direction, polarity]
-#
-#         [text, tense, direction, polarity]
-#
-#     Input combinations text-based file:
-#
-#         [text, osp]
-#         [text, tense]
-#         [text, osp, tense]
-#
-#     '''
-#
-#     rule_comb_1 = []
-#     rule_comb_2 = []
-#     rule_comb_3 = []
-#     rule_comb_4 = []
-#     rule_comb_5 = []
-#     rule_comb_6 = []
-#     rule_comb_7 = []
-#
-#     text_comb_1 = []
-#     text_comb_2 = []
-#     text_comb_3 = []
-#     for input_data in text_ls:
-#         tmp = input_data.split('\t')
-#         #if len(tmp) == 4:
-#         if rule_or_text == 'rule':
-#             text = tmp[0]
-#             tense = tmp[1]
-#             direction = tmp[2]
-#             polarity = tmp[3]
-#
-#             rule_comb_1.append(text+'\t'+tense)
-#             rule_comb_2.append(text+'\t'+direction)
-#             rule_comb_3.append(text+'\t'+polarity)
-#             rule_comb_4.append(text+'\t'+tense+'\t'+direction)
-#             rule_comb_5.append(text+'\t'+tense+'\t'+polarity)
-#             rule_comb_6.append(text+'\t'+direction+'\t'+polarity)
-#             rule_comb_7.append(text+'\t'+tense+'\t'+direction+'\t'+polarity)
-#
-#         #elif len(tmp) == 3:
-#         elif rule_or_text == 'text':
-#             text = tmp[0]
-#             osp = tmp[1]
-#             tense = tmp[2]
-#
-#             text_comb_1.append(text+'\t'+osp)
-#             text_comb_2.append(text+'\t'+tense)
-#             text_comb_3.append(text+'\t'+osp+'\t'+tense)
-#
-#     if rule_or_text == 'rule':
-#         return [rule_comb_1, rule_comb_2, rule_comb_3, rule_comb_4, rule_comb_5, rule_comb_6, rule_comb_7]
-#     elif rule_or_text == 'text':
-#         return [text_comb_1, text_comb_2, text_comb_3]
+def get_input_combinations(text_ls, rule_or_text):
 
+    '''
+    This function returns all possible input combinations as a list.
+    Input combinations rule-based file:
+
+        [text, tense]
+        [text, direction]
+        [text, polarity]
+
+        [text, tense, direction]
+        [text, tense, polarity]
+        [text, direction, polarity]
+
+        [text, tense, direction, polarity]
+
+    Input combinations text-based file:
+
+        [text, osp]
+        [text, tense]
+        [text, osp, tense]
+
+    '''
+
+    rule_comb_1 = []
+    rule_comb_2 = []
+    rule_comb_3 = []
+    rule_comb_4 = []
+    rule_comb_5 = []
+    rule_comb_6 = []
+    rule_comb_7 = []
+
+    text_comb_1 = []
+    text_comb_2 = []
+    text_comb_3 = []
+
+    for input_data in text_ls:
+        tmp = input_data.split('\t')
+        #if len(tmp) == 4:
+        if rule_or_text == 'rule':
+            text = tmp[0]
+            tense = tmp[1]
+            direction = tmp[2]
+            polarity = tmp[3]
+
+            rule_comb_1.append(text+'\t'+tense)
+            rule_comb_2.append(text+'\t'+direction)
+            rule_comb_3.append(text+'\t'+polarity)
+            rule_comb_4.append(text+'\t'+tense+'\t'+direction)
+            rule_comb_5.append(text+'\t'+tense+'\t'+polarity)
+            rule_comb_6.append(text+'\t'+direction+'\t'+polarity)
+            rule_comb_7.append(text+'\t'+tense+'\t'+direction+'\t'+polarity)
+
+        #elif len(tmp) == 3:
+        elif rule_or_text == 'text':
+            text = tmp[0]
+            osp = tmp[1]
+            tense = tmp[2]
+
+            text_comb_1.append(text+'\t'+osp)
+            text_comb_2.append(text+'\t'+tense)
+            text_comb_3.append(text+'\t'+osp+'\t'+tense)
+
+    if rule_or_text == 'rule':
+        return [rule_comb_1, rule_comb_2, rule_comb_3, rule_comb_4, rule_comb_5, rule_comb_6, rule_comb_7]
+    elif rule_or_text == 'text':
+        return [text_comb_1, text_comb_2, text_comb_3]
 
 # Get paths for text- and rule-based occ variables
 train_path_text, test_path_text = get_path_text()
@@ -151,15 +151,13 @@ y_test_raw_text, x_test_raw_text = get_data(test_path_text)
 y_train_raw_rule, x_train_raw_rule = get_data(train_path_rule)
 y_test_raw_rule, x_test_raw_rule = get_data(test_path_rule)
 
-
-
 # Get combinations for rule-based occ
-# rule_combinations_train = get_input_combinations(x_train_raw_rule, 'rule')
-# rule_combinations_test = get_input_combinations(x_test_raw_rule, 'rule')
-#
-# # Get combinations for text-based occ
-# text_combinations_train = get_input_combinations(x_train_raw_text, 'text')
-# text_combinations_test = get_input_combinations(x_test_raw_text, 'text')
+rule_combinations_train = get_input_combinations(x_train_raw_rule, 'rule')
+rule_combinations_test = get_input_combinations(x_test_raw_rule, 'rule')
+
+# Get combinations for text-based occ
+text_combinations_train = get_input_combinations(x_train_raw_text, 'text')
+text_combinations_test = get_input_combinations(x_test_raw_text, 'text')
 
 # convert to tfidf, for text data
 # since default transform type is csr.sparse, need to be converted np.array
@@ -167,8 +165,8 @@ y_test_raw_rule, x_test_raw_rule = get_data(test_path_rule)
 
 
 vectorizer = TfidfVectorizer()
-x_train = vectorizer.fit_transform(x_train_raw_rule).toarray()
-x_test = vectorizer.transform(x_test_raw_rule).toarray()
+x_train = vectorizer.fit_transform(rule_combinations_train[6]).toarray() # [6] =  [text, tense, direction, polarity]
+x_test = vectorizer.transform(rule_combinations_test[6]).toarray()
 
 
 # make target/label look-up table && recast to np array of int
@@ -177,5 +175,5 @@ idx_to_label = {v:k for k, v in label_to_idx.items()}
 y_train = np.array(list(map(lambda x: label_to_idx[x], y_train_raw_rule)))
 y_test = np.array(list(map(lambda x: label_to_idx[x], y_test_raw_rule)))
 
-#train_occ(x_train, tf.sparse.reorder(tf.SparseTensor(y_train)), x_test, y_test)
-train_occ(x_train, y_train, x_test, y_test)
+train_occ(x_train, y_train, x_test, y_test, x_train_raw_rule)
+
