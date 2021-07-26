@@ -3,6 +3,7 @@ from io import open
 
 setuptools.setup(
     name="team9", 
+    version="1.0",
     author="Jiwon Kim and Lara Grimminger",
     author_email="st176776@stud.uni-stuttgart.de",
     description="NLP Teamlab Group 9 Emotion Classification Library",
@@ -18,7 +19,7 @@ setuptools.setup(
     python_requires='>=3.6',
     entry_points = {
         'console_scripts': [
-            'team9-emo-cls=team9.main:main',
+            'team9-emo-cls=team9_cli.main:main',
         ]
     }
 )

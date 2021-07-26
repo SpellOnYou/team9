@@ -73,3 +73,23 @@ Epochs: `1`, `3`, `5`, `7`, `9`, `11`, `13`
 numpy version >= 1.19
 python version >= 3.6
 pytorch version >= 1.0
+
+--------------
+--------------
+----- this version was written for final -----
+TODO: This should be intergrated with above description
+
+### Installation
+
+To use the package, please clone/download this and install it.
+
+$ git clone #or you may extract downloaded zipfile.
+
+
+
+$ cd team9
+$ python setup.py install
+
+or
+
+pip install team9
