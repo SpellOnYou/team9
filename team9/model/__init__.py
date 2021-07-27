@@ -1,7 +1,7 @@
 # model.__init__.py
 
-from sklearn.naive_bayes import MultinomialNB as nb
-from mlp import mlp
+# from sklearn.naive_bayes import MultinomialNB as nb
+from .mlp import mlp
 
-__all__ = ['nb', 'lstm_awd', 'mlp', 'dummy']
+__all__ = ['lstm_awd', 'mlp']
 

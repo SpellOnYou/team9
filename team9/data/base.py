@@ -8,6 +8,7 @@ import pkgutil
 import pandas as pd
 import numpy as np
 import pickle
+from sklearn.feature_extraction.text import TfidfVectorizer
 
 def get_bytestring(formatter):
 	"""function which reads data as a bytestring insensitive to cwd and packaging
@@ -48,8 +49,8 @@ def load_csv(raw_data, occ_type='', index_col=0, **kwargs):
 def load_npz(emb_type = 'fasttext', emb_dim=100):
 	"""A function loads embedding"""
 	# find current path
-	embedding_path = Path('.')/'pretrained/{emb_type}.en.{emb_dim}.npz'
-	assert embedding_path.is_file(), f"there is no version for {emb_type} with dimension size: {dim_size}"
+	embedding_path = Path(__file__).parent / f'pretrained/{emb_type}.en.{emb_dim}.npz'
+	assert embedding_path.exists(), f"there is no version for {emb_type} with dimension size: {emb_dim}"
 	with np.load(embedding_path) as ed:
 		lookup_emb = ed[f'emb{emb_dim}']
 	return lookup_emb
@@ -61,6 +62,7 @@ def load_pkl(emb_type='fasttext', **kwargs):
 	---
 		collections.OrderedDict instance, key: word in dataset, value: idx
 	"""
-	with open(f'pretrained/{'.'}.en.vtoi.pkl' ,'rb') as f:
+	fname = Path(__file__).parent/f'pretrained/{emb_type}.en.vtoi.pkl'
+	with fname.open('rb') as f:
 		vtoi = pickle.load(f)
 	return vtoi

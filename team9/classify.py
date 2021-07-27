@@ -1,5 +1,12 @@
 """classify.py; this is core implementation of this library"""
 import importlib
+from sklearn.feature_extraction.text import TfidfVectorizer as tfidf
+from sklearn.naive_bayes import MultinomialNB as nb
+from .model import *
+from .data import *
+from .interpret import *
+from .classify import *
+from .utils import validate_y
 
 __all__ = ["Classifier"]
 
@@ -7,7 +14,7 @@ __all__ = ["Classifier"]
 emb_dict = {'tfidf': tfidf()}
 
 class Classifier():
-	def __init__(self, model=nb, emb_type= 'tfidf', occ_type='', *args, **kwargs):
+	def __init__(self, model=nb, emb_type= 'fasttext', occ_type='', *args, **kwargs):
 		self.model = model()
 		self.emb_type = emb_type
 		self.occ_type = ''
@@ -15,12 +22,12 @@ class Classifier():
 
 
 	def get_data(self):
-		train_data_fn = load_csv('example/train.csv')
-		import pudb; pudb.set_trace()
+		train_data_fn = load_csv('../example/train.csv')
+		
 		self.x_train_text, self.y_train_label = train_data_fn(occ_type = self.occ_type)
 
-		self.x_valid_text, self.y_valid_label = load_csv('example/valid.csv')(occ_type = self.occ_type)
-		self.x_test_text, self.y_test_label = load_csv('example/test.csv')(occ_type = self.occ_type)
+		self.x_valid_text, self.y_valid_label = load_csv('../example/valid.csv')(occ_type = self.occ_type)
+		self.x_test_text, self.y_test_label = load_csv('../example/test.csv')(occ_type = self.occ_type)
 		
 		# change when labels aren't int
 		self.label2idx, self.y_train = validate_y(self.y_train_label)
@@ -30,12 +37,13 @@ class Classifier():
 	def get_embedding(self):
 		#TODO: it's better to divide fit / transform of tfidf and override function with additional class,
 		# so that both type of embedding can be obtained same method
-		if not self.emb_type=='tfidf':
+		if self.emb_type=='tfidf':
 			self.embedding = emb_dict[self.emb_type]
 			self.x_train = self.embedding.fit_transform(x)
 		else:
 			self.embedding = load_npz(self.emb_type)
 			self.vtoi = load_pkl(self.emb_type)
+            import pdb; pdb.set_trace()
 
 
 	def train(self, x, y):
@@ -47,8 +55,9 @@ class Classifier():
 		# TODO Its better to split getting data and embedding to data module
 		
 		self.get_data()
-
 		self.get_embedding()
+
+        
 		self.train(self.x_train, self.y_train)
 
 		#check performance on data which have trained
