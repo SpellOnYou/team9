@@ -14,7 +14,7 @@ __all__ = ["Classifier"]
 emb_dict = {'tfidf': tfidf()}
 
 class Classifier():
-	def __init__(self, model=nb, emb_type= 'fasttext', occ_type='', *args, **kwargs):
+	def __init__(self, model=nb, emb_type= 'tfidf', occ_type='', *args, **kwargs):
 		self.model = model()
 		self.emb_type = emb_type
 		self.occ_type = ''
@@ -23,12 +23,10 @@ class Classifier():
 
 	def get_data(self):
 		train_data_fn = load_csv('../example/train.csv')
-		
 		self.x_train_text, self.y_train_label = train_data_fn(occ_type = self.occ_type)
 
 		self.x_valid_text, self.y_valid_label = load_csv('../example/valid.csv')(occ_type = self.occ_type)
 		self.x_test_text, self.y_test_label = load_csv('../example/test.csv')(occ_type = self.occ_type)
-		
 		# change when labels aren't int
 		self.label2idx, self.y_train = validate_y(self.y_train_label)
 		self.y_valid = list(map(lambda x: self.label2idx[x], self.y_valid_label))
@@ -39,12 +37,10 @@ class Classifier():
 		# so that both type of embedding can be obtained same method
 		if self.emb_type=='tfidf':
 			self.embedding = emb_dict[self.emb_type]
-			self.x_train = self.embedding.fit_transform(x)
+			self.x_train = self.embedding.fit_transform(self.x_train_text)
 		else:
 			self.embedding = load_npz(self.emb_type)
 			self.vtoi = load_pkl(self.emb_type)
-            import pdb; pdb.set_trace()
-
 
 	def train(self, x, y):
 		self.model.fit(x, y)
@@ -56,8 +52,7 @@ class Classifier():
 		
 		self.get_data()
 		self.get_embedding()
-
-        
+		# import pudb; pudb.set_trace()
 		self.train(self.x_train, self.y_train)
 
 		#check performance on data which have trained

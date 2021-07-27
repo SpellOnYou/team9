@@ -50,6 +50,8 @@ def main():
     args = get_args()
     print(args)
     # team9.model.dummy()
+    emo_cls = team9.Classifier()
+    emo_cls()
     #TODO: 1) load datasets instance
     #TODO: 2) get embedding 'emb_type'
     #TODO: 3) load model and train with embedding
