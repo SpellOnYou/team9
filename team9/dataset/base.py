@@ -17,6 +17,7 @@ def get_bytestring(formatter):
 
 @get_bytestring
 def load_csv(raw_data, occ_type='', index_col=0, **kwargs):
+	
 	"""get data using pandas data frame object
 	here we assume encoding type of source data is utf-8 (You may fix this with kwargs)
 

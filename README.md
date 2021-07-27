@@ -1,30 +1,4 @@
 
-TODO: This should be intergrated with descriptions below
-
-### Installation
-
-To use the package, please clone/download this and install it.
-
-```
-$ git clone https://github.com/SpellOnYou/CLab21/origin/master # or you may extract downloaded zipfile.
-$ cd team9
-$ python setup.py install
-```
-
-or just use pip :)
-
-`
-pip install team9
-`
-
-Now you can use our package!
-
-
-
-
----
-
-
 # CLab 21: Group 9 Emotion Classification
 
 Repository for [Jiwon Kim](mailto:st176776@stud.uni-stuttgart.de) and Lara Grimminger for the 2021 Team Laboratory.
@@ -100,3 +74,22 @@ numpy version >= 1.19
 python version >= 3.6
 pytorch version >= 1.0
 
+--------------
+--------------
+----- this version was written for final -----
+TODO: This should be intergrated with above description
+
+### Installation
+
+To use the package, please clone/download this and install it.
+
+$ git clone #or you may extract downloaded zipfile.
+
+
+
+$ cd team9
+$ python setup.py install
+
+or
+
+pip install team9
