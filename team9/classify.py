@@ -1,19 +1,6 @@
 """classify.py; this is core implementation of this library"""
 import importlib
 
-from .model import (
-	mlp,
-	lstm_awd,
-	nb)
-
-from .dataset import *
-
-from .emb import tfidf
-
-from .utils import validate_y
-
-from .interpret import cls_report
-
 __all__ = ["Classifier"]
 
 
@@ -24,7 +11,6 @@ class Classifier():
 		self.model = model()
 		self.emb_type = emb_type
 		self.occ_type = ''
-		self.embedding = emb_dict[self.emb_type]
 		self.kwargs = {k: v for k, v in kwargs.items()}
 
 
@@ -41,15 +27,30 @@ class Classifier():
 		self.y_valid = list(map(lambda x: self.label2idx[x], self.y_valid_label))
 		self.y_test = list(map(lambda x: self.label2idx[x], self.y_test_label))
 
+	def get_embedding(self):
+		#TODO: it's better to divide fit / transform of tfidf and override function with additional class,
+		# so that both type of embedding can be obtained same method
+		if not self.emb_type=='tfidf':
+			self.embedding = emb_dict[self.emb_type]
+			self.x_train = self.embedding.fit_transform(x)
+		else:
+			self.embedding = load_npz(self.emb_type)
+			self.vtoi = load_pkl(self.emb_type)
+
+
 	def train(self, x, y):
-		self.x_train = self.embedding.fit_transform(x)
-		self.model.fit(self.x_train, y)
-		train_pred = self.model.predict(self.x_train)
+		self.model.fit(x, y)
+		train_pred = self.model.predict(x)
 		return train_pred
 
 	def __call__(self):
-		self.get_data()
+		# TODO Its better to split getting data and embedding to data module
 		
+		self.get_data()
+
+		self.get_embedding()
+		self.train(self.x_train, self.y_train)
+
 		#check performance on data which have trained
 		if 'verbose' in self.kwargs:
 			train_pred = self.train(self.x_train_text, self.y_train)

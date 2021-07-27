@@ -2,6 +2,6 @@
 """
 # import model
 from .model import *
-from .emb import *
-from .dataset import base
+from .data import *
+from .interpret import *
 from .classify import *
