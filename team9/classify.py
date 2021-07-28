@@ -6,7 +6,6 @@ from .model import *
 from .data import *
 from .interpret import *
 from .classify import *
-from .utils import validate_y
 from pathlib import Path
 
 __all__ = ["Classifier"]

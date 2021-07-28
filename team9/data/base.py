@@ -6,8 +6,8 @@ import importlib
 import pandas as pd
 import numpy as np
 import pickle
-from sklearn.feature_extraction.text import TfidfVectorizer
-
+from sklearn.feature_extraction.text import TfidfVectorizer as tfidf
+from pathlib import Path
 
 def load_csv(fpath, occ_type='', index_col=0, **kwargs):
 	"""
@@ -68,7 +68,16 @@ def load_pkl(emb_type='fasttext', **kwargs):
 		collections.OrderedDict instance, key: word in dataset, value: idx
 	"""
 	#TODO: make this path rubust using pkgutil
-	fname = Path(__file__).parent/f'pretrained/{emb_type}.en.vtoi.pkl'
+	fname = Path(__file__).parent/f'pretrained/{emb_type}.vtoi'
 	with fname.open('rb') as f:
 		vtoi = pickle.load(f)
 	return vtoi
+
+def validate_y(labels):
+	"""return referential dict when y label is not integer"""
+	label2idx = dict()
+	if not all(map(lambda x: isinstance(x, int), labels)):
+		label2idx = {v:i for i, v in enumerate(set(labels))}
+		labels = map(lambda x: label2idx[x], labels)
+
+	return label2idx, list(labels)
