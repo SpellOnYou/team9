@@ -75,6 +75,8 @@ class MLP():
         return tf.keras.Model(inputs=self.input_layer, outputs=self.outputs, name="multiple_inputs_model")
         
     def fit(self, x, y):
+
+        print(x.shape, y.shape)
         self.model.summary()
         
         self.params = self._config_params(params)
@@ -89,4 +91,4 @@ class MLP():
 
         
     def predict(self, x):
-        return self.model.predict(x).argmax(-1)
+        return self.model.predict(x)
