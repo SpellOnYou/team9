@@ -1,46 +1,48 @@
 """classify.py; this is core implementation of this library"""
 import importlib
-from sklearn.feature_extraction.text import TfidfVectorizer as tfidf
+
 from sklearn.naive_bayes import MultinomialNB as nb
 from .model import *
 from .data import *
 from .interpret import *
 from .classify import *
 from .utils import validate_y
+from pathlib import Path
 
 __all__ = ["Classifier"]
-
-
-emb_dict = {'tfidf': tfidf()}
 
 class Classifier():
 	def __init__(self, model=nb, emb_type= 'tfidf', occ_type='', *args, **kwargs):
 		self.model = model()
 		self.emb_type = emb_type
-		self.occ_type = ''
+		self.occ_type = occ_type
 		self.kwargs = {k: v for k, v in kwargs.items()}
 
 
-	def get_data(self):
-		train_data_fn = load_csv('../example/train.csv')
-		self.x_train_text, self.y_train_label = train_data_fn(occ_type = self.occ_type)
+	# def get_data(self):
+	# 	"""
+	# 	Description:
+	# 		here pkgname is module where data exists.
 
-		self.x_valid_text, self.y_valid_label = load_csv('../example/valid.csv')(occ_type = self.occ_type)
-		self.x_test_text, self.y_test_label = load_csv('../example/test.csv')(occ_type = self.occ_type)
-		# change when labels aren't int
-		self.label2idx, self.y_train = validate_y(self.y_train_label)
-		self.y_valid = list(map(lambda x: self.label2idx[x], self.y_valid_label))
-		self.y_test = list(map(lambda x: self.label2idx[x], self.y_test_label))
+	# 	"""
+	# 	self.x_train_text, self.y_train_label = load_csv(fpath = 'example/train', occ_type = self.occ_type)
+	# 	self.x_valid_text, self.y_valid_label = load_csv(fpath= 'example/valid', occ_type = self.occ_type)
+	# 	self.x_test_text, self.y_test_label = load_csv(fpath='example/test', occ_type = self.occ_type)
+ #        # TODO: getting occ variable
+	# 	# change when labels aren't int
+	# 	self.label2idx, self.y_train = validate_y(self.y_train_label)
+	# 	self.y_valid = list(map(lambda x: self.label2idx[x], self.y_valid_label))
+	# 	self.y_test = list(map(lambda x: self.label2idx[x], self.y_test_label))
 
-	def get_embedding(self):
-		#TODO: it's better to divide fit / transform of tfidf and override function with additional class,
-		# so that both type of embedding can be obtained same method
-		if self.emb_type=='tfidf':
-			self.embedding = emb_dict[self.emb_type]
-			self.x_train = self.embedding.fit_transform(self.x_train_text)
-		else:
-			self.embedding = load_npz(self.emb_type)
-			self.vtoi = load_pkl(self.emb_type)
+	# def get_embedding(self):
+	# 	#TODO: it's better to divide fit / transform of tfidf and override function with additional class,
+	# 	# so that both type of embedding can be obtained same method
+	# 	if self.emb_type=='tfidf':
+	# 		self.embedding = emb_dict[self.emb_type]
+	# 		self.x_train = self.embedding.fit_transform(self.x_train_text)
+	# 	else:
+	# 		self.embedding = load_npz(self.emb_type)
+	# 		self.vtoi = load_pkl(self.emb_type)
 
 	def train(self, x, y):
 		self.model.fit(x, y)

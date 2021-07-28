@@ -1,45 +1,50 @@
 # data.base.py
-
-
-from pathlib import Path
+import pkgutil
 from functools import partial
 import io
-import pkgutil
+import importlib
 import pandas as pd
 import numpy as np
 import pickle
 from sklearn.feature_extraction.text import TfidfVectorizer
 
-def get_bytestring(formatter):
-	"""function which reads data as a bytestring insensitive to cwd and packaging
-	we can reuse this function when data file has different format/features/.."""
-	def _inner(fpath='example/train.csv'):
-		return partial(formatter, pkgutil.get_data( __package__ , fpath))
-	return _inner
 
-@get_bytestring
-def load_csv(raw_data, occ_type='', index_col=0, **kwargs):
-	
-	"""get data using pandas data frame object
-	here we assume encoding type of source data is utf-8 (You may fix this with kwargs)
+def load_csv(fpath, occ_type='', index_col=0, **kwargs):
+	"""
+	since our data is string, we first approach the source data with pkgutil we need to make works in zip
+	after reading in bytestring, we assume encoding type of source data is utf-8 (You may fix this with kwargs)
+	and get data using pandas data frame object 
+
+	Note
+	---
+		Some features don't have its value (as you can see in our report), we need to take care of None type
 
 	return
 	---
 		x:
 		y:
 	"""
-	data = pd.read_csv(io.StringIO(raw_data.decode()), sep=',', index_col=0)
+	pkgname = __package__
+	if 'package' in kwargs: pkgname = kwargs['package']
+
+	bytestring = pkgutil.get_data(pkgname, fpath)
+
+	data = pd.read_csv(io.StringIO(bytestring.decode()), sep=',', index_col=0)
+	data = data.fillna(value='')
+	# import pudb; pudb.set_trace()
 
 	cols = ['text']
-	# add features if 
 
+	# add features if 
+	
 	if occ_type:
 		cols.extend([f'osp_{occ_type}', f'tense_{occ_type}'])
 
 	# get features which is in cols list
 	features = map(lambda x: data.__getitem__(x).tolist(), cols)
-	# unzip features and join with tab 
-	x = ['\t'.join(one_data)  for one_data in list(zip(*features))]
+
+	# unzip features and join with tab. one data is tuple(when variable is more than one)
+	x = [' '.join(list(one_data))  for one_data in list(zip(*features))]
 	y = data['label'].tolist()
 
 	return x, y
@@ -62,6 +67,7 @@ def load_pkl(emb_type='fasttext', **kwargs):
 	---
 		collections.OrderedDict instance, key: word in dataset, value: idx
 	"""
+	#TODO: make this path rubust using pkgutil
 	fname = Path(__file__).parent/f'pretrained/{emb_type}.en.vtoi.pkl'
 	with fname.open('rb') as f:
 		vtoi = pickle.load(f)

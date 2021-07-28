@@ -20,9 +20,9 @@ def get_args():
                         type=str,
                         default='MLP')
 
-    parser.add_argument("-e",
-                        "--embedding",
-                        help="An embedding type,\nNOTE: model LSTM_AWD will use its own pre-trained embedding.",
+    parser.add_argument("-t",
+                        "--type",
+                        help="A type of embedding,\n",
                         metavar='tfidf, fasttext',
                         type=str,
                         default='tfidf')
@@ -32,13 +32,17 @@ def get_args():
                         metavar='rule, data',
                         type=str,
                         default='')
-    
-    # parser.add_argument("-l",
-    #                     "--list",
-    #                     help="A list of features given to model, \nNOTE: case insensitive",
-    #                     metavar='MLP, NB, LSTM_AWD',
-    #                     type=str,
-    #                     default='MLP')
+    parser.add_argument("-e",
+                        "--emb_size",
+                        help="A size of embedding dimension,\nNOTE: This is only valid when you use predict-based embedding, which is fasttext in our library.",
+                        metavar='50 100 300',
+                        type=str,
+                        default='')
+    parser.add_argument("-v",
+                        "--verbose",
+                        help=".",
+                        # type=str, this is flag
+                        default=False)                            
 
     # TODO: validate given arguments
     args = parser.parse_args()
