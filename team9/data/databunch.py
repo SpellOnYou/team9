@@ -17,24 +17,22 @@ class DataBunch():
 	"""load all data and convert it to appropriate embedding type. embedding type will be obtrained in main(classify) module
 	Note: when you load embedding from pre-trained model, it will have tensor size (dataset, max_length, emb_dim) which can't feed on MLP/NB.
 		It will be flattend (i.e. tensor size (dataset, max_length * emb_dim)) unless other option is given.
-	"""
+	"""	
 	def get_embedding(self, **kwargs):
 		#TODO: it's better to divide fit / transform of tfidf and override function with additional class,
 		# so that both type of embedding can be obtained same method
 
-		assert self.emb_type in emb_type, f"You've given currently unavailable embedding option : {self.emb_type},\nWe support {emb_type} only."
+		assert self.kwargs['emb_type'] in self.kwargs['emb_type'], f"You've given currently unavailable embedding option : {self.kwargs['emb_type']},\nWe support {emb_type} only."
 
 		# when embeddig type is count based
-		if self.emb_type=='tfidf':
-			self.embedder = emb_dict[self.emb_type]
+		if self.kwargs['emb_type']=='tfidf':
+			self.embedder = tfidf()
 			self.x_train = self.embedder.fit_transform(self.x_train_text)
 
 		#when it's pretrained version
 		else:
 			self.embedder = self._load_pretrained
-			self.x_train = np.array([self.embedder[pad_sent, ] for pad_sent in self.pad_num_sents])
-
-# train_data = np.array([pre_trained[num_sent, ] for num_sent in self.num_pad])			
+			self.x_train = np.array([self.embedder[pad_sent, :] for pad_sent in self.pad_num_sents])
 
 	def get_data(self):
 		"""
@@ -47,9 +45,9 @@ class DataBunch():
 		"""
 		#TODO:we can get dir path's data at once and split by ourselves
 
-		self.x_train_text, self.y_train_label = load_csv(fpath = 'example/train', occ_type = self.occ_type)
-		self.x_valid_text, self.y_valid_label = load_csv(fpath= 'example/valid', occ_type = self.occ_type)
-		self.x_test_text, self.y_test_label = load_csv(fpath='example/test', occ_type = self.occ_type)
+		self.x_train_text, self.y_train_label = load_csv(fpath = 'example/train', occ_type = self.kwargs['occ_type'])
+		self.x_valid_text, self.y_valid_label = load_csv(fpath= 'example/valid', occ_type = self.kwargs['occ_type'])
+		self.x_test_text, self.y_test_label = load_csv(fpath='example/test', occ_type = self.kwargs['occ_type'])
 		
 		# change when labels aren't int with saving label's index
 		self.label2idx, self.y_train = validate_y(self.y_train_label)
@@ -79,10 +77,10 @@ class DataBunch():
 		text_to_nums = map(num_fn, tokens_in_sents)
 
 		#padding, vacant words will be substituted as unknown
-		if not 'max_seq' in kwargs: max_seq = max([len(i) for i in tokens_in_sents])
+		max_seq = max([len(i) for i in tokens_in_sents]) if not 'max_seq' in self.kwargs else self.kwargs['max_seq']
 		pad_fn = lambda sent: sent + [-1] * (max_seq-len(sent))
 		self.pad_num_sents = list(map(pad_fn, text_to_nums))
 		
 		#third process
-		pre_trained = load_npz(self.emb_type)
+		pre_trained = load_npz(self.kwargs['emb_type'])
 		return pre_trained

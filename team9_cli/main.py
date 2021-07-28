@@ -14,11 +14,11 @@ def get_args():
         formatter_class=argparse.ArgumentDefaultsHelpFormatter
     )
     parser.add_argument("-m",
-                        "--model",
+                        "--model_type",
                         help="A model used for classification, \nNOTE: case insensitive",
                         metavar='MLP, NB, LSTM_AWD',
                         type=str,
-                        default='MLP')
+                        default='NB')
 
     parser.add_argument("-t",
                         "--type",
@@ -27,7 +27,7 @@ def get_args():
                         type=str,
                         default='tfidf')
     parser.add_argument("-o",
-                        "--occ",
+                        "--occ_type",
                         help="A type of occ features,\nNOTE: It will use text only if no argument is given.",
                         metavar='rule, data',
                         type=str,
@@ -53,8 +53,9 @@ def get_args():
 def main():
     args = get_args()
     print(args)
+    # import pudb; pudb.set_trace()
     # team9.model.dummy()
-    emo_cls = team9.Classifier()
+    emo_cls = team9.Classifier(**args.__dict__)
     emo_cls()
     #TODO: 1) load datasets instance
     #TODO: 2) get embedding 'emb_type'

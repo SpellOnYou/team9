@@ -10,12 +10,13 @@ from pathlib import Path
 
 __all__ = ["Classifier"]
 
-class Classifier():
-	def __init__(self, model=nb, emb_type= 'tfidf', occ_type='', *args, **kwargs):
-		self.model = model()
-		self.emb_type = emb_type
-		self.occ_type = occ_type
+model_dict = {'nb': nb()}
+
+class Classifier(DataBunch):
+	def __init__(self, model_type='nb', emb_type= 'tfidf', occ_type='', *args, **kwargs):
 		self.kwargs = {k: v for k, v in kwargs.items()}
+
+		self.model = model_dict[model_type.lower()]
 
 	def train(self, x, y):
 		self.model.fit(x, y)
@@ -31,7 +32,7 @@ class Classifier():
 		self.train(self.x_train, self.y_train)
 
 		#check performance on data which have trained
-		if 'verbose' in self.kwargs:
+		if self.kwargs['verbose']:
 			train_pred = self.train(self.x_train_text, self.y_train)
 			print(f"Model type: {self.model.__repr__()}. An evaluation report from train data\n{cls_report(self.y_train, train_pred)}")
 
