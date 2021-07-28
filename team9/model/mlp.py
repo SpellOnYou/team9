@@ -8,7 +8,7 @@ from functools import partial
 hparams = {
     'learning_rate': 1e-4,
     'optimizer': tf.keras.optimizers.Adam,
-    'loss': partial(tf.keras.metrics.categorical_crossentropy, from_logits = True),
+    'loss': tf.keras.metrics.categorical_crossentropy(from_logits = True),
     'metrics': [tf.keras.metrics.Recall(), tf.keras.metrics.Precision(), F1Score(num_classes=7)]
 }
 

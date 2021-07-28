@@ -27,9 +27,14 @@ class Classifier(DataBunch):
 		self.model_type = model_type
 		self.kwargs = {k: v for k, v in kwargs.items()}
 		print(self.kwargs)
+
+	def __call__(self):
+        """
+        Mainly (transformed) text data and model are created.
+        """
 		self.get_data()
 		self.get_embedding()
-		# if self.kwargs['model_type'].lower() == 'mlp': 
+        self.model()
 		self.model = model_dict[model_type.lower()](self.x_train.shape[1])
 		
 	def train(self):
@@ -38,9 +43,12 @@ class Classifier(DataBunch):
 		self.model.fit(x=self.x_train, y=self.y_train)
 
 		if 'verbose' in self.kwargs:
-			train_pred = self.model.predict(self.x_train)
+			pred = self.model.predict(self.x_train)
 			print(f"Model type: {self.model.__repr__()}. An evaluation report from train data\n{cls_report(self.y_train, train_pred)}")
-	def evaluate(self):
-		test_pred = self.model.predict(x=self.x_test)
 
-		print(f"Model type: {self.model.__repr__()}. An evaluation report from test data\n{cls_report(self.y_test, test_pred)}")
+
+	def evaluate(self):
+		pred = self.model.predict(x=self.x_test)
+		return pred
+
+		# print(f"Model type: {self.model.__repr__()}. An evaluation report from test data\n{cls_report(self.y_test, test_pred)}")

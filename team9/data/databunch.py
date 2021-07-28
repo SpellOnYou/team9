@@ -40,13 +40,15 @@ class DataBunch():
         if self.model_type.lower()=='mlp':
             self.y_train, self.y_test = map(self.onehot, (self.y_train, self.y_test))
 
-    def onehot(self, mat, c = 7):
-        init_mat = np.zeros(shape=(mat.shape[0], c))
-        # import pudb; pudb.set_trace()
-        init_mat[range(mat.shape[0]), mat] = 1
-        return init_mat
-
-# train_data = np.array([pre_trained[num_sent, ] for num_sent in self.num_pad])         
+    def onehot(self, labels):
+        """
+        In case of neural network, we need to expand label to one-hot encoded matrix
+        """
+        shape = (len(labels), max(labels)+1)
+        
+        mat = np.zeros(shape=shape)
+        mat[range(shape[0]), labels] = 1
+        return mat    
 
     def get_data(self):
         """
@@ -69,7 +71,6 @@ class DataBunch():
         self.label2idx, y_train = validate_y(self.y_train_label)
         y_test = list(map(lambda x: self.label2idx[x], self.y_test_label))
         self.y_train, self.y_test = map(np.array, (y_train, y_test))
-
 
     @property
     def _load_pretrained(self, token='word', **kwargs):
