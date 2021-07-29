@@ -1,6 +1,7 @@
 # data.base.py
 import pkgutil
 from functools import partial
+from collections import OrderedDict
 import io
 import importlib
 import pandas as pd
@@ -51,7 +52,7 @@ def load_csv(fpath, occ_type='', index_col=0, **kwargs):
 
 # this is already zip_compresssed
 # (and included to MANIFEST)format so that we don;t need to read it as bytestring
-def load_npz(emb_type = 'fasttext', emb_dim=100):
+def load_npz(emb_dim=100, emb_type = 'fasttext'):
 	"""A function loads embedding"""
 	# find current path
 	embedding_path = Path(__file__).parent / f'pretrained/{emb_type}.en.{emb_dim}.npz'
@@ -77,7 +78,7 @@ def validate_y(labels):
 	"""return referential dict when y label is not integer"""
 	label2idx = dict()
 	if not all(map(lambda x: isinstance(x, int), labels)):
-		label2idx = {v:i for i, v in enumerate(set(labels))}
+		label2idx = OrderedDict({v:i for i, v in enumerate(set(labels))})
 		labels = map(lambda x: label2idx[x], labels)
 
 	return label2idx, list(labels)

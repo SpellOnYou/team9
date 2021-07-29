@@ -1,9 +1,6 @@
 # interpret.__init__.py
+from .base import cls_report
+from .base import cm
+from .base import lime
 
-from sklearn.metrics import classification_report as cls_report
-
-# @Lara / we can add lime here
-__all__ = ["cls_report", "confusion_matrix", "lime"]
-
-def confusion_matrix(): pass
-def lime(): pass
+__all__ = ["cls_report", "cm", "lime"]

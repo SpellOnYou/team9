@@ -15,14 +15,14 @@ def get_args():
 	parser.add_argument("-m",
 						"--model_type",
 						help="A model used for classification, \nNOTE: case insensitive",
-						metavar='MLP, NB, LSTM_AWD',
+						metavar='MLP, NB',
 						type=str,
 						default='NB')
 
 	parser.add_argument("-e",
 						"--emb_type",
 						help="A type of embedding,\n",
-						metavar='tfidf, fasttext',
+						metavar='tfidf, fasttext\nNOTE: pretrained(predict-based) word embedding is not available to Naive Bayes, since, as you know, it assigns probability reffering frequency wherein negative value makes no sense.',
 						type=str,
 						default='tfidf')
 	parser.add_argument("-o",
@@ -33,13 +33,13 @@ def get_args():
 						default='')
 	parser.add_argument("-d",
 						"--dim",
-						help="A size of embedding dimension,\nNOTE: This is only valid when you use predict-based embedding, which is fasttext in our library.",
+						help="A size of embedding dimension.",
 						metavar='50 100 300',
 						type=str,
-						default='')
+						default='50')
 	parser.add_argument("-v",
 						"--verbose",
-						help=".",
+						help="flags, if true, it will shows progress",
 						# type=str, this is flag
 						default=True)
 
@@ -53,8 +53,18 @@ def main():
 	try:
 		args = get_args()
 		#todo: main args and other optional args.. discrete
-		emo_cls = team9.Classifier(**args.__dict__)
+		# emo_cls = team9.Classifier(**args.__dict__)
+		emo_cls = team9.Classifier(
+			model_type=args.model_type,
+			emb_type = args.emb_type,
+			occ_type = args.occ_type,
+			dim = args.dim,
+			verbose = args.verbose
+		)
 		emo_cls()
+		emo_cls.train()
+		pred = emo_cls.predict()
+		emo_cls.evaluate(emo_cls.y_test, pred)
 	except (BrokenPipeError, IOError): pass
 	
 	sys.stderr.close()

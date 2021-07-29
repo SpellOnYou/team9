@@ -7,13 +7,13 @@ from functools import partial
 
 hparams = {
     'learning_rate': 1e-4,
-    'optimizer': tf.keras.optimizers.Adam,
-    'loss': tf.keras.metrics.categorical_crossentropy(from_logits = True),
+    'optimizer': tf.keras.optimizers.Adam,    
+    'loss': tf.keras.losses.CategoricalCrossentropy(),
     'metrics': [tf.keras.metrics.Recall(), tf.keras.metrics.Precision(), F1Score(num_classes=7)]
 }
 
 params = {
-    'epoch': 20,
+    'epoch': 1,
     'batch_size': 64,
     'validation_split': 0.2,
     'callbacks': tf.keras.callbacks.EarlyStopping(monitor="val_loss", mode="min", verbose=1, patience=5)
@@ -23,9 +23,9 @@ class MLP():
     """
     Fully-connected multi-layer perceptron. Note here we fix the length of layers.
     """
-    def __init__(self, *args):
+    def __init__(self, *args, **kwargs):
         """
-        A function configure hyper parameters, change it if in need, and create model.
+        A function configure hyper parameters, change it if in need
         (Hyper)parameters are previously set up (as others), but can be changed when user gives adequage values.
 
         Method
@@ -34,18 +34,16 @@ class MLP():
             This is private function, and used for change hyperparameters by checking given arguments
         """
         
-        self.hparams = self._config_params(hparams)
+        self.hparams = self._config_params(hparams, **kwargs)
         #Set model
         opt = self.hparams['optimizer']
         self.model = self._get_layers(*args)
-
         self.model.compile(
             optimizer = opt(learning_rate = self.hparams['learning_rate']),
             loss = self.hparams['loss'],
             metrics = self.hparams['metrics']
-        )        
+        )
 
-        
     def _config_params(self, trg_params, **kwargs):
         """
         Change hyperparameters or params when given name and type are adequate
@@ -74,21 +72,20 @@ class MLP():
         
         return tf.keras.Model(inputs=self.input_layer, outputs=self.outputs, name="multiple_inputs_model")
         
-    def fit(self, x, y):
+    def fit(self, X, y, **kwargs):
 
-        print(x.shape, y.shape)
+        print(X.shape, y.shape)
         self.model.summary()
         
-        self.params = self._config_params(params)
+        self.params = self._config_params(params, **kwargs)
         # import pudb; pudb.set_trace()
         self.model.fit(
-            x=x,
+            x=X,
             y=y,
             epochs = self.params['epoch'],
             batch_size = self.params['batch_size'],
             validation_split=self.params['validation_split'],
             callbacks=self.params['callbacks'])
-
-        
+       
     def predict(self, x):
         return self.model.predict(x)
