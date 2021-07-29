@@ -8,11 +8,11 @@
 ### Installation
 
 Install this project from the source by 
-`
+```sh
 $ git clone https://github.com/SpellOnYou/nlp-tema9
 $ cd nlp-team9
 $ pip install .
-`
+```
 
 
 ### Usage
@@ -27,9 +27,10 @@ Here is the most succinct version of example,
 ```python
 import team9
 clf = team9.Classifier(model_type='MLP',emb_type='tfidf', occ_type='rule')
+clf()
 clf.train()
 pred = clf.predict()
-clf.valiate(clf.y_test, pred)
+clf.evaluate(clf.y_test, pred)
 
 ```
 
