@@ -27,6 +27,7 @@ Here is the most succinct version of example,
 ```python
 import team9
 clf = team9.Classifier(model_type='MLP',emb_type='tfidf', occ_type='rule')
+clf()
 clf.train()
 pred = clf.predict()
 clf.valiate(clf.y_test, pred)
