@@ -16,6 +16,14 @@ setuptools.setup(
         "License :: OSI Approved :: GNU General Public License v3 or later (GPLv3+)",
         "Operating System :: OS Independent",
     ],
+    install_requires=[
+        'pandas',
+        'numpy',
+        'tensorflow',
+        'tensorflow-addons>=0.11',
+        'numpy',
+        'sklearn'
+    ],
     python_requires='>=3.6',
     entry_points = {
         'console_scripts': [
