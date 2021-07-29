@@ -13,7 +13,7 @@ hparams = {
 }
 
 params = {
-    'epoch': 1,
+    'epoch': 20,
     'batch_size': 64,
     'validation_split': 0.2,
     'callbacks': tf.keras.callbacks.EarlyStopping(monitor="val_loss", mode="min", verbose=1, patience=5)

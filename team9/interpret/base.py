@@ -2,11 +2,16 @@
 
 from sklearn.metrics import classification_report as cls_report
 from sklearn.metrics import confusion_matrix
+from sklearn.feature_extraction.text import TfidfVectorizer
 
 from pathlib import Path
 import seaborn as sn
 import pandas as pd
 import matplotlib.pyplot as plt
+from lime.lime_text import LimeTextExplainer
+
+global X_TRAIN
+global MODEL
 
 
 def cm(true_label, pred_label, labels=None, fname='confusion_matrix', **kwargs):
@@ -43,29 +48,34 @@ def lime_predictor(text):
 
     Parameters
     ----------
-    text:
-        Variations of text instance
+    text: {list}
+        Variations of text input
 
-    Returns predicted label for the text instance generated from the model
+    Returns predicted label for the text input generated from the model
     -------
 
     """
+    global X_TRAIN # train data for fit and transform
+    global MODEL # model for predicting
     vectorizer = TfidfVectorizer()
-    vectorizer.fit_transform(x_data_train)
+    vectorizer.fit_transform(X_TRAIN)
     text_vector = vectorizer.transform(text).toarray()
-    prob = model.predict(text_vector, batch_size=64, verbose=1)
+    prob = MODEL.predict(text_vector)
     return prob
 
 
-def lime(x_data_train, x_data_test):
+def lime(x_data_train, x_data_test, model):
 
     """
     Creates an explainer object
-    Calls method lime_predictor to receive prediction for text instance
-    Generates an explanation with 7 features for text instance of the test set.
+    Calls method lime_predictor to receive prediction for text input
+    Generates an explanation with 7 features for text input of the test data
+    Saves explanations to .html file
 
     Parameters
     ----------
+    model: model
+
     x_data_train: array-like
         Train sentences
 
@@ -76,12 +86,19 @@ def lime(x_data_train, x_data_test):
     -------
 
     """
+    global X_TRAIN  # train data for fit and transform
+    global MODEL  # model for predicting
     idx = 906
-    target_names = ["Anger", "Disgust", "Fear", "Guilt", "Joy", "Sadness", "Shame"]
+    target_names = ["fear", "shame", "disgust", "anger", "guilt", "sadness", "joy"]
     explainer = LimeTextExplainer(class_names=target_names)
     row = x_data_test[idx] # row of the test data whose prediction will be explained with LIME
     print("Row: %s" % row)
+    X_TRAIN = x_data_train
+    MODEL = model
     exp = explainer.explain_instance(row, lime_predictor, num_features=7, top_labels=7)
-    exp.save_to_file(f"results_Lime/ISEAR_{idx}_occ_rule.html")
+    exp_path = Path(__package__.split('.')[0]) / 'interpret/lime_results'
+    exp_path.mkdir(exist_ok=True, parents=True)
+    exp.save_to_file(exp_path / f"ISEAR_{idx}_.html")
+    print(f"Your lime explanation is saved at : {str(exp_path)}")
 
     return exp
