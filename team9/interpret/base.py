@@ -1,5 +1,5 @@
 # team9.interpret.base
-
+from lime.lime_text import LimeTextExplainer
 from sklearn.metrics import classification_report as cls_report
 from sklearn.metrics import confusion_matrix
 
@@ -78,10 +78,14 @@ def lime(x_data_train, x_data_test):
     """
     idx = 906
     target_names = ["Anger", "Disgust", "Fear", "Guilt", "Joy", "Sadness", "Shame"]
-    explainer = LimeTextExplainer(class_names=target_names)
+    
     row = x_data_test[idx] # row of the test data whose prediction will be explained with LIME
     print("Row: %s" % row)
     exp = explainer.explain_instance(row, lime_predictor, num_features=7, top_labels=7)
     exp.save_to_file(f"results_Lime/ISEAR_{idx}_occ_rule.html")
 
     return exp
+
+
+def lime_experimental():
+    explainer = LimeTextExplainer(class_names=target_names)

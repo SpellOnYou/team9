@@ -1,1 +1,2 @@
-recursive-include tema9/data/pretrained *
+recursive-include team9/data/pretrained *
+recursive-include team9/data/example *

@@ -22,9 +22,11 @@ setuptools.setup(
         'tensorflow',
         'tensorflow-addons>=0.11',
         'numpy',
-        'sklearn'
+        'sklearn',
+        'lime'
     ],
     python_requires='>=3.6',
+    include_package_data=True,
     entry_points = {
         'console_scripts': [
             'team9-emo-cls=team9_cli.main:main',
