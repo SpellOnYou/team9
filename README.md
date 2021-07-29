@@ -1,27 +1,50 @@
 # CLab 21: Group 9 Emotion Classification
 
+
+### Overview
+
+
+
 ### Installation
 
-To use the package, please clone/download this project
-
-~~~
-$ git clone https://github.com/SpellOnYou/CLab21.git 
-or
-!wget zipfile url
-~~~
-
-And install
-
-~~~
-$ cd team9
-$ python setup.py install
-or
-$ pip install team9
-~~~
+Install this project from the source by 
+`
+$ git clone https://github.com/SpellOnYou/nlp-tema9
+$ cd nlp-team9
+$ pip install .
+`
 
 
-Please see the tutorial for detailed usage here in [colab](https://colab.research.google.com/drive/1eWcxVjaEadUxoMwy9GCJ9_N9-67ussKC?usp=sharing)
+### Usage
 
+#### Python Module (GUI)
+
+On a high level, we provide a python object `team9.Classifier` and the supported features like: loading data, vectorizing/embedding text, create model, train dataset, predict from trained model, and analysing the results.
+Mainly, this module consists of several submodules: [data]() where loading and embedding happen, [model]() which executes actual training and prediction, [interpret] which provides relevant metrics to evaluate model estimation, and finally [classify]() where integrate the submodules and renders various options to the submodules repectively.
+
+Here is the most succinct version of example, 
+
+```python
+import team9
+clf = team9.Classifier(model_type='MLP',emb_type='tfidf', occ_type='rule')
+clf.train()
+pred = clf.predict()
+clf.valiate(clf.y_test, pred)
+
+```
+
+and please refer to our source code for implement details and try the demo on [Google Colab](https://colab.research.google.com/drive/1eWcxVjaEadUxoMwy9GCJ9_N9-67ussKC?usp=sharing)
+
+
+#### Command Line Intergface (CLI)
+
+We provide a command line interface (CLI) of emotion classification (of ISEAR dataset, which can be easily extended to other datasets) as well as the python module.
+
+As for additional available arguments, please see 
+
+```sh
+team9-emo-cls -h
+```
 
 ----- this version was written for final -----
 TODO: This should be intergrated with below 👇 description
