@@ -54,10 +54,9 @@ class MLP():
         ---
             (un)modified parameters: (dict)
         """
-        kwargs = {k:v for k, v in kwargs}
-        for k, v in kwargs.items():
-            if k in trg_params and isinstance(v, type(kwargs[k])):
-                if kwargs['verbose']: sys.out('')
+        newconfig = {k:v for k, v in kwargs.items()}
+        for k, v in newconfig.items():
+            if k in trg_params and isinstance(v, type(newconfig[k])):
                 trg_params[k] = v
         return trg_params
 

@@ -49,11 +49,11 @@ class Classifier(DataBunch):
         if self.verbose: print("\n\n", "="*40, f"\nx_train : {self.x_train.shape}, y_train: {self.y_train.shape}, x_test: {self.x_test.shape}, y_test: {self.y_test.shape}\n\n")
         self.learner = model_dict[self.model_type](self.x_train.shape[1]) if self.model_type=='mlp' else model_dict[self.model_type]()
         
-    def train(self):
+    def train(self, **kwargs):
         """A function actually executes parameter learning."""
         # import pdb; pdb.set_trace()
 
-        self.learner.fit(X=self.x_train, y=self.y_train)
+        self.learner.fit(X=self.x_train, y=self.y_train, **kwargs)
 
         if self.verbose:
             # temporal value assign and reshaping tensor..
