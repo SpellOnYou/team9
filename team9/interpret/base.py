@@ -37,19 +37,49 @@ def cm(true_label, pred_label, labels=None, fname='confusion_matrix', **kwargs):
     print(f"Your confusion matrix is saved at : {str(img_path)} named {fname}")
 
 
-def lime_predictor(self, text):
+def lime_predictor(text):
+
+    """
+
+    Parameters
+    ----------
+    text:
+        Variations of text instance
+
+    Returns predicted label for the text instance generated from the model
+    -------
+
+    """
     vectorizer = TfidfVectorizer()
-    vectorizer.fit_transform(x_data)
+    vectorizer.fit_transform(x_data_train)
     text_vector = vectorizer.transform(text).toarray()
-    prob = model.pre  # x_datadict(text_vector, batch_size=64, verbose=1)
+    prob = model.predict(text_vector, batch_size=64, verbose=1)
     return prob
 
 
-def lime(x_data, y_data):
+def lime(x_data_train, x_data_test):
+
+    """
+    Creates an explainer object
+    Calls method lime_predictor to receive prediction for text instance
+    Generates an explanation with 7 features for text instance of the test set.
+
+    Parameters
+    ----------
+    x_data_train: array-like
+        Train sentences
+
+    x_data_test: array-like
+        Test sentences
+
+    Returns explanation for text instance
+    -------
+
+    """
     idx = 906
     target_names = ["Anger", "Disgust", "Fear", "Guilt", "Joy", "Sadness", "Shame"]
     explainer = LimeTextExplainer(class_names=target_names)
-    row = y_data[idx]
+    row = x_data_test[idx] # row of the test data whose prediction will be explained with LIME
     print("Row: %s" % row)
     exp = explainer.explain_instance(row, lime_predictor, num_features=7, top_labels=7)
     exp.save_to_file(f"results_Lime/ISEAR_{idx}_occ_rule.html")
