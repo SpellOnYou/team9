@@ -8,11 +8,11 @@
 ### Installation
 
 Install this project from the source by 
-`
+```sh
 $ git clone https://github.com/SpellOnYou/nlp-tema9
 $ cd nlp-team9
 $ pip install .
-`
+```
 
 
 ### Usage
