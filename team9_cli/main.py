@@ -40,7 +40,7 @@ def get_args():
 	parser.add_argument("-v",
 						"--verbose",
 						help="flags, if true, it will shows progress",
-						# type=str, this is flag
+						action="store_true",
 						default=True)
 
 	# TODO: validate given arguments
