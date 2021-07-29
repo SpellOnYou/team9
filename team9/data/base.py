@@ -25,10 +25,7 @@ def load_csv(fpath, occ_type='', index_col=0, **kwargs):
 		x:
 		y:
 	"""
-	pkgname = __package__
-	if 'package' in kwargs: pkgname = kwargs['package']
-
-	bytestring = pkgutil.get_data(pkgname, fpath)
+	bytestring = pkgutil.get_data(__package__, fpath)
 
 	data = pd.read_csv(io.StringIO(bytestring.decode()), sep=',', index_col=0)
 	data = data.fillna(value='')

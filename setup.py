@@ -16,7 +16,17 @@ setuptools.setup(
         "License :: OSI Approved :: GNU General Public License v3 or later (GPLv3+)",
         "Operating System :: OS Independent",
     ],
+    install_requires=[
+        'pandas',
+        'numpy',
+        'tensorflow',
+        'tensorflow-addons>=0.11',
+        'numpy',
+        'sklearn',
+        'lime'
+    ],
     python_requires='>=3.6',
+    include_package_data=True,
     entry_points = {
         'console_scripts': [
             'team9-emo-cls=team9_cli.main:main',

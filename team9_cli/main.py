@@ -15,33 +15,27 @@ def get_args():
 	parser.add_argument("-m",
 						"--model_type",
 						help="A model used for classification, \nNOTE: case insensitive",
-						metavar='MLP, NB',
 						type=str,
 						default='NB')
-
 	parser.add_argument("-e",
 						"--emb_type",
-						help="A type of embedding,\n",
-						metavar='tfidf, fasttext\nNOTE: pretrained(predict-based) word embedding is not available to Naive Bayes, since, as you know, it assigns probability reffering frequency wherein negative value makes no sense.',
+						help="A type of embedding\nNOTE: pretrained(predict-based) word embedding is not available to Naive Bayes, since, as you know, it assigns probability reffering frequency wherein negative value makes no sense.",
 						type=str,
 						default='tfidf')
 	parser.add_argument("-o",
 						"--occ_type",
 						help="A type of occ features,\nNOTE: It will use text only if no argument is given.",
-						metavar='rule, data',
 						type=str,
 						default='')
 	parser.add_argument("-d",
 						"--dim",
 						help="A size of embedding dimension.",
-						metavar='50 100 300',
 						type=str,
 						default='50')
 	parser.add_argument("-v",
 						"--verbose",
 						help="flags, if true, it will shows progress",
-						action="store_true",
-						default=True)
+						action="store_true")
 
 	# TODO: validate given arguments
 	args = parser.parse_args()

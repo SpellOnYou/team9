@@ -1,5 +1,5 @@
 # team9.interpret.base
-
+from lime.lime_text import LimeTextExplainer
 from sklearn.metrics import classification_report as cls_report
 from sklearn.metrics import confusion_matrix
 from sklearn.feature_extraction.text import TfidfVectorizer
