@@ -12,7 +12,7 @@ import matplotlib.pyplot as plt
 
 def cm(true_label, pred_label, clf):
     """
-    The function not only calculate confusion matrix, but also visualize (i.e. sys out write) as heatmap
+    The function not only calculates confusion matrix, but also visualizes (i.e. sys out write) it as heatmap
 
     Parameters
     ----------
@@ -25,7 +25,7 @@ def cm(true_label, pred_label, clf):
 
     Note
     ----------
-    Please be sure that input should be 1-D
+    Please be sure that input is 1-D
 
     """
     cm_score = confusion_matrix(true_label, pred_label)
@@ -43,7 +43,7 @@ def lime_wrapper_tfidf(clf, texts):
     Parameters
     ----------
     embedder: A function which converts given texts to vectors (including one-hot)
-    model: model which predict probability of input texts
+    model: model which predicts probability of input texts
 
     Return
     ----------
@@ -58,7 +58,7 @@ def lime_wrapper_fasttext(clf, texts):
     Parameters
     ----------
     embedder: A function which converts given texts to vectors (including one-hot)
-    model: model which predict probability of input texts
+    model: model which predicts probability of input texts
 
     Return
     ----------
@@ -79,9 +79,10 @@ def lime(clf, trg_idx=None, test = True):
     """
     A function calls wrapped function and render adequate predictor using existing classifier.
     Since Lime gets only one text example, this function will get target index and handles lime stuff.
-    Parameters
+    Lime creates an explainer object and generates explanations for one text example.
+
     ----------
-    clf : {tema9.Classifier}
+    clf : {team9.Classifier}
 
     trg_idx : {int}, default = randomly chosen index
         If no given index of target text, we randomly extract index depends on length of text data

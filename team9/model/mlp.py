@@ -69,7 +69,7 @@ class MLP():
         self.dense_layer_5 = tf.keras.layers.Dense(15, activation='relu', name="dense_layer_5")(self.dense_layer_4)
         self.outputs = tf.keras.layers.Dense(7, activation="softmax", name="output")(self.dense_layer_5)
         
-        return tf.keras.Model(inputs=self.input_layer, outputs=self.outputs, name="multiple_inputs_model")
+        return tf.keras.Model(inputs=self.input_layer, outputs=self.outputs, name="mlp_model")
         
     def fit(self, X, y, **kwargs):
         
