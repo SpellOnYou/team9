@@ -1,6 +1,6 @@
 # CLab 21: Group 9 Emotion Classification
 
-Repository for [Jiwon Kim](mailto:st176776@stud.uni-stuttgart.de) and Lara Grimminger(mailto:st157146@stud.uni-stuttgart.de) for the 2021 Team Laboratory.
+Repository for [Jiwon Kim](mailto:st176776@stud.uni-stuttgart.de) and [Lara Grimminger](mailto:st157146@stud.uni-stuttgart.de) for the 2021 Team Laboratory.
 Subject: Emotion Classification on the ISEAR Dataset.
 
 ## Overview
