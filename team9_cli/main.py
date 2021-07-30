@@ -16,21 +16,25 @@ def get_args():
 						"--model_type",
 						help="A model used for classification, \nNOTE: case insensitive",
 						type=str,
+						choices = ['NB', 'nb', 'mlp', 'MLP'],
 						default='NB')
 	parser.add_argument("-e",
 						"--emb_type",
 						help="A type of embedding\nNOTE: pretrained(predict-based) word embedding is not available to Naive Bayes, since, as you know, it assigns probability reffering frequency wherein negative value makes no sense.",
 						type=str,
+						choices = ['tfidf', 'fasttext'],
 						default='tfidf')
 	parser.add_argument("-o",
 						"--occ_type",
 						help="A type of occ features,\nNOTE: It will use text only if no argument is given.",
 						type=str,
+						choices = ['', 'rule' 'text'],
 						default='')
 	parser.add_argument("-d",
 						"--dim",
 						help="A size of embedding dimension.",
 						type=str,
+						choices = [50, 100, 300],
 						default='50')
 	parser.add_argument("-v",
 						"--verbose",
