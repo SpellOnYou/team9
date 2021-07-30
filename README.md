@@ -84,7 +84,7 @@ Additionally, we use python standard library [pkgutil](https://docs.python.org/3
 
 Regarding embedding, we try to incorporate both count/predict embedding methods as we previously discussed in our mid-term presentation. But we use only two models, one is Naive Bayes which is not applicable to fasttext, and the other one is MLP which needs flatten vectors (which will exponentially increase the number of parameters).
 
-Moreover, as the size of pretrained model provided by [fasttext](https://fasttext.cc/docs/en/crawl-vectors.html#models) is up to 6.78GB in English, we decide to extract the embeddings we need. This package gives three choices for embedding dimension found folder [pretrained](.data/pretrained) (format: compressed with zipfile) and separately saved corresponding vocabulary index at separate file [fasttext.vtoi.pkl](./data/pretrained/fasttext.vtoi.pkl).
+Moreover, as the size of pretrained model provided by [fasttext](https://fasttext.cc/docs/en/crawl-vectors.html#models) is up to 6.78GB in English, we decide to extract the embeddings we need. This package gives three choices for embedding dimension found folder [pretrained](./team9/data/pretrained) (format: compressed with zipfile) and separately saved corresponding vocabulary index at separate file [fasttext.vtoi.pkl](./team9/data/pretrained/fasttext.vtoi.pkl).
 
 2. [model](./team9/model)
 
