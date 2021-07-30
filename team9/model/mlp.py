@@ -72,9 +72,6 @@ class MLP():
         return tf.keras.Model(inputs=self.input_layer, outputs=self.outputs, name="multiple_inputs_model")
         
     def fit(self, X, y, **kwargs):
-
-        print(X.shape, y.shape)
-        self.model.summary()
         
         self.params = self._config_params(params, **kwargs)
         # import pudb; pudb.set_trace()

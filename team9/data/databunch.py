@@ -15,6 +15,10 @@ crt_emb_type = ['fasttext','tfidf']
 
 class DataBunch():
     """load all data and convert it to appropriate embedding type. embedding type will be obtrained in main(classify) module
+
+    Parameters
+    ----------
+
     Note: when you load embedding from pre-trained model, it will have tensor size (dataset, max_length, emb_dim) which can't feed on MLP/NB.
         It will be flattend (i.e. tensor size (dataset, max_length * emb_dim)) unless other option is given.
     """ 
