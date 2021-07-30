@@ -1,6 +1,6 @@
 # team9.interpret.base
 from lime.lime_text import LimeTextExplainer
-from sklearn.feature_extraction.text import TfidfVectorizer
+from sklearn.feature_extraction.text import TfidfVectorizer as tfidf
 from sklearn.metrics import classification_report as cls_report
 from sklearn.metrics import confusion_matrix
 from pathlib import Path
@@ -32,13 +32,13 @@ def cm(true_label, pred_label, clf):
     df_cm = pd.DataFrame(cm_score, index=clf.labels, columns=clf.labels)
     plt.figure(figsize=(10, 7))
     sn.heatmap(df_cm, annot=True)
-    img_path = Path(__package__.split('.')[0]) / 'interpret/results/cm'
+    img_path = Path(__file__).parent/'results/cm'
     img_path.mkdir(exist_ok=True, parents=True)
     fname = img_path / f'ISEAR_{clf.model_type}_{clf.occ_type}'
     plt.savefig(fname)
     print(f"Your confusion matrix is saved at : {str(img_path)} named {fname}")
 
-def lime_wrapper(embedder, model, labels, texts):
+def lime_wrapper_tfidf(clf, texts):
     """
     Parameters
     ----------
@@ -49,8 +49,31 @@ def lime_wrapper(embedder, model, labels, texts):
     ----------
         probability of input text
     """
-    embs = embedder.transform(texts)
-    return model.predict(embs.toarray())
+    embs = clf.embedder.transform(texts)
+    if clf.model_type== 'mlp': return clf.learner.model.predict(embs.toarray())
+    else: return clf.learner.predict_proba(embs)
+    
+def lime_wrapper_fasttext(clf, texts):
+    """
+    Parameters
+    ----------
+    embedder: A function which converts given texts to vectors (including one-hot)
+    model: model which predict probability of input texts
+
+    Return
+    ----------
+        probability of input text
+    """
+    tokenizer = tfidf().build_tokenizer()
+    tokens = list(map(tokenizer, texts))
+    num_fn = lambda tokens: [clf.vtoi[token.lower()] if token.lower() in clf.vtoi else -1 for token in tokens ]
+    numeric = map(num_fn, tokens)
+    pad_fn = lambda sent: sent + [-1] * (clf.max_seq-len(sent))
+    pad_nums = list(map(pad_fn, numeric))
+    xv = np.array([clf.embedder[pad_sent, ] for pad_sent in pad_nums])
+    embs = xv.reshape(xv.shape[0], -1)
+    return clf.learner.model.predict(embs)
+    
 
 def lime(clf, trg_idx=None, test = True):
     """
@@ -65,11 +88,13 @@ def lime(clf, trg_idx=None, test = True):
     test : {bool}, default = True
         Assume target index is for the text data
     """
-    
-    lime_predictor = partial(lime_wrapper, clf.embedder, clf.learner, clf.labels)
+    lime_wrapper = lime_wrapper_tfidf if clf.emb_type == 'tfidf' else lime_wrapper_fasttext
+    lime_predictor = partial(lime_wrapper, clf)
+
     idx = trg_idx if trg_idx else np.random.choice(clf.x_test.shape[0])
+
     exp = LimeTextExplainer(class_names=clf.labels).explain_instance(clf.x_test_text[idx],lime_predictor, num_features=clf.c, top_labels=clf.c)
-    exp_path = Path(__package__.split('.')[0]) / 'interpret/results/lime'
+    exp_path = Path(__file__).parent/'results/lime'
     exp_path.mkdir(exist_ok=True, parents=True)
     exp.save_to_file(exp_path / f"ISEAR_{clf.model_type}_{idx}_.html")
     exp.as_pyplot_figure().savefig(exp_path / f"ISEAR_{clf.model_type}_{idx}_.png")

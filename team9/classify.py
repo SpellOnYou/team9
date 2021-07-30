@@ -69,7 +69,7 @@ class Classifier(DataBunch):
         self.learner = model_dict[self.model_type](self.x_train.shape[1]) if self.model_type=='mlp' else model_dict[self.model_type]()
         if self.verbose:
             print("\n\n", "="*40, f"\nModel Created.\n")
-            if self.model_type = 'mlp': self.learner.summary()
+            if self.model_type == 'mlp': self.learner.model.summary()
         
     def train(self, **kwargs):
         """A function actually executes parameter learning."""

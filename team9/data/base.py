@@ -66,7 +66,7 @@ def load_pkl(emb_type='fasttext', **kwargs):
 		collections.OrderedDict instance, key: word in dataset, value: idx
 	"""
 	#TODO: make this path rubust using pkgutil
-	fname = Path(__file__).parent/f'pretrained/{emb_type}.vtoi'
+	fname = Path(__file__).parent/f'pretrained/{emb_type}.vtoi.pkl'
 	with fname.open('rb') as f:
 		vtoi = pickle.load(f)
 	return vtoi

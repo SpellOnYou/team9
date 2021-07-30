@@ -108,6 +108,8 @@ class DataBunch():
 
         #padding, vacant words will be substituted as unknown
         if not 'max_seq' in kwargs: max_seq = max([len(i) for i in train_tokens])
+        # this can be used for later (i.e., evaluating)
+        if not hasattr(self, 'max_seq'): self.max_seq = max_seq
         pad_fn = lambda sent: sent + [-1] * (max_seq-len(sent))
         self.train_pad_nums = list(map(pad_fn, train_numeric))
         self.test_pad_nums = list(map(pad_fn, test_numeric))
