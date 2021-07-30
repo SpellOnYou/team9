@@ -42,7 +42,7 @@ We provide a command line interface (CLI) of emotion classification (of ISEAR da
 
 As for additional available arguments, please refer to following image
 
-![gui-package](https://github.com/SpellOnYou/team9/blob/package/img/team9-example2.pngg)
+![gui-package](https://github.com/SpellOnYou/team9/blob/package/img/team9-example2.png)
 
 ### Module Architecture
 
