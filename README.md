@@ -22,6 +22,9 @@ python3 -m pip install --use-feature=in-tree-build -qq team9-package/
 
 ### Usage
 
+**Before we start, we highly recommend you to go through our demo on [Google Colab](https://colab.research.google.com/drive/1eWcxVjaEadUxoMwy9GCJ9_N9-67ussKC?usp=sharing) which will help you to understand overall architecture easily and quickly :)**
+
+
 #### Python Module (GUI)
 
 On a high level, we provide a python object `team9.Classifier` and the supported features like: *loading data*, *vectorizing/embedding text*, *create model*, *train*, *predict from trained model*, and *analysing the results*.
@@ -31,9 +34,6 @@ Mainly, this module consists of several submodules: [data](./team9/data/) where 
 Here is the most succinct version of example, 
 
 ![gui-package](https://github.com/SpellOnYou/team9/blob/package/img/team9-example.png)
-
-Before we start, we highly recommend you to go through our demo on [Google Colab](https://colab.research.google.com/drive/1eWcxVjaEadUxoMwy9GCJ9_N9-67ussKC?usp=sharing) which will help you to understand overall architecture easily and quickly :)
-
 
 #### Command Line Intergface (CLI)
 
