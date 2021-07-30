@@ -97,7 +97,7 @@ First one is [F-Score from sklearn](), arguably is the one of most used metrics 
 
 We also provide confusion matrix heatmap, which clearly shows which label is confused with which other label. For example, you might recognize symetric pattern of below example that the model (MLP, 6-layer) is mostly confused of guilt/disgust and shame/anger.
 
-![gui-package](./img/team9-example2.png)
+![gui-package](./img/team9-example3.png)
 
 <!-- LIME PART -->
 
