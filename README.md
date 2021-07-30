@@ -105,7 +105,7 @@ To understand the reasons behind our models' predictions, we use an explanation 
 
 The results of the confusion matrices and lime are saved in [results](./team9/interpret/results).
 
-![gui-package](./img/team9-example3.png)
+![gui-package](./img/team9-example-lime.png)
 
 In [experimental](./team9/experimental) you find the script to extract the OCC variable "overall sentence polarity" from the text.
 
