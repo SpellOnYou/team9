@@ -75,3 +75,5 @@ class Classifier(DataBunch):
 
         print("="*60, f"\nAn evaluation report from TEST DATA\n\n\nModel type: {self.learner.__repr__()}.\n{cls_report(y_true, y_pred)}", sep='\n')
         cm_plot = cm(y_true, y_pred, list(self.label2idx.keys()))
+
+        lime(self.x_test_text[0], self)
