@@ -1,38 +1,37 @@
 # CLab 21: Group 9 Emotion Classification
 
 
+Repository for [Jiwon Kim](mailto:st176776@stud.uni-stuttgart.de) and Lara Grimminger for the 2021 Team Laboratory.
+Subject: Emotion Classification on the ISEAR Dataset.
+
 ### Overview
 
+Emotion classificaton is the task of classifying the correct emotion given a text.
+Here, we have used the research material which was released by ISEAR(International Survey on Emotion Antecedents and Reactions) project (see [official hompage](https://www.unige.ch/cisa/research/materials-and-online-research/research-material/) #6 for details).
+This dataset contains seven emotion labels (anger, disgust, fear, guilt, joy, shame, and sadness) reported by participants' own experience.
+As a preliminary research, we experimented two layer fully connected neural network and decided to investigate cause of imbalanced model performance across the labels. You can find detailed journey in our final report.
 
+Here we mainly focus on the emotion classification module, named `team9` developed to further our reserch and make external users easily approach.
 
 ### Installation
 
 Install this project from the source by 
 ```sh
-$ git clone https://github.com/SpellOnYou/nlp-tema9
-$ cd nlp-team9
-$ pip install .
+!unzip -qq team9-package.zip -d .
+python3 -m pip install --use-feature=in-tree-build -qq team9-package/
 ```
-
 
 ### Usage
 
 #### Python Module (GUI)
 
-On a high level, we provide a python object `team9.Classifier` and the supported features like: loading data, vectorizing/embedding text, create model, train dataset, predict from trained model, and analysing the results.
-Mainly, this module consists of several submodules: [data]() where loading and embedding happen, [model]() which executes actual training and prediction, [interpret] which provides relevant metrics to evaluate model estimation, and finally [classify]() where integrate the submodules and renders various options to the submodules repectively.
+On a high level, we provide a python object `team9.Classifier` and the supported features like: *loading data*, *vectorizing/embedding text*, *create model*, *train*, *predict from trained model*, and *analysing the results*.
+
+Mainly, this module consists of several submodules: [data](./team9/data/) where loading and embedding happen, [model](./team9/model/) which executes actual training and prediction, [interpret](./team9/data/) which provides relevant metrics to evaluate model estimation, and finally [classify]() where integrate the submodules and renders various options to the submodules repectively.
 
 Here is the most succinct version of example, 
 
-```python
-import team9
-clf = team9.Classifier(model_type='MLP',emb_type='tfidf', occ_type='rule')
-clf()
-clf.train()
-pred = clf.predict()
-clf.evaluate(clf.y_test, pred)
-
-```
+![gui-package](./png/gui-example)
 
 and please refer to our source code for implement details and try the demo on [Google Colab](https://colab.research.google.com/drive/1eWcxVjaEadUxoMwy9GCJ9_N9-67ussKC?usp=sharing)
 
@@ -51,17 +50,8 @@ team9-emo-cls -h
 TODO: This should be intergrated with below 👇 description
 ---
 
-
-Repository for [Jiwon Kim](mailto:st176776@stud.uni-stuttgart.de) and Lara Grimminger for the 2021 Team Laboratory.
-Subject: Emotion Classification on the ISEAR Dataset.
-
 ## Introduction
 
-Emotion classificaton is the task of classifying the correct emotion given a text.
-Here, we have used the ISEAR dataset which contains seven emotion labels (joy, fear, shame, disgust, guilt, anger and sadness) and was obtained by asking students to describe emotional events for 7 emotions.
-
-As baseline, we opted for a simple 2 layer neural network to obtain an understanding of the task
-and the way neural networks work.
 
 ### Data
 
