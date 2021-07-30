@@ -77,7 +77,7 @@ When you call the instance after you initiate the instance, which is despicted a
 
 2. [data]()
 
-Functions and dataset we need when we handle (file) data containing texts are all implemented here. 
+Functions and dataset we need when we handle (file) data containing texts are all implemented here, for example, `get_data` and `get_embedding`. We made main Classifier object to inherit the object called DataBunch which conducts input file reading and transforming the raw data. 
 this part takes charge of load package data, 
 
 2. model
