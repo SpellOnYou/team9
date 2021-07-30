@@ -53,7 +53,7 @@ You can decompose this library as its subdirectory structure reveals in team9, n
 
 1. [classify](./team9/classify.py)
 
-Before we move into the submodules, we will explain the main module which is in [team9.classify](./team9/classify). This module is charged for the systematic execution of individual modules. When you initiate this class, it sets the default configuration of the experiment setting. You can easily observe its construction with the command
+Before we move into the submodules, we will explain the **main** module which is in [team9.classify.py](./team9/classify). This module is charged for the systematic execution of individual modules. When you initiate this class, it sets the default configuration of the experiment setting. You can easily observe its construction with the command
 
 ```python
 import inspect
@@ -89,7 +89,7 @@ Moreover, as the size of pretrained model provided by [fasttext](https://fasttex
 2. [model](./team9/model)
 
 We adopt two machine learning models which are the most classical NLP classification models but quite different in the way they attempt to find reasonable classification.
-For NB, we use [sklearn library](https://scikit-learn.org/stable/modules/naive_bayes.html) without any source code modification. For MLP, we mainly use [tensorflow.keras] API for building 6-layer MLP and it is implemented in [mlp](./team9/model/mlp) module.
+For NB, we use [sklearn library](https://scikit-learn.org/stable/modules/naive_bayes.html) without any source code modification. For MLP, we mainly use [tensorflow.keras] API for building 6-layer MLP and it is implemented in [mlp](./team9/model/mlp.py) module.
 
 3. [interpret](./team9/interpret)
 
@@ -103,7 +103,7 @@ We also provide a confusion matrix heatmap, which clearly shows which label is c
 
 To understand the reasons behind our models' predictions, we use an explanation technique called [Local Interpretable Model-agnostic Explanations (LIME)](https://github.com/marcotcr/lime). In the case of text classification, LIME generates a set of scores that indicate the relevance of the word tokens for the classification decision in the text (see example below). LIME further produces heatmaps to visualize the importance of the respective words.
 
-The results of the confusion matrices and lime are saved in [results](./team9/interpret/results)
+The results of the confusion matrices and lime are saved in [results](./team9/interpret/results).
 
 ![gui-package](./img/team9-example3.png)
 
