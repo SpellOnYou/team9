@@ -52,6 +52,7 @@ As we briefly described above, this library is composed of a hierarchical collec
 You can decompose this library as its subdirectory structure reveals in team9, named `classify`, `data`, `model`, and `interpret`. We will explain how it works individually as well as systematically in the following description.
 
 1. [classify](./team9/classify.py)
+
 Before we move into the submodules, we will explain the main module which is in [team9.classify](./team9/classify). This module is charged for the systematic execution of individual modules. When you initiate this class, it sets the default configuration of the experiment setting. You can easily observe its construction with the command
 
 ```python
