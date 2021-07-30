@@ -3,7 +3,7 @@
 Repository for [Jiwon Kim](mailto:st176776@stud.uni-stuttgart.de) and Lara Grimminger for the 2021 Team Laboratory.
 Subject: Emotion Classification on the ISEAR Dataset.
 
-### Overview
+## Overview
 
 Emotion classificaton is the task of classifying the correct emotion given a text.
 Here, we have used the research material which was released by ISEAR(International Survey on Emotion Antecedents and Reactions) project (see [official hompage](https://www.unige.ch/cisa/research/materials-and-online-research/research-material/) #6 for details).
@@ -12,7 +12,7 @@ As a preliminary research, we experimented two layer fully connected neural netw
 
 Here we mainly focus on the emotion classification module, named `team9` developed to further our reserch and make external users easily approach.
 
-### Installation
+## Installation
 
 Install this project from the source by 
 ```sh
@@ -20,9 +20,12 @@ Install this project from the source by
 python3 -m pip install --use-feature=in-tree-build -qq team9-package/
 ```
 
-### Usage
+## Usage
 
-#### Python Module (GUI)
+**Before we start, we highly recommend you to go through our demo on [Google Colab](https://colab.research.google.com/drive/1eWcxVjaEadUxoMwy9GCJ9_N9-67ussKC?usp=sharing) which will help you to understand overall architecture easily and quickly :)**
+
+
+### Python Module (GUI)
 
 On a high level, we provide a python object `team9.Classifier` and the supported features like: *loading data*, *vectorizing/embedding text*, *create model*, *train*, *predict from trained model*, and *analysing the results*.
 
@@ -32,10 +35,7 @@ Here is the most succinct version of example,
 
 ![gui-package](https://github.com/SpellOnYou/team9/blob/package/img/team9-example.png)
 
-and please refer to our source code for implement details and try the demo on [Google Colab](https://colab.research.google.com/drive/1eWcxVjaEadUxoMwy9GCJ9_N9-67ussKC?usp=sharing)
-
-
-#### Command Line Intergface (CLI)
+### Command Line Intergface (CLI)
 
 We provide a command line interface (CLI) of emotion classification (of ISEAR dataset, which can be easily extended to other datasets) as well as the python module.
 
@@ -45,7 +45,7 @@ As for additional available arguments, please refer to following image
 
 The internal mechanism is exactly same with python module, since we made the command `team9-emo-cls` load package of modules used for our task.
 
-### Module Architecture
+## Module Architecture
 
 As we brifely described above, this library composed of hierarchial collection of modules corresponding the process of classification.
 You can decompose this library as its own subdirectory structure reveals in team9, named `classify`, `data`, `model`, and `interpret`. We will explain how it works individually as well as systematically in following description.
