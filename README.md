@@ -43,19 +43,20 @@ As for additional available arguments, please refer to following image
 
 ![gui-package](https://github.com/SpellOnYou/team9/blob/package/img/team9-example2.png)
 
+The internal mechanism is exactly same with python module, since we made the command `team9-emo-cls` load package of modules used for our task.
+
 ### Module Architecture
-ss
+
 As we brifely described above, this library composed of hierarchial collection of modules corresponding the process of classification.
-You can decompose this library as its own structure in team9, named `data`, `model`, `interpret`. We will explain how it works individually as well as systematically in following description.
+You can decompose this library as its own subdirectory structure reveals in team9, named `classify`, `data`, `model`, and `interpret`. We will explain how it works individually as well as systematically in following description.
 
 1. [classify](./team9/classify.py)
-Before we move in the submodules, we will explain the main module which is in team9.classify, and this module is charged for actual execution of classification. When you initiate that class, it sets default configuration of experiment setting. You can easily observe its construction with command
+Before we move in the submodules, we will explain the main module which is in [team9.classify](./team9/classify). This module is charged for systematic execution of individual modules. When you initiate this class, it sets default configuration of experiment setting. You can easily observe its construction with command
 
 ```python
 import inspect
 inspect.getmembers(team9.Classifier )
 ```
-
 
 Aside from various dunder and private method, you could see the following options as itself depicting overall process of classification. 
 
@@ -81,19 +82,31 @@ Additionally, we use python standard library [pkgutil](https://docs.python.org/3
 
 Regarding embedding, we try to incorporate both of count/predict embedding methods as we previously discussed in mid-term presentation. However, as we use only two models, one is Naive Bayes which is not applicable to fasttext, and MLP which needs flatten vectors (which will exponentially increase the number of parameters).
 
-Moreover, as the size of embedding data itself is about to 6.78GB in English, we decide to extract the embeddings we need. This package gives three choices for embedding dimension found folder [pretrained](.data/pretrained) (type: compressed with zipfile) and separately saved corresponding vocabulary index at separate file [fasttext.vtoi.pkl](./data/pretrained/fasttext.vtoi.pkl).
+Moreover, as the size of pretrained model provided by [fasttext](https://fasttext.cc/docs/en/crawl-vectors.html#models) is up to 6.78GB in English, we decide to extract the embeddings we need. This package gives three choices for embedding dimension found folder [pretrained](.data/pretrained) (format: compressed with zipfile) and separately saved corresponding vocabulary index at separate file [fasttext.vtoi.pkl](./data/pretrained/fasttext.vtoi.pkl).
 
+2. [model](./team9/model)
 
-2. [model]
+We adopt two machine learning models which are the most classical NLP classification models but quite different in the way they attemps to find reasonable classification.
+For NB, we use [sklearn library](https://scikit-learn.org/stable/modules/naive_bayes.html) without any source code modification. For MLP, we mainly use [tensorflow.keras] API for building 6-layer MLP and it is implemented in [mlp](./team9/model/mlp) module.
 
+3. [interpret](./team9/interpret)
 
+Finally, there are three metrics we incorporate to understand underlying pattenrns of various enviromental settings.
 
-3. [interpret]
+First one is [F-Score from sklearn](), arguably is the one of most used metrics in the field of classification task. Though it has an [controversy on class imbalance](https://direct.mit.edu/neco/article/33/4/853/97475/The-Effect-of-Class-Imbalance-on-Precision-Recall), we have seen that it is not relevant to our dataset.
 
-You can find the labeled ISEAR dataset in the [datasets/emotions](./data/example) directory. The dataset is split into train, validation and test set. Since the respective datasets contained noise and "not provided" text sequences, we have cleaned the datasets and saved them and added "modified" to the respective file names.
+We also provide confusion matrix heatmap, which clearly shows which label is confused with which other label. For example, you might recognize symetric pattern of below example that the model (MLP, 6-layer) is mostly confused of guilt/disgust and shame/anger.
+
+![gui-package](./img/team9-example2.png)
+
+<!-- LIME PART -->
 
 
 ---
+---
+
+
+You can find the labeled ISEAR dataset in the [datasets/emotions](./data/example) directory. The dataset is split into train, validation and test set. Since the respective datasets contained noise and "not provided" text sequences, we have cleaned the datasets and saved them and added "modified" to the respective file names.
 
 
 ### Input and Output Representation
