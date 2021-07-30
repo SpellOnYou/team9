@@ -31,7 +31,7 @@ Mainly, this module consists of several submodules: [data](./team9/data/) where 
 
 Here is the most succinct version of example, 
 
-![gui-package](./png/team9-example.png)
+![gui-package](https://github.com/SpellOnYou/team9/blob/package/img/team9-example.png)
 
 and please refer to our source code for implement details and try the demo on [Google Colab](https://colab.research.google.com/drive/1eWcxVjaEadUxoMwy9GCJ9_N9-67ussKC?usp=sharing)
 
@@ -42,7 +42,7 @@ We provide a command line interface (CLI) of emotion classification (of ISEAR da
 
 As for additional available arguments, please refer to following image
 
-![gui-package](./png/team9-example2.png)
+![gui-package](https://github.com/SpellOnYou/team9/blob/package/img/team9-example2.pngg)
 
 ### Module Architecture
 
