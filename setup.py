@@ -3,7 +3,7 @@ from io import open
 
 setuptools.setup(
     name="team9", 
-    version="1.0",
+    version="1.7",
     author="Jiwon Kim and Lara Grimminger",
     author_email="st176776@stud.uni-stuttgart.de",
     description="NLP Teamlab Group 9 Emotion Classification Library",
@@ -17,9 +17,9 @@ setuptools.setup(
         "Operating System :: OS Independent",
     ],
     install_requires=[
-        'pandas',
-        'numpy',
-        'tensorflow',
+        'pandas>1.0',
+        'numpy'>=1.15,
+        'tensorflow>=2.0',
         'tensorflow-addons>=0.11',
         'numpy',
         'sklearn',
