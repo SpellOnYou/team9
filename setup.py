@@ -23,7 +23,8 @@ setuptools.setup(
         'tensorflow-addons>=0.11',
         'numpy',
         'sklearn',
-        'lime'
+        'lime',
+        'seaborn'
     ],
     python_requires='>=3.6',
     include_package_data=True,
