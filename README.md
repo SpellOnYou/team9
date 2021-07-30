@@ -1,3 +1,4 @@
+
 # CLab 21: Group 9 Emotion Classification
 
 Repository for [Jiwon Kim](mailto:st176776@stud.uni-stuttgart.de) and [Lara Grimminger](mailto:st157146@stud.uni-stuttgart.de) for the 2021 Team Laboratory.
@@ -5,12 +6,12 @@ Subject: Emotion Classification on the ISEAR Dataset.
 
 ## Overview
 
-Emotion classificaton is the task of classifying the correct emotion given a text.
-Here, we have used the research material which was released by ISEAR(International Survey on Emotion Antecedents and Reactions) project (see [official hompage](https://www.unige.ch/cisa/research/materials-and-online-research/research-material/) #6 for details).
-This dataset contains seven emotion labels (anger, disgust, fear, guilt, joy, shame, and sadness) reported by participants' own experience.
-As a preliminary research, we experimented two layer fully connected neural network and decided to investigate cause of imbalanced model performance across the labels. You can find detailed journey in our final report.
+Emotion classification is the task of classifying the correct emotion given a text.
+Here, we have used the research material which was released by the ISEAR (International Survey on Emotion Antecedents and Reactions) project (see [official hompage](https://www.unige.ch/cisa/research/materials-and-online-research/research-material/) #6 for details).
+This dataset contains seven emotion labels (anger, disgust, fear, guilt, joy, shame, and sadness) reported by participants' own experiences.
+As preliminary research, we experimented with a two-layer fully connected neural network, and due to the imbalanced performance of the model across the labels, we decided to investigate further. You can find the detailed journey in our final report.
 
-Here we mainly focus on the emotion classification module, named `team9` developed to further our reserch and make external users easily approach.
+Here, we mainly focus on the emotion classification module named `team9`, developed to further our research and make it easily approachable by external users.
 
 ## Installation
 
@@ -27,38 +28,38 @@ python3 -m pip install --use-feature=in-tree-build -qq team9-package/
 
 ### Python Module (GUI)
 
-On a high level, we provide a python object `team9.Classifier` and the supported features like: *loading data*, *vectorizing/embedding text*, *create model*, *train*, *predict from trained model*, and *analysing the results*.
+On a high level, we provide a python object `team9.Classifier` and the supported features like: *loading data*, *vectorizing/embedding text*, *create model*, *train*, *predict from trained model*, and * analyzing the results*.
 
-Mainly, this module consists of several submodules: [data](./team9/data/) where loading and embedding happen, [model](./team9/model/) which executes actual training and prediction, [interpret](./team9/data/) which provides relevant metrics to evaluate model estimation, and finally [classify]() where integrate the submodules and renders various options to the submodules repectively.
+Mainly, this module consists of several submodules: [data](./team9/data/) where loading and embedding happens, [model](./team9/model/) which executes actual training and prediction, [interpret](./team9/data/) which provides relevant metrics to evaluate model estimation, and finally [classify]() which integrates the submodules and renders various options to the respective submodules.
 
-Here is the most succinct version of example, 
+Here is the most succinct version of the example, 
 
 ![gui-package](https://github.com/SpellOnYou/team9/blob/package/img/team9-example.png)
 
 ### Command Line Intergface (CLI)
 
-We provide a command line interface (CLI) of emotion classification (of ISEAR dataset, which can be easily extended to other datasets) as well as the python module.
+We provide a command line interface (CLI) of emotion classification (of the ISEAR dataset, which can be easily extended to other datasets), as well as the python module.
 
-As for additional available arguments, please refer to following image
+As for additional available arguments, please refer to the following image
 
 ![gui-package](https://github.com/SpellOnYou/team9/blob/package/img/team9-example2.png)
 
-The internal mechanism is exactly same with python module, since we made the command `team9-emo-cls` load package of modules used for our task.
+The internal mechanism is the same as the python module since we made the command `team9-emo-cls` load the package of the modules used for our task.
 
 ## Module Architecture
 
-As we brifely described above, this library composed of hierarchial collection of modules corresponding the process of classification.
-You can decompose this library as its own subdirectory structure reveals in team9, named `classify`, `data`, `model`, and `interpret`. We will explain how it works individually as well as systematically in following description.
+As we briefly described above, this library is composed of a hierarchical collection of modules corresponding to the process of classification.
+You can decompose this library as its subdirectory structure reveals in team9, named `classify`, `data`, `model`, and `interpret`. We will explain how it works individually as well as systematically in the following description.
 
 1. [classify](./team9/classify.py)
-Before we move in the submodules, we will explain the main module which is in [team9.classify](./team9/classify). This module is charged for systematic execution of individual modules. When you initiate this class, it sets default configuration of experiment setting. You can easily observe its construction with command
+Before we move into the submodules, we will explain the main module which is in [team9.classify](./team9/classify). This module is charged for the systematic execution of individual modules. When you initiate this class, it sets the default configuration of the experiment setting. You can easily observe its construction with the command
 
 ```python
 import inspect
 inspect.getmembers(team9.Classifier )
 ```
 
-Aside from various dunder and private method, you could see the following options as itself depicting overall process of classification. 
+Aside from various dunder and private methods, you could see the following options as itself depicting the overall process of classification. 
 
 ```sh
  ('get_data', <function team9.data.databunch.DataBunch.get_data>),
@@ -69,42 +70,46 @@ Aside from various dunder and private method, you could see the following option
  ('evaluate', <function team9.classify.Classifier.evaluate>),
 ```
 
-Additionally, you might have noticed above example, there is not positional argument, which means all arguments have their default value as to alleviate difficulties you might confront when you use this package first. However, though it has its own valid default, program will be broken if you order invalid variable.
+Additionally, you might have noticed in the above example, that there is no positional argument, which means all arguments have their default value to alleviate difficulties you might confront when you use this package first. However, though it has its own valid default, the program will be broken if you order an invalid variable.
 
-For example, `emb_type=200` when you use `fasttext`, or when you try to use `multinomial naive bayes classification model` (a.k.a. NB) with `pretrained/predict-based embedding`(here we use only fasttext for the trial). The former would evoke 'FileNotFoundError' since, as we will explain in detail later, we provide only 3 choices of embedding the dimension. The latter would result in `ValueError` raised by sklearn library itself, as Naive Bayes classification calculates chain of probability to decide the estimated label.
+For example, `emb_type=200` when you use `fasttext`, or when you try to use `multinomial naive bayes classification model` (a.k.a. NB) with `pretrained/predict-based embedding`(here we use only fasttext for the trial). The former would evoke 'FileNotFoundError' since, as we will explain in detail later, we provide only 3 choices of embedding the dimension. The latter would result in `ValueError` raised by sklearn library itself, as Naive Bayes classification calculates the chain of probability to decide the estimated label.
 
-When you call the instance after you initiate the instance, which is despicted as `my_classifier(learnig_rate=1e-5)` above GUI example, there comes the part where the submodules `data` and `model` start working. We will continue on this part at next module.
+When you call the instance after you initiate the instance, which is depicted as `my_classifier(learnig_rate=1e-5)` above GUI example, there comes the part where the submodules `data` and `model` start working. We will continue on this part in the next module.
 
 2. [data](./team9/data)
 
-Functions and datasets we need when we handle (file) data containing texts are all implemented here, and we made main `Classifier` object to inherit the object called `DataBunch` which conducts input file reading and transforming the raw data. 
+Functions and datasets we need when we handle (file) data containing texts are all implemented here, and we made the main `Classifier` object to inherit the object called `DataBunch` which conducts input file reading and transforming the raw data. 
 Additionally, we use python standard library [pkgutil](https://docs.python.org/3/library/pkgutil.html) when reading package data (ISEAR) so that the program might not be lost in finding out file path in different local's different file structure, as well as interpreting preserved file contents in the process zipped egg archive.
 
-Regarding embedding, we try to incorporate both of count/predict embedding methods as we previously discussed in mid-term presentation. However, as we use only two models, one is Naive Bayes which is not applicable to fasttext, and MLP which needs flatten vectors (which will exponentially increase the number of parameters).
+Regarding embedding, we try to incorporate both count/predict embedding methods as we previously discussed in our mid-term presentation. But we use only two models, one is Naive Bayes which is not applicable to fasttext, and the other one is MLP which needs flatten vectors (which will exponentially increase the number of parameters).
 
 Moreover, as the size of pretrained model provided by [fasttext](https://fasttext.cc/docs/en/crawl-vectors.html#models) is up to 6.78GB in English, we decide to extract the embeddings we need. This package gives three choices for embedding dimension found folder [pretrained](.data/pretrained) (format: compressed with zipfile) and separately saved corresponding vocabulary index at separate file [fasttext.vtoi.pkl](./data/pretrained/fasttext.vtoi.pkl).
 
 2. [model](./team9/model)
 
-We adopt two machine learning models which are the most classical NLP classification models but quite different in the way they attemps to find reasonable classification.
+We adopt two machine learning models which are the most classical NLP classification models but quite different in the way they attempt to find reasonable classification.
 For NB, we use [sklearn library](https://scikit-learn.org/stable/modules/naive_bayes.html) without any source code modification. For MLP, we mainly use [tensorflow.keras] API for building 6-layer MLP and it is implemented in [mlp](./team9/model/mlp) module.
 
 3. [interpret](./team9/interpret)
 
-Finally, there are three metrics we incorporate to understand underlying pattenrns of various enviromental settings.
+Finally, there are three metrics we incorporate to understand the underlying patterns of various environmental settings.
 
-First one is [F-Score from sklearn](), arguably is the one of most used metrics in the field of classification task. Though it has an [controversy on class imbalance](https://direct.mit.edu/neco/article/33/4/853/97475/The-Effect-of-Class-Imbalance-on-Precision-Recall), we have seen that it is not relevant to our dataset.
+The first one is [F-Score from sklearn](), arguably one of the most used metrics in the field of classification tasks. Though it has a [controversy on class imbalance](https://direct.mit.edu/neco/article/33/4/853/97475/The-Effect-of-Class-Imbalance-on-Precision-Recall), we have seen that this is not relevant to our dataset.
 
-We also provide confusion matrix heatmap, which clearly shows which label is confused with which other label. For example, you might recognize symetric pattern of below example that the model (MLP, 6-layer) is mostly confused of guilt/disgust and shame/anger.
+We also provide a confusion matrix heatmap, which clearly shows which label is confused with another label. For example, you might recognize in the symmetric pattern of the example below that the model (MLP, 6-layer) is mostly confused by guilt/disgust and shame/anger.
 
 ![gui-package](./img/team9-example3.png)
 
-<!-- LIME PART -->
+To understand the reasons behind our models' predictions, we use an explanation technique called [Local Interpretable Model-agnostic Explanations (LIME)](https://github.com/marcotcr/lime). In the case of text classification, LIME generates a set of scores that indicate the relevance of the word tokens for the classification decision in the text (see example below). LIME further produces heatmaps to visualize the importance of the respective words.
+
+![gui-package](./img/team9-example3.png)
+
 
 
 ---
 ---
 
+### Preliminary experiments for the mid-term presentation ###
 
 You can find the labeled ISEAR dataset in the [datasets/emotions](./data/example) directory. The dataset is split into train, validation and test set. Since the respective datasets contained noise and "not provided" text sequences, we have cleaned the datasets and saved them and added "modified" to the respective file names.
 
