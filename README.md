@@ -32,7 +32,7 @@ Here is the most succinct version of example,
 
 ![gui-package](https://github.com/SpellOnYou/team9/blob/package/img/team9-example.png)
 
-and please refer to our source code for implement details and try the demo on [Google Colab](https://colab.research.google.com/drive/1eWcxVjaEadUxoMwy9GCJ9_N9-67ussKC?usp=sharing)
+Before we start, we highly recommend you to go through our demo on [Google Colab](https://colab.research.google.com/drive/1eWcxVjaEadUxoMwy9GCJ9_N9-67ussKC?usp=sharing) which will help you to understand overall architecture easily and quickly :)
 
 
 #### Command Line Intergface (CLI)
