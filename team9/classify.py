@@ -74,6 +74,6 @@ class Classifier(DataBunch):
         if y_pred.ndim==2: y_pred = y_pred.argmax(-1)
 
         print("="*60, f"\nAn evaluation report from TEST DATA\n\n\nModel type: {self.learner.__repr__()}.\n{cls_report(y_true, y_pred)}", sep='\n')
-        cm_plot = cm(y_true, y_pred, list(self.label2idx.keys()))
+        cm_plot = cm(y_true, y_pred, self)
 
-        lime(self.x_test_text[0], self)
+        lime(self, trg_idx = None)

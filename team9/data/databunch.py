@@ -73,6 +73,8 @@ class DataBunch():
         
         # change when labels aren't int with saving label's index
         self.label2idx, y_train = validate_y(self.y_train_label)
+        self.c = len(self.label2idx) #number of classes
+        self.labels = list(self.label2idx.keys())
         y_test = list(map(lambda x: self.label2idx[x], self.y_test_label))
         self.y_train, self.y_test = map(np.array, (y_train, y_test))
 
