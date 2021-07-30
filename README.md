@@ -1,6 +1,5 @@
 # CLab 21: Group 9 Emotion Classification
 
-
 Repository for [Jiwon Kim](mailto:st176776@stud.uni-stuttgart.de) and Lara Grimminger for the 2021 Team Laboratory.
 Subject: Emotion Classification on the ISEAR Dataset.
 
@@ -45,7 +44,7 @@ As for additional available arguments, please refer to following image
 ![gui-package](https://github.com/SpellOnYou/team9/blob/package/img/team9-example2.png)
 
 ### Module Architecture
-
+ss
 As we brifely described above, this library composed of hierarchial collection of modules corresponding the process of classification.
 You can decompose this library as its own structure in team9, named `data`, `model`, `interpret`. We will explain how it works individually as well as systematically in following description.
 
@@ -75,15 +74,27 @@ For example, `emb_type=200` when you use `fasttext`, or when you try to use `mul
 
 When you call the instance after you initiate the instance, which is despicted as `my_classifier(learnig_rate=1e-5)` above GUI example, there comes the part where the submodules `data` and `model` start working. We will continue on this part at next module.
 
-2. [data]()
+2. [data](./team9/data)
 
-Functions and dataset we need when we handle (file) data containing texts are all implemented here, for example, `get_data` and `get_embedding`. We made main Classifier object to inherit the object called DataBunch which conducts input file reading and transforming the raw data. 
-this part takes charge of load package data, 
+Functions and datasets we need when we handle (file) data containing texts are all implemented here, and we made main `Classifier` object to inherit the object called `DataBunch` which conducts input file reading and transforming the raw data. 
+Additionally, we use python standard library [pkgutil](https://docs.python.org/3/library/pkgutil.html) when reading package data (ISEAR) so that the program might not be lost in finding out file path in different local's different file structure, as well as interpreting preserved file contents in the process zipped egg archive.
 
-2. model
-3. interpret
+Regarding embedding, we try to incorporate both of count/predict embedding methods as we previously discussed in mid-term presentation. However, as we use only two models, one is Naive Bayes which is not applicable to fasttext, and MLP which needs flatten vectors (which will exponentially increase the number of parameters).
+
+Moreover, as the size of embedding data itself is about to 6.78GB in English, we decide to extract the embeddings we need. This package gives three choices for embedding dimension found folder [pretrained](.data/pretrained) (type: compressed with zipfile) and separately saved corresponding vocabulary index at separate file [fasttext.vtoi.pkl](./data/pretrained/fasttext.vtoi.pkl).
+
+
+2. [model]
+
+
+
+3. [interpret]
 
 You can find the labeled ISEAR dataset in the [datasets/emotions](./data/example) directory. The dataset is split into train, validation and test set. Since the respective datasets contained noise and "not provided" text sequences, we have cleaned the datasets and saved them and added "modified" to the respective file names.
+
+
+---
+
 
 ### Input and Output Representation
 
