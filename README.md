@@ -107,6 +107,8 @@ The results of the confusion matrices and lime are saved in [results](./team9/in
 
 ![gui-package](./img/team9-example3.png)
 
+In [experimental](./team9/experimental) you find the script to extract the OCC variable "overall sentence polarity" from the text.
+
 
 
 ---
