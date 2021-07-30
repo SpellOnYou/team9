@@ -53,7 +53,7 @@ You can decompose this library as its subdirectory structure reveals in team9, n
 
 1. [classify](./team9/classify.py)
 
-Before we move into the submodules, we will explain the **main** module which is in [team9.classify.py](./team9/classify). This module is charged for the systematic execution of individual modules. When you initiate this class, it sets the default configuration of the experiment setting. You can easily observe its construction with the command
+Before we move into the submodules, we will explain the **main** module which is in [team9.classify](./team9/classify.py). This module is charged for the systematic execution of individual modules. When you initiate this class, it sets the default configuration of the experiment setting. You can easily observe its construction with the command
 
 ```python
 import inspect
@@ -101,7 +101,7 @@ We also provide a confusion matrix heatmap, which clearly shows which label is c
 
 ![gui-package](./img/team9-example3.png)
 
-To understand the reasons behind our models' predictions, we use an explanation technique called [Local Interpretable Model-agnostic Explanations (LIME)](https://github.com/marcotcr/lime). In the case of text classification, LIME generates a set of scores that indicate the relevance of the word tokens for the classification decision in the text (see example below). LIME further produces heatmaps to visualize the importance of the respective words.
+To understand the reasons behind our models' predictions, we use an explanation technique called [Local Interpretable Model-agnostic Explanations (LIME)](https://github.com/marcotcr/lime). In the case of text classification, LIME generates a set of scores that indicate the relevance of the word tokens for the classification decision in the text (see example below). LIME further produces heatmaps to visualize the importance of the respective words. LIME can be applied to the MLP or to NB.
 
 The results of the confusion matrices and lime are saved in [results](./team9/interpret/results).
 
