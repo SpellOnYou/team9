@@ -30,7 +30,7 @@ python3 -m pip install --use-feature=in-tree-build -qq team9-package/
 
 On a high level, we provide a python object `team9.Classifier` and the supported features like: *loading data*, *vectorizing/embedding text*, *create model*, *train*, *predict from trained model*, and * analyzing the results*.
 
-Mainly, this module consists of several submodules: [data](./team9/data/) where loading and embedding happens, [model](./team9/model/) which executes actual training and prediction, [interpret](./team9/data/) which provides relevant metrics to evaluate model estimation, and finally [classify]() which integrates the submodules and renders various options to the respective submodules.
+Mainly, this module consists of several submodules: [data](./team9/data/) where loading and embedding happens, [model](./team9/model/) which executes actual training and prediction, [interpret](./team9/data/) which provides relevant metrics to evaluate model estimation, and finally [classify](./team9/classify.py) which integrates the submodules and renders various options to the respective submodules.
 
 Here is the most succinct version of the example, 
 
@@ -102,6 +102,8 @@ We also provide a confusion matrix heatmap, which clearly shows which label is c
 ![gui-package](./img/team9-example3.png)
 
 To understand the reasons behind our models' predictions, we use an explanation technique called [Local Interpretable Model-agnostic Explanations (LIME)](https://github.com/marcotcr/lime). In the case of text classification, LIME generates a set of scores that indicate the relevance of the word tokens for the classification decision in the text (see example below). LIME further produces heatmaps to visualize the importance of the respective words.
+
+The results of the confusion matrices and lime are saved in [results](./team9/interpret/results)
 
 ![gui-package](./img/team9-example3.png)
 
